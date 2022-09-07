@@ -796,6 +796,7 @@
 
 
 <h1 id="insert">INSERT</h1>
+<p>La commande <strong>INSERT</strong> est utilisée pour ajouter des enregistrements dans une table.</p>
 <h2 id="syntaxe-de-base">Syntaxe de base</h2>
 <h3 id="la-methode-la-plus-simple">La méthode la plus simple</h3>
 <pre><code class="language-sql">INSERT INTO ma_table
@@ -806,7 +807,7 @@ VALUES (valeur1, valeur2, valeur3);
 - Si on modifie les noms de colonnes, pas besoin de modifier la requête.</p>
 <p><strong>Inconvénients</strong></p>
 <ul>
-<li>Possibilités d'erreurs plus grand, il faut que les valeurs concordent avec le nombre de colonnes et leur position.</li>
+<li>Possibilité d'erreurs plus grande, il faut que les valeurs concordent avec le nombre de colonnes et leur position.</li>
 </ul>
 <h3 id="la-methode-la-plus-precise">La méthode la plus précise</h3>
 <pre><code class="language-sql">INSERT INTO ma_table (colonne1, colonne2, colonne3)
@@ -814,11 +815,11 @@ VALUES (valeur1, valeur2, valeur3);
 </code></pre>
 <p><strong>Avantages</strong>
 - Plus de précisions dans la requête
-- On n'est pas forcer de suivre l'ordre des colonnes ni d'ajouter une valeur pour chacune d'entre elles.</p>
+- On n'est pas forcé de suivre l'ordre des colonnes ni d'ajouter une valeur pour chacune d'entre elles.</p>
 <p><strong>Inconvénient</strong>
 - Les requêtes sont plus longue à écrire.</p>
 <ul>
-<li>Au niveau de la maintenance, si on modifie un nom de colonne, il faut modifier toutes les requêtes ajoutant dans cette colonne.</li>
+<li>Au niveau de la maintenance, si on modifie un nom de colonne, il faut modifier toutes les requêtes ajoutant des valeurs dans cette colonne.</li>
 </ul>
 <h2 id="inserer-des-donnees-seulement-dans-certaines-colonnes">Insérer des données seulement dans certaines colonnes</h2>
 <pre><code class="language-sql">INSERT INTO ma_table (colonne1)
