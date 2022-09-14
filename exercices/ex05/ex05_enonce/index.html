@@ -489,7 +489,21 @@
   
     <li class="md-nav__item">
       <a href="../../../notes_de_cours/view/" class="md-nav__link">
-        les Views
+        Les Views
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notes_de_cours/curseur/" class="md-nav__link">
+        Les curseurs
       </a>
     </li>
   
@@ -610,9 +624,40 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Exercice 05 - Les Views
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Exercice 05 - Les Views
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#corrige" class="md-nav__link">
+    Corrigé
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -726,6 +771,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#corrige" class="md-nav__link">
+    Corrigé
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -752,6 +812,58 @@
 <li>Supprimer la view <strong>resultat_14juillet2019</strong></li>
 </ol>
 <p>Je veux que vous me remettiez les requêtes dans un script SQL.</p>
+<h2 id="corrige">Corrigé</h2>
+<pre><code class="language-sql">-- #1
+CREATE OR REPLACE VIEW resultat_hhmmss
+AS 
+    SELECT r.id,
+           r.athlete_id,
+           r.epreuve_id,
+           r.date_resultat,
+           r.resultat_ms,
+           TIME_FORMAT(SEC_TO_TIME(r.resultat_ms / 1000), '%H:%i:%s') AS resultat_hhmmss 
+    FROM resultat r;
+
+-- #2
+CREATE OR REPLACE VIEW athlete_complet 
+(id, nom, date_epreuve, nom_epreuve, resultat)
+AS 
+    SELECT a.id,
+           CONCAT(a.prenom, ' ', a.nom),
+           rh.date_resultat,
+           e.description,
+           rh.resultat_hhmmss 
+    FROM athlete a 
+        INNER JOIN resultat_hhmmss rh ON rh.athlete_id = a.id 
+            INNER JOIN epreuve e ON e.id = rh.epreuve_id;
+-- J'ai réutiliser ici la view créé au numéro 1 pour vous montrer 
+-- qu'on peut très bien utiliser une view dans une view
+
+-- #3
+SELECT *
+FROM athlete_complet ac 
+WHERE ac.nom_epreuve = 'Marathon';
+
+-- #4
+CREATE OR REPLACE VIEW resultat_21juillet2020
+AS
+    SELECT *
+    FROM resultat r 
+    WHERE r.date_resultat = '2020-07-21';
+
+-- #5
+ALTER VIEW resultat_21juillet2020
+AS
+    SELECT *
+    FROM resultat r 
+    WHERE r.date_resultat = '2019-07-14';
+
+RENAME TABLE resultat_21juillet2020 TO resultat_14juillet2019;
+
+-- #6
+DROP VIEW IF EXISTS resultat_14juillet2019;
+
+</code></pre>
 
               
             </article>

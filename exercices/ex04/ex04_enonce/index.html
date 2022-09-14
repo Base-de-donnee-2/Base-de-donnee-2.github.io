@@ -489,7 +489,21 @@
   
     <li class="md-nav__item">
       <a href="../../../notes_de_cours/view/" class="md-nav__link">
-        les Views
+        Les Views
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notes_de_cours/curseur/" class="md-nav__link">
+        Les curseurs
       </a>
     </li>
   
@@ -596,9 +610,40 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Exercice 04 - Insert
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Exercice 04 - Insert
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#corrige" class="md-nav__link">
+    Corrigé
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -726,6 +771,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#corrige" class="md-nav__link">
+    Corrigé
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -751,6 +811,56 @@
 <li>Insérez dans cette table tous les athlètes qui proviennent de la province du Québec à l'aide d'une requête select.</li>
 </ol>
 <p>Je veux que vous me remettiez les requêtes dans un script SQL avec pour chaque requête d'insertion une requête select qui va valider que les données ont bien été ajouté.</p>
+<h2 id="corrige">Corrigé</h2>
+<pre><code class="language-sql">-- 1. Insérez-vous dans la table athlète sans spécifier les noms de colonnes 
+--    dans la requête.
+INSERT INTO athlete 
+VALUES (501,
+        'Fréchette',
+        'Mathieu',
+        '1980-07-21', 
+        '2056 11e rang ouest', 
+        'Princeville', 
+        'Québec', 
+        'Canada', 
+        'math.frechette@gmail.com');
+
+SELECT * FROM athlete WHERE id = 501; 
+
+-- 2. Insérez un autre athlète fictif mais en spécifiant seulement son nom, 
+--    prénom et la date de naissance.
+INSERT INTO athlete (nom, prenom, date_naissance) 
+VALUES ('Fréchette','Mathieu 2','1980-07-21');
+
+SELECT * FROM athlete WHERE id = LAST_INSERT_ID() ;
+
+-- 3. Récupérez le id qui a été généré automatiquement lors de la requête 
+--    précédente et faites afficher avec une requête SELECT le message 
+--    suivant : &quot;L'athlète [prenom] [nom] a été ajouté avec succès!&quot;. Utilisez 
+--    le id récupéré dans la clause WHERE de votre requête.
+SELECT CONCAT(&quot;L'athlète &quot;, a.prenom, &quot; &quot;, a.nom, &quot; a été ajouté avec succès!&quot;)
+FROM athlete a 
+WHERE a.id = LAST_INSERT_ID();
+
+-- 4. Créez une nouvelle table appelé athlete_quebec avec les colonnes 
+--    suivante ( id clé primaire auto-incrémenté, nom, prénom, ville )
+CREATE TABLE IF NOT EXISTS athlete_quebec (
+    id INT AUTO_INCREMENT NOT NULL,
+    nom VARCHAR(50),
+    prenom VARCHAR(50),
+    ville VARCHAR(50),
+    CONSTRAINT PRIMARY KEY (id)
+);
+
+-- 5. Insérez dans cette table tous les athlètes qui proviennent de la 
+--    province du Québec à l'aide d'une requête select.
+INSERT INTO athlete_quebec (nom, prenom, ville)
+SELECT a.nom, a.prenom, a.ville 
+FROM athlete a
+WHERE a.province = &quot;Québec&quot;; 
+
+SELECT * FROM athlete_quebec;
+</code></pre>
 
               
             </article>
