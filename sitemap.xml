@@ -2,77 +2,82 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://base-de-donnee-2.github.io/</loc>
-         <lastmod>2022-09-14</lastmod>
+         <lastmod>2022-09-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/exercices/ex01/ex01_enonce/</loc>
-         <lastmod>2022-09-14</lastmod>
+         <lastmod>2022-09-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/exercices/ex02/ex02_enonce/</loc>
-         <lastmod>2022-09-14</lastmod>
+         <lastmod>2022-09-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/exercices/ex03/ex03_enonce/</loc>
-         <lastmod>2022-09-14</lastmod>
+         <lastmod>2022-09-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/exercices/ex04/ex04_enonce/</loc>
-         <lastmod>2022-09-14</lastmod>
+         <lastmod>2022-09-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/exercices/ex05/ex05_enonce/</loc>
-         <lastmod>2022-09-14</lastmod>
+         <lastmod>2022-09-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://base-de-donnee-2.github.io/exercices/ex06/ex06_enonce/</loc>
+         <lastmod>2022-09-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/formatif/intra/intra_formatif_01/</loc>
-         <lastmod>2022-09-14</lastmod>
+         <lastmod>2022-09-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/notes_de_cours/analyse/</loc>
-         <lastmod>2022-09-14</lastmod>
+         <lastmod>2022-09-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/notes_de_cours/convention/</loc>
-         <lastmod>2022-09-14</lastmod>
+         <lastmod>2022-09-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/notes_de_cours/curseur/</loc>
-         <lastmod>2022-09-14</lastmod>
+         <lastmod>2022-09-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/notes_de_cours/formes_normales/</loc>
-         <lastmod>2022-09-14</lastmod>
+         <lastmod>2022-09-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/notes_de_cours/function/</loc>
-         <lastmod>2022-09-14</lastmod>
+         <lastmod>2022-09-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/notes_de_cours/insert/</loc>
-         <lastmod>2022-09-14</lastmod>
+         <lastmod>2022-09-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/notes_de_cours/type_relation/</loc>
-         <lastmod>2022-09-14</lastmod>
+         <lastmod>2022-09-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/notes_de_cours/view/</loc>
-         <lastmod>2022-09-14</lastmod>
+         <lastmod>2022-09-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
