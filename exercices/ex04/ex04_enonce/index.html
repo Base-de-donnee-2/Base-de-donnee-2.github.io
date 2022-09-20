@@ -832,8 +832,8 @@ INSERT INTO athlete
 VALUES (501,
         'Fréchette',
         'Mathieu',
-        '1980-07-21', 
-        '2056 11e rang ouest', 
+        '1980-01-01', 
+        '1 rue Street', 
         'Princeville', 
         'Québec', 
         'Canada', 
@@ -844,7 +844,7 @@ SELECT * FROM athlete WHERE id = 501;
 -- 2. Insérez un autre athlète fictif mais en spécifiant seulement son nom, 
 --    prénom et la date de naissance.
 INSERT INTO athlete (nom, prenom, date_naissance) 
-VALUES ('Fréchette','Mathieu 2','1980-07-21');
+VALUES ('Fréchette','Mathieu 2','1980-01-01');
 
 SELECT * FROM athlete WHERE id = LAST_INSERT_ID() ;
 

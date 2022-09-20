@@ -113,11 +113,11 @@ values ('Carmen', 'Bonnie', '2016-09-10'),
 ('Chomiszewski', 'Merrielle', '1994-02-23'),
 ('Springford', 'Becki', '2009-07-01'),
 ('Huller', 'Galven', '2000-08-06'),
-('Fréchette', 'Anthony', '2006-01-07'),
-('Fréchette', 'Jérôme', '2008-04-11'),
-('Fréchette', 'Pénéloppe', '2009-11-06'),
-('Mathis-Fréchette', 'Charles-Édouard', '2017-03-06'),
-('Mathis-Fréchette', 'Luna Marguerite', '2019-06-17');
+('Fréchette', 'Anthony', '2006-01-01'),
+('Fréchette', 'Jérôme', '2008-01-01'),
+('Fréchette', 'Pénéloppe', '2009-01-01'),
+('Mathis-Fréchette', 'Charles-Édouard', '2017-01-01'),
+('Mathis-Fréchette', 'Luna Marguerite', '2019-01-01');
 
 -- Création de la table genre
 CREATE TABLE genre (
