@@ -31,7 +31,22 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://base-de-donnee-2.github.io/exercices/ex06/ex06_corrige/</loc>
+         <lastmod>2022-09-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://base-de-donnee-2.github.io/exercices/ex06/ex06_enonce/</loc>
+         <lastmod>2022-09-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://base-de-donnee-2.github.io/exercices/ex07/ex07_corrige/</loc>
+         <lastmod>2022-09-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://base-de-donnee-2.github.io/exercices/ex07/ex07_enonce/</loc>
          <lastmod>2022-09-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -67,6 +82,16 @@
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/notes_de_cours/insert/</loc>
+         <lastmod>2022-09-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://base-de-donnee-2.github.io/notes_de_cours/join/</loc>
+         <lastmod>2022-09-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://base-de-donnee-2.github.io/notes_de_cours/operateur/</loc>
          <lastmod>2022-09-20</lastmod>
          <changefreq>daily</changefreq>
     </url>

@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://base-de-donnee-2.github.io/notes_de_cours/curseur/">
+        <link rel="canonical" href="https://base-de-donnee-2.github.io/notes_de_cours/operateur/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.8">
     
     
       
-        <title>Les curseurs - Base de données 2 420-3B4-VI</title>
+        <title>Les opérateurs logiques - Base de données 2 420-3B4-VI</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#les-curseurs" class="md-skip">
+        <a href="#operateurs-logique-sql" class="md-skip">
           Aller au contenu
         </a>
       
@@ -99,7 +99,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Les curseurs
+              Les opérateurs logiques
             
           </span>
         </div>
@@ -504,87 +504,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Les curseurs
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../curseur/" class="md-nav__link">
         Les curseurs
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table des matières
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#declaration-du-curseur" class="md-nav__link">
-    Déclaration du curseur
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ouverture-du-curseur" class="md-nav__link">
-    Ouverture du curseur
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ajout-de-donnees-au-curseur" class="md-nav__link">
-    Ajout de données au curseur
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fermeture-du-curseur" class="md-nav__link">
-    Fermeture du curseur
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#exemple-dune-procedure-utilisant-un-curseur" class="md-nav__link">
-    Exemple d'une procédure utilisant un curseur
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sources-et-documentation-supplementaire" class="md-nav__link">
-    Sources et documentation supplémentaire
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -608,11 +532,80 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../operateur/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Les opérateurs logiques
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Les opérateurs logiques
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#in" class="md-nav__link">
+    IN
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#like" class="md-nav__link">
+    LIKE
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#regexp" class="md-nav__link">
+    REGEXP
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#not" class="md-nav__link">
+    NOT
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exists" class="md-nav__link">
+    EXISTS
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -871,43 +864,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#declaration-du-curseur" class="md-nav__link">
-    Déclaration du curseur
+  <a href="#in" class="md-nav__link">
+    IN
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#ouverture-du-curseur" class="md-nav__link">
-    Ouverture du curseur
+  <a href="#like" class="md-nav__link">
+    LIKE
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#ajout-de-donnees-au-curseur" class="md-nav__link">
-    Ajout de données au curseur
+  <a href="#regexp" class="md-nav__link">
+    REGEXP
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#fermeture-du-curseur" class="md-nav__link">
-    Fermeture du curseur
+  <a href="#not" class="md-nav__link">
+    NOT
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#exemple-dune-procedure-utilisant-un-curseur" class="md-nav__link">
-    Exemple d'une procédure utilisant un curseur
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sources-et-documentation-supplementaire" class="md-nav__link">
-    Sources et documentation supplémentaire
+  <a href="#exists" class="md-nav__link">
+    EXISTS
   </a>
   
 </li>
@@ -924,115 +910,139 @@
             <article class="md-content__inner md-typeset">
               
                 
-<a href="https://github.com/Base-de-donnee-2/Base-de-donnee-2.github.io/edit/master/docs/notes_de_cours/curseur.md" title="Editer cette page" class="md-content__button md-icon">
+<a href="https://github.com/Base-de-donnee-2/Base-de-donnee-2.github.io/edit/master/docs/notes_de_cours/operateur.md" title="Editer cette page" class="md-content__button md-icon">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
 </a>
 
 
-<h1 id="les-curseurs">Les curseurs</h1>
-<p>Parfois on peut vouloir effectuer un traitement sur chaque lignes du résultat d'une requête. Les curseurs (<strong>cursor</strong>) nous permettent de parcourir justement de parcourir ligne par ligne un résultat, un peu à la manière d'une boucle "while" en programmation. </p>
-<p>Il y a trois caractéristiques à savoir sur les curseurs :</p>
+<h1 id="operateurs-logique-sql">Opérateurs logique SQL</h1>
+<h2 id="in">IN</h2>
+<p>L'opérateur IN nous permet d'inclure plusieurs valeurs de comparaison dans une clause WHERE. On peut le voir comme plusieurs OR sur une même colonne. On peut aussi l'utiliser avec une sous-requête.</p>
+<p>Syntaxe</p>
+<pre><code class="language-sql">-- Utilisation comme une série de OR
+SELECT nom_colonne
+FROM ma_table
+WHERE nom_colonne_test IN ('Valeur1', 'Valeur2', 'Valeur3', ...);
+
+-- Utilisation avec une sous-requête
+SELECT nom_colonne
+FROM ma_table
+WHERE nom_colonne_test IN (
+    sous-requête 
+);
+</code></pre>
+<p>Exemple</p>
+<p>Je veux la liste des athlètes qui sont originaire du Québec, de l'Ontario ou de la Saskatchewan</p>
+<pre><code class="language-sql">SELECT *
+FROM athlete a
+WHERE a.province IN ('Québec', 'Ontario', 'Saskatchewan');
+</code></pre>
+<p>À partir des tables suivantes, je veux avoir la liste de tous les athlètes qui ont déjà participer à un marathon. La base de données contient une table athlète qui contient la liste de tous les athlètes et une table résultat qui contient le résultat à une course, le id de l'athlète et le id de l'épreuve (le marathon à un id de 4).</p>
+<pre><code class="language-sql">SELECT *
+FROM athlete a 
+WHERE a.id IN (
+    SELECT r.athlete_id 
+    FROM resultat r 
+    WHERE r.epreuve_id = 4 
+          AND r.athlete_id = a.id
+    );
+</code></pre>
+<h2 id="like">LIKE</h2>
+<p>L'opérateur LIKE nous permet d'utiliser les "jokers" (<em>wildcard</em>) suivant dans une expression pour faire une recherche dans un colonne spécifique avec un certain motif.</p>
 <ul>
-<li>Ils sont en lecture seule, on ne peut pas modifier les valeurs du résultat.</li>
-<li>On ne peut que parcourir les lignes du résultat de la première à la dernière et on ne peut pas sauter de ligne. Pour modifier "l'ordre de lecture" on doit utiliser le résultat avec la clause <strong>ORDER BY</strong> de la requête qui générera le résultat. </li>
-<li>En MySQL, les données du curseurs pointent vers les vrais données de la base de données. Ce qui veut dire que si une modification est faite durant l'utilisation du curseur, les données de celui-ci seront aussi modifiées.</li>
+<li><strong>%</strong> remplace n'importe quel texte de n'importe quelle longueur.</li>
+<li><strong>_</strong> remplace un seul caractère.</li>
 </ul>
-<p>On peut utiliser les curseurs dans des procédures stockées, des fonctions et des "triggers".</p>
-<p>L'utilisation des curseurs se fait en quatre étapes : </p>
+<p>Exemple </p>
+<pre><code class="language-sql">-- Liste tous les athlètes dont le nom débute par Fré
+SELECT * FROM athlete a WHERE a.nom LIKE 'Fré%';
+
+-- Liste tous les athlètes dont le nom se termine par ette
+SELECT * FROM athlete a WHERE a.nom LIKE '%ette';
+
+-- Liste tous les athlètes dont le nom contient ch (le terme ch pour être situé au tout  
+-- début du nom, dans le milieu ou à la fin)
+SELECT * FROM athlete a WHERE a.nom LIKE '%ch%';
+
+-- Liste tous les athlètes dont le nom se débute par Fr, est suivi d'une lettre quelconque --- et se termine par chette.
+SELECT * FROM athlete a WHERE a.nom LIKE 'Fr_chette';
+</code></pre>
+<h2 id="regexp">REGEXP</h2>
+<p>On peut aussi faire des comparaison beaucoup plus complexe en utilisant l'opérateur REGEXP et des expressions régulières.</p>
+<p>Syntaxe</p>
+<pre><code class="language-sql">SELECT nom_colonne
+FROM ma_table
+WHERE nom_colonne_test REGEXP (expression_reguliere)
+</code></pre>
+<p>Exemple </p>
+<p>Je veux la liste des athlètes qui ont un nom d'exactement 9 caractères</p>
+<pre><code class="language-sql">SELECT *
+FROM athlete a 
+WHERE a.nom REGEXP &quot;^.{12}$&quot;;
+</code></pre>
+<p>Pour créer et tester des expressions régulières : <a href="https://regexr.com/">https://regexr.com/</a></p>
+<h2 id="not">NOT</h2>
+<p>L'opérateur NOT va inverser le résultat d'une condition. Il peut être jumelé à la plupart des autres opérateurs.</p>
+<p>Exemple</p>
+<p>Je veux la liste des athlètes qui ne sont PAS originaire du Québec, de l'Ontario ou de la Saskatchewan</p>
+<pre><code class="language-sql">SELECT *
+FROM athlete a
+WHERE a.province NOT IN ('Québec', 'Ontario', 'Saskatchewan');
+</code></pre>
+<p>Je veux la liste des athlètes dont l'adresse courriel n'est pas une adresse GMAIL</p>
+<pre><code class="language-sql">SELECT *
+FROM athlete a
+WHERE a.courriel NOT LIKE '%@gmail.com';
+</code></pre>
+<p>Je veux la liste des athlètes dont la valeur de la colonne date_naissance n'est pas NULL</p>
+<pre><code class="language-sql">SELECT *
+FROM athlete a
+WHERE a.date_naissance IS NOT NULL
+</code></pre>
+<h2 id="exists">EXISTS</h2>
+<p>L'opérateur EXISTS est utilisée pour déterminer si le résultat d'une sous-requête retourne des enregistrements ou non.   Il retournera TRUE si la sous-requête contient un ou plusieurs enregistrement et FALSE dans le cas contraire. Le traitement se termine dès qu'une ligne correspondante dans la sous-requête est trouvée. </p>
+<p>Syntaxe</p>
+<pre><code class="language-sql">SELECT nom_colonne
+FROM ma_table
+WHERE EXISTS(sous-requête);
+</code></pre>
+<p>Exemple</p>
+<p>À partir des tables suivantes, je veux avoir la liste de tous les athlètes qui ont déjà participer à un marathon. La base de données contient une table athlète qui contient la liste de tous les athlètes et une table résultat qui contient le résultat à une course, le id de l'athlète et le id de l'épreuve (le marathon à un id de 4).</p>
+<pre><code class="language-sql">select *
+from athlete a 
+where exists (
+    select 1 
+    from resultat r 
+    where r.epreuve_id = 4 
+          and r.athlete_id = a.id
+    );
+</code></pre>
+<p>Il est aussi intéressant de noter ici que même si un athlète a participé à plus d'un marathon il ne sera affiché qu'une fois dans la liste car comme dit plus haut, dès qu'il y a une correspondance, la sous-requête de la fonction se termine.</p>
+<p>L'opérateur EXISTS peut aussi être utilisée dans la clause WHERE d'un UPDATE, INSERT et DELETE.</p>
+<pre><code class="language-sql">DELETE FROM athlete
+WHERE EXISTS(
+    select 1 
+    from resultat r 
+    where r.epreuve_id = 4 
+          and r.athlete_id = a.id
+    );
+</code></pre>
+<p>Dans cette exemple, tous les athlètes qui ont déjà participé à un marathon seront supprimées.</p>
+<p>On peut aussi utilisé l'opérateur NOT pour inverser le résultat. Si on reprends l'exemple où on liste les athlètes qui ont déjà participer à un marathon mais qu'on voudrait connaitre l'inverse, c'est-à-dire d'avoir la liste des athlètes qui n'ont jamais participé à un marathon. Il suffit d'ajouter NOT devant le EXISTS pour inverser le résultat et avoir la réponse recherché.</p>
+<pre><code class="language-sql">select *
+from athlete a 
+where not exists (
+    select 1 
+    from resultat r 
+    where r.epreuve_id = 4 
+          and r.athlete_id = a.id
+    );
+</code></pre>
+<p>Pour plus d'exemple :</p>
 <ul>
-<li>DECLARE : On déclare notre curseur en lui spécifiant la requête qui sera utilisée</li>
-<li>OPEN : On "ouvre" notre curseur. On le place dans un état où il pourra recevoir les données</li>
-<li>FETCH : On ajoute les données de la ligne courante du résultat de la requête. La valeur de chaque colonnes de la ligne de résultat sera ajouté dans une variable que l'on aura déclarée préalablement.</li>
-<li>CLOSE : On ferme le curseur une fois notre utilisation terminée.</li>
-</ul>
-<h2 id="declaration-du-curseur">Déclaration du curseur</h2>
-<p>La déclaration du curseur doit se faire <strong><u>après</u></strong> la déclaration des autres variables sinon MySQL va générer un erreur. La syntaxe pour déclarer un curseur est la suivante : </p>
-<pre><code class="language-sql">DECLARE mon_curseur CURSOR FROM requete_select;
-</code></pre>
-<p>On doit toujours utiliser une requête SELECT pour générer le résultat qui va être utilisé par le curseur. Voici un exemple où l'on voudrait utiliser le matricule des employées qui ont été embauché il y a 5 ans ou plus</p>
-<pre><code class="language-sql">DECLARE curseur_employe CURSOR FROM
-    SELECT matricule 
-    FROM employe
-    WHERE TIMESTAMPDIFF(year,date_embauche, now()) &gt;= 5;
-</code></pre>
-<h2 id="ouverture-du-curseur">Ouverture du curseur</h2>
-<p>Pour ouvrir le curseur, on doit simplement utiliser la commande <strong>OPEN</strong> suivie du nom du curseur : </p>
-<pre><code class="language-sql">OPEN mon_curseur;
-</code></pre>
-<p>Si on reprend l'exemple plus haut, on ferais </p>
-<pre><code class="language-sql">OPEN curseur_employe;
-</code></pre>
-<h2 id="ajout-de-donnees-au-curseur">Ajout de données au curseur</h2>
-<p>Une fois le curseur disponible, on peut y ajouter des données avec la commande <strong>FETCH</strong>. On le verra plus loin mais le cette opération s'effectue à l'intérieur d'une boucle. Le résultat du <strong>FETCH</strong> sera les valeurs des colonnes du résultat pour la ligne courante. La syntaxe est la suivante : </p>
-<pre><code class="language-sql">FETCH mon_curseur INTO liste de variable;
-</code></pre>
-<p>Les variables doivent être séparées par des espaces et correspondre au nombre de colonnes du résultat. Ces variables auront été déclaré au début de la procédure comme on l'expliquait plus haut. En reprenant notre exemple, nom allons assigner la valeur du matricule de la ligne courante du résultat dans une variable nommée no_matricule : </p>
-<pre><code class="language-sql">FETCH curseur_employe INTO no_matricule;
-</code></pre>
-<p>Chaque fois qu'on execute la commande FETCH,  MySQL essaie de lire la ligne suivante du résultat. S'il n'y a plus d'enregistrement (qu'on est à la dernière ligne), une exception sera levé. On doit gérer cette exception si on veut que tout se déroule bien. Pour se faire, on va ajouter un <strong>HANDLER</strong>. Sa déclaration se fera après la déclaration du curseur (on va voir plus loin l'ordre en détail avec un exemple).</p>
-<pre><code class="language-sql">DECLARE CONTINUE HANDLER FOR NOT FOUND SET fin_enregistrement = 1;
-</code></pre>
-<p>En résumé, on indique à MySQL que si il rencontre l'exception <strong>NOT FOUND</strong> de continuer le traitement (<strong>CONTINUE</strong>) et d'assigner à la variable fin_enregistrement la valeur 1. La variable fin_enregistrement aura été déclaré plus haut.</p>
-<h2 id="fermeture-du-curseur">Fermeture du curseur</h2>
-<p>Finalement, une fois notre traitement terminé, il nous reste qu'à fermer le curseur. </p>
-<pre><code class="language-sql">CLOSE mon_curseur;
-</code></pre>
-<p>ou avec notre exemple</p>
-<pre><code class="language-sql">CLOSE curseur_employe;
-</code></pre>
-<h2 id="exemple-dune-procedure-utilisant-un-curseur">Exemple d'une procédure utilisant un curseur</h2>
-<p>Une entreprise veut créer deux listes de diffusion pour ses employées, une première pour les employées qui compte moins de x années d'anciennetés et une pour les autres (le nombre d'années sera reçu en paramêtre). La liste comportera le nom et prénom de l'employé ainsi que son adresse courriel. Dans la base de données il y a déjà deux tables qui ont été créé pour recevoir ces listes : <strong>employe_moins</strong> et <strong>employe_plus</strong>. En réalité il y aurait plus d'étapes en mettre en place dans notre procédure pour s'assurer de l'intégrité de nos données (utiliser une transaction, vider les tables avant l'ajout, "attraper" les erreurs, etc...). Pour simplifier les choses prenons pour acquis que les tables sont vides et que tout va se dérouler sans erreurs comme par magie.</p>
-<pre><code class="language-sql">DELIMITER $$
-CREATE PROCEDURE generer_liste_employe (IN nombre_annee)
-BEGIN
-    -- Déclaration de la variable utilisée dans le handler &quot;NOT FOUND&quot;
-    DECLARE fin_enregistrement INTEGER DEFAULT 0;
-    -- Déclaration des variables utilisées dans le fetch du curseur
-    DECLARE nom varchar(30) DEFAULT &quot;&quot;;
-    DECLARE prenom varchar(30) DEFAULT &quot;&quot;;
-    DECLARE courriel varchar(255) DEFAULT &quot;&quot;;
-    DECLARE calcul_anciennete INT DEFAULT 0;
-
-    -- Déclaration du curseur des employées
-    DEClARE curseur_employe CURSOR FOR 
-        SELECT nom, prenom, email, TIMESTAMPDIFF(year,date_embauche, now()) 
-        FROM employees;
-
-    -- Déclaration du handler NOT FOUND
-    DECLARE CONTINUE HANDLER FOR NOT FOUND SET fin_enregistrement = 1;
-
-    -- Ouverture du curseur
-    OPEN curseur_employe;
-
-    -- Début de la boucle
-    liste_employee: LOOP
-        -- On assigne les valeurs de la ligne du résultat aux variables
-        FETCH curseur_employe INTO nom, prenom, courriel, calcul_anciennete;
-        -- On s'assure qu'on n'a pas atteind la fin des enregistrements avant de continuer
-        IF fin_enregistrement = 1 THEN 
-            LEAVE liste_employee;
-        END IF;
-
-        -- En utilisant la variable calcul_anciennete utilisée dans le fetch et le paramêtre
-        -- nombre_annee, on valide avec un si dans quelle tables ajoutées les données
-        IF  calcul_anciennete &lt; nombre_annee THEN
-            INSERT INTO employe_moins(nom, prenom, courriel) VALUES (nom, prenom, courriel)
-        ELSE
-            INSERT INTO employe_plus(nom, prenom, courriel) VALUES (nom, prenom, courriel)
-        END IF;
-
-    END LOOP liste_employee;
-
-    -- Fermeture du curseur
-    CLOSE curseur_employe;
-
-END$$
-DELIMITER ;
-</code></pre>
-<h2 id="sources-et-documentation-supplementaire">Sources et documentation supplémentaire</h2>
-<ul>
-<li><a href="https://dev.mysql.com/doc/refman/8.0/en/cursors.html">https://dev.mysql.com/doc/refman/8.0/en/cursors.html</a></li>
-<li><a href="https://www.mysqltutorial.org/mysql-cursor/">https://www.mysqltutorial.org/mysql-cursor/</a></li>
+<li>https://sql.sh/cours/where/exists</li>
+<li>https://www.mysqltutorial.org/mysql-exists/</li>
+<li>https://www.w3schools.com/sql/sql_exists.asp</li>
 </ul>
 
               
@@ -1052,7 +1062,7 @@ DELIMITER ;
     <nav class="md-footer__inner md-grid" aria-label="Pied de page">
       
         
-        <a href="../view/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: Les Views" rel="prev">
+        <a href="../join/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: Les jointures entre les tables" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1061,20 +1071,20 @@ DELIMITER ;
               <span class="md-footer__direction">
                 Précédent
               </span>
-              Les Views
+              Les jointures entre les tables
             </div>
           </div>
         </a>
       
       
         
-        <a href="../join/" class="md-footer__link md-footer__link--next" aria-label="Suivant: Les jointures entre les tables" rel="next">
+        <a href="../../exercices/ex01/ex01_enonce/" class="md-footer__link md-footer__link--next" aria-label="Suivant: Exercice 01 - Revision" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Suivant
               </span>
-              Les jointures entre les tables
+              Exercice 01 - Revision
             </div>
           </div>
           <div class="md-footer__button md-icon">
