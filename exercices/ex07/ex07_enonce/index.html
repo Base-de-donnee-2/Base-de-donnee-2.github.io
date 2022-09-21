@@ -936,7 +936,7 @@
 <li>Calculez le nombre de citoyen par classe. Affichez comme résultat le titre de la classe et le nombre de citoyen. Si la classe à aucun citoyen, afficher 0;</li>
 <li>Sélectionnez les manifestations qui avait plus de 5 participants qui furent arrêté. (Une entrée a été créé dans la table événement).</li>
 <li>Calculer la moyenne des scores de crédit social pour chaque dénonciation.</li>
-<li>Sélectionnez citoyen qui a le plus haut score de crédit social. Le résultat doit contenir son nom, prénom et score.</li>
+<li>Sélectionnez citoyen qui a le plus haut score de crédit social. Le résultat doit contenir son nom, prénom et score. <u>N'utilisez pas de GROUP BY pour cette requête</u>, allez-y avec ce que vous voulez.</li>
 <li>Calculer la somme des scores de crédit social pour tous les participants de la réunion du parti du 2021-07-17. Il y a eu plusieurs réunions cette journée, soit vous en cibler qu'un avec aussi l'heure ou bien vous faite la somme de toutes les réunions de cette journée.</li>
 </ol>
 <h2 id="exists">EXISTS</h2>
@@ -944,7 +944,7 @@
 <li>Sélectionnez tous les citoyens qui résident au Québec. (Ce n'est pas très optimal comme requête mais c'est pour pratiquer le exists).</li>
 <li>Sélectionnez tous les citoyens qui <u>n'ont jamais eu</u> de réalignement sanitaire.</li>
 <li>Sélectionnez tous les citoyens qui n'ont jamais participé à aucun événement.</li>
-<li>Faites une mise à jour du code pin de tous les citoyens de la ville de Madrid. Remplacer le premier caractère par un x. Vous pouvez vous servir de la fonction <strong>concat()</strong> et <strong>right()</strong>.</li>
+<li>Faites une mise à jour du code pin de tous les citoyens de la ville de Madrid. Remplacer le premier caractère par un x. Vous pouvez vous servir de la fonction <strong>concat()</strong> et <strong>right()</strong>. La difficulté ici est qu'on ne peut pas faire de update avec dans le where une sous-requête sur la même table. </li>
 <li>Faites une mise à jour de la colonne <strong>score_ajustement</strong> de la table <strong>citoyen_evenement</strong> pour tous les événement de type dénonciation. La valeur de score_ajustement devra être un nombre généré aléatoirement entre 25 et 100.</li>
 </ol>
 <h2 id="procedures-stockees-et-fonctions">Procédures stockées et fonctions</h2>

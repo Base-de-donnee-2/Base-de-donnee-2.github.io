@@ -1177,7 +1177,7 @@ where not exists (
 );
 </code></pre>
 <h3 id="question-4_3">Question 4</h3>
-<p>La difficulté ici était qu'on ne peut pas faire de update avec dans le where une sous-requête sur la même table. Un façon de contourner le problème est de créer une table temporaire dans la sous-requête.</p>
+<p>La difficulté ici était qu'on ne peut pas faire de update avec dans le where une sous-requête sur la même table. Une façon de contourner le problème est de créer une table temporaire dans la sous-requête.</p>
 <pre><code class="language-sql">update citoyen
 set pin = concat('x', right(citoyen.pin, length(citoyen.pin) - 1))
 where exists (
