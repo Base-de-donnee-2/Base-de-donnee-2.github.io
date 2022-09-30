@@ -1091,21 +1091,34 @@
 <h2 id="exemple-de-connexion-a-mysql">Exemple de connexion à mySQL</h2>
 <pre><code class="language-python">import mysql.connector
 
+# Création de la connexion à la bd
 mydb = mysql.connector.connect(
   host=&quot;localhost&quot;,
   user=&quot;root&quot;,
-  password=&quot;mysql&quot;,
-  database=&quot;libapi&quot;
+  password=&quot;r00t_bd2&quot;,
+  database=&quot;formatif_intra_01&quot;
 )
 
+# Création d'un curseur
 mycursor = mydb.cursor()
 
-mycursor.execute(&quot;SELECT titre, isbn FROM livres&quot;)
+# Dans notre requête on remplace tous les paramêtres par des %s
+requete = &quot;SELECT id, titre FROM profession WHERE id = %s&quot;
+# Ensuite on crée un tuple avec les valeurs des paramêtres
+parametres = (8,)
+# Dans le execute on passe en paramêtres la requête et ensuite les paramêtres
+mycursor.execute(requete, parametres)
 
+# Le curseur récupère toutes les données du résultat de la requête
 myresult = mycursor.fetchall()
 
-for (titre, isbn) in myresult:
-  print('{} ({})'.format(titre, isbn)) 
+print('\nListe des professions')
+
+# Boucle sur les résultats de la requête, en attribuant la valeur des champs
+# id et titre à des variables du même nom
+for (id, titre) in myresult:
+  print('{} - {}'.format(id, titre)) 
+
 </code></pre>
 <h2 id="ressources">Ressources</h2>
 <ul>
