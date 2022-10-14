@@ -255,8 +255,8 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../formatif/intra/intra_formatif_01/" class="md-tabs__link">
-        Formatif
+      <a href="../../examen/intra/intra_formatif_01/" class="md-tabs__link">
+        Examen
       </a>
     </li>
   
@@ -777,14 +777,14 @@
       
       
         <label class="md-nav__link" for="__nav_4">
-          Formatif
+          Examen
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Formatif" data-md-level="1">
+      <nav class="md-nav" aria-label="Examen" data-md-level="1">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
-          Formatif
+          Examen
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -820,8 +820,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../formatif/intra/intra_formatif_01/" class="md-nav__link">
-        formatif 01 - Voyage vers Mars
+      <a href="../../examen/intra/intra_formatif_01/" class="md-nav__link">
+        Formatif 01 - Voyage vers Mars
       </a>
     </li>
   
@@ -834,8 +834,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../../formatif/intra/intra_formatif_02/" class="md-nav__link">
-        formatif 02 - xLabs
+      <a href="../../examen/intra/intra_formatif_02/" class="md-nav__link">
+        Formatif 02 - xLabs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examen/intra/examen_intra/" class="md-nav__link">
+        Examen intra - Dune
       </a>
     </li>
   
@@ -929,13 +943,16 @@
 <li>Prenons par exemple un jeu d'aventure qui comprend les tables usagers et personnages (dans ce jeu un usager peut se créer plus d'une partie simultanément). <strong>Un</strong> usager peut avoir <strong>plusieurs</strong> personnages, mais chaque personnage est propre à un usager.</li>
 <li>Pour représenter cette relation dans la structure de la base de données, on va prendre la clé primaire de la table qui correspond au cas unique (ici l'usager) et on va l'ajouter à la table "plusieurs" (le personnage). </li>
 </ul>
+<p><img alt="type_relation_1-n" src="\img\type_relation_1-n.png" /></p>
 <h3 id="plusieurs-a-plusieurs-n-n">Plusieurs à plusieurs (n-n)</h3>
 <ul>
 <li>Encore dans ce même jeu, on a une table inventaire et une table item. Le personnage peut avoir un inventaire qui contient <strong>plusieurs</strong> fois le même item, et chaque item peut être contenu dans <strong>plusieurs</strong> inventaires différents. On a donc une relation de plusieurs à plusieurs.</li>
 <li>Au niveau de sa représentation, on va créer une troisième table "de jonction" qui va décomposer la relation de plusieurs à plusieurs en des relations un à plusieurs. Pour se faire, on va utiliser la même technique que pour la relation 1-n. Dans notre exemple il y aura une relation entre la clé primaire de la table inventaire et un champ "inventaire_id" de la table jonction. Même chose pour la table item et une relation avec la clé primaire et un champ "item_id" dans la table jonction.</li>
 </ul>
+<p><img alt="type_relation_n-n" src="\img\type_relation_n-n.png" /></p>
 <h3 id="un-a-un-1-1">Un à un (1-1)</h3>
-<p>Dans cette relation, chaque entrée de la première table ne peut se retrouver qu'une seule fois dans la seconde et vice versa. Cette forme de relation n'est pas très courante, car habituellement les données des deux tables seraient stockées dans une seule.</p>
+<p>Dans cette relation, chaque entrée de la première table ne peut se retrouver qu'une seule fois dans la seconde et vice versa. Cette forme de relation n'est pas très courante, car habituellement les données des deux tables seraient stockées dans une seule. On pourrait par exemple l'utiliser pour stocker les informations plus sensibles de l'usager dans une autre table.</p>
+<p><img alt="type_relation_1-1" src="\img\type_relation_1-1.png" /></p>
 
 
 
