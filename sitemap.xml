@@ -151,7 +151,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://base-de-donnee-2.github.io/notes_de_cours/mySQL/triggers/</loc>
+         <lastmod>2022-10-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://base-de-donnee-2.github.io/notes_de_cours/python/mysql_connector/</loc>
+         <lastmod>2022-10-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://base-de-donnee-2.github.io/notes_de_cours/python/pyQT5/</loc>
          <lastmod>2022-10-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
