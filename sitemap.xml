@@ -101,6 +101,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://base-de-donnee-2.github.io/exercices/ex10/ex10_enonce/</loc>
+         <lastmod>2022-10-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://base-de-donnee-2.github.io/notes_de_cours/analyse/</loc>
          <lastmod>2022-10-21</lastmod>
          <changefreq>daily</changefreq>
