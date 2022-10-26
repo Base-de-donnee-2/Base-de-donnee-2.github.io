@@ -226,13 +226,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../ex01/ex01_enonce/" class="md-tabs__link">
+      <a href="../../ex01/ex01_enonce/" class="md-tabs__link md-tabs__link--active">
         Exercices
       </a>
     </li>
@@ -634,12 +636,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       
       
@@ -777,6 +781,102 @@
       <a href="../../ex09/ex09_enonce/" class="md-nav__link">
         Exercice 09 - pyQT5
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Exercice 10 - Triggers
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Exercice 10 - Triggers
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#preparation-des-donnees" class="md-nav__link">
+    Préparation des données
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#triggers-a-creer" class="md-nav__link">
+    Triggers à créer
+  </a>
+  
+    <nav class="md-nav" aria-label="Triggers à créer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#question-1" class="md-nav__link">
+    Question #1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-2" class="md-nav__link">
+    Question #2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-3" class="md-nav__link">
+    Question #3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-4" class="md-nav__link">
+    Question #4
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -935,6 +1035,40 @@
     Triggers à créer
   </a>
   
+    <nav class="md-nav" aria-label="Triggers à créer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#question-1" class="md-nav__link">
+    Question #1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-2" class="md-nav__link">
+    Question #2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-3" class="md-nav__link">
+    Question #3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#question-4" class="md-nav__link">
+    Question #4
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -960,17 +1094,59 @@
 <h1 id="exercice-10-triggers">Exercice 10 - Triggers</h1>
 <h2 id="preparation-des-donnees">Préparation des données</h2>
 <ul>
-<li>Créez une nouvelle base de données appelée <strong>exercice_trigger</strong></li>
-<li>Importer le script sql <strong>exercice10_trigger.sql</strong> disponible sur Teams dans la section exercices</li>
+<li>Importer le script sql <strong>exercice10_trigger.sql</strong> disponible <a href="\ressources\exercice10_trigger.sql">ici</a></li>
 </ul>
 <h2 id="triggers-a-creer">Triggers à créer</h2>
-<ul>
-<li>Pour chaque modification de la colonne resultat_ms de la table resultat, insérez les informations nécessaires dans la table resultat_log APRÈS l'exécution de la requête INSERT, UPDATE et DELETE.</li>
-<li>Quand on ajoute un résultat, validez AVANT l'ajout que la valeur de la colonne cree_par existe dans la table usager. Si la valeur est invalide, empêchez la requête INSERT et retournez un message d'erreurs (Google it :smile:)</li>
-<li>Effectuez les mêmes opérations quand on modifie un résultat mais sur la colonne modifie_par.</li>
-<li>APRÈS chaque modification dans la table resultat, vérifier si le résultats se situe dans les trois meilleurs résultats de l'épreuve et de l'événement. Si oui, modifiez en conséquence la table resultat_statistique.</li>
-<li>AVANT l'insertion ou la modification de la desrciption d'une épreuve dans la table epreuve_type, valider que la description n'est pas déjà utilisé. Si oui, modifiez la valeur à ajouter ou modifier en ajoutant (x) à la description avec le mot clé NEW. ( x vaudra le nombre de fois que le nom se retrouve dans la table -1 ) Ex. On veut insérer Marathon comme valeur mais elle est déjà présente comme description dans la table. On va utiliser Marathon (1) comme nouvelle valeur à insérer.</li>
-</ul>
+<h3 id="question-1">Question #1</h3>
+<p>Pour chaque modification à la table <strong>resultat</strong>, insérez les informations nécessaires dans la table <strong>resultat_log</strong> APRÈS l'exécution de la requête INSERT, UPDATE et DELETE. Attention, lors d'un UPDATE, ajoutez les informations seulement si la colonne <strong>resultat_ms</strong> a été modifié.</p>
+<table>
+<thead>
+<tr>
+<th>colonne</th>
+<th>insert</th>
+<th>update</th>
+<th>delete</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>operation</td>
+<td>insert</td>
+<td>update</td>
+<td>delete</td>
+</tr>
+<tr>
+<td>ancien_resultat</td>
+<td>null</td>
+<td>old.resultat_ms</td>
+<td>old.resultat_ms</td>
+</tr>
+<tr>
+<td>nouveau_resultat</td>
+<td>new.resultat_ms</td>
+<td>new.resultat_ms</td>
+<td>null</td>
+</tr>
+<tr>
+<td>resultat_id</td>
+<td>resultat.id</td>
+<td>resultat.id</td>
+<td>resultat.id</td>
+</tr>
+<tr>
+<td>date_operation</td>
+<td>now()</td>
+<td>now()</td>
+<td>now()</td>
+</tr>
+</tbody>
+</table>
+<h3 id="question-2">Question #2</h3>
+<p>Quand on ajoute un résultat, validez AVANT l'ajout que la valeur de la colonne cree_par existe dans la table <strong>usager</strong>. Si la valeur est invalide, empêchez la requête INSERT et retournez un message d'erreurs ( Regardez du côté de SIGNAL en MySQL). La valeur à insérer est le id d'un usager de la table <strong>usager</strong>. </p>
+<h3 id="question-3">Question #3</h3>
+<p>Effectuez les mêmes opérations que la question #2 quand on modifie un résultat mais sur la colonne modifie_par.</p>
+<h3 id="question-4">Question #4</h3>
+<p>AVANT l'insertion ou la modification de la description d'une épreuve dans la table epreuve_type, valider que la description n'est pas déjà utilisé. Si oui, modifiez la valeur à ajouter ou modifier en ajoutant (x) à la description. ( x vaudra le nombre de fois que le nom se retrouve dans la table -1 ) Ex. On veut insérer Marathon comme valeur mais elle est déjà présente comme description dans la table. On va utiliser Marathon (1) comme nouvelle valeur à insérer.</p>
 
 
 
@@ -991,6 +1167,42 @@
       </main>
       
         <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Pied de page" >
+      
+        
+        <a href="../../ex09/ex09_enonce/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: Exercice 09 - pyQT5" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Précédent
+              </span>
+              Exercice 09 - pyQT5
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../../examen/intra/intra_formatif_01/" class="md-footer__link md-footer__link--next" aria-label="Suivant: Formatif 01 - Voyage vers Mars" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Suivant
+              </span>
+              Formatif 01 - Voyage vers Mars
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

@@ -142,7 +142,7 @@ CREATE TABLE `resultat_log` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `operation` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
   `ancien_resultat` int(11) DEFAULT NULL,
-  `nouveau_resultat` int(11) NOT NULL,
+  `nouveau_resultat` int(11) DEFAULT NULL,
   `resultat_id` int(11) DEFAULT NULL,
   `date_operation` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
