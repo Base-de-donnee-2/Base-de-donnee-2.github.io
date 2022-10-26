@@ -832,6 +832,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#corrige" class="md-nav__link">
+    Corrigé
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1017,6 +1024,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#corrige" class="md-nav__link">
+    Corrigé
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1122,6 +1136,117 @@ app.exec()
 
     def afficher_nom(self):
         self.resultat.setText('Mathieu Fréchette')
+</code></pre>
+<h2 id="corrige">Corrigé</h2>
+<p>Voici ma version de l'exercice</p>
+<p><strong>app.py</strong></p>
+<pre><code class="language-python">import sys
+
+from PyQt5.QtCore import QSize, Qt
+from PyQt5.QtWidgets import QApplication, QGridLayout, QHBoxLayout, QLabel, QLineEdit, QMainWindow, QPushButton, QVBoxLayout, QWidget
+from db_citoyen import getCitoyen
+
+class MainWindows(QMainWindow):
+    def __init__(self):
+        super().__init__()
+
+        self.setWindowTitle(&quot;Mon App&quot;)
+        # self.setFixedSize(QSize(300, 300))
+
+        layout = QGridLayout()
+        layout.setContentsMargins(40,10,40,10)
+
+        titre = QLabel('Entrez le id du citoyen')
+        titre.setAlignment(Qt.AlignCenter)
+        font = titre.font()
+        font.setPointSize(12)
+        titre.setFont(font)
+        titre.setFixedHeight(50)
+        layout.addWidget(titre, 0, 0)
+
+        # Edit box
+        self.input_id_citoyen = QLineEdit()
+        self.input_id_citoyen.returnPressed.connect(self.RechercherCitoyen)
+        layout.addWidget(self.input_id_citoyen, 1, 0)
+
+        bouton = QPushButton('Rechercher')
+        bouton.clicked.connect(self.RechercherCitoyen)
+        layout.addWidget(bouton, 2, 0)
+
+        self.label_nom_citoyen = QLabel('-')
+        self.label_nom_citoyen.setAlignment(Qt.AlignCenter)
+        font = self.label_nom_citoyen.font()
+        font.setPointSize(12)
+        self.label_nom_citoyen.setFont(font)
+        self.label_nom_citoyen.setFixedHeight(100)
+        layout.addWidget(self.label_nom_citoyen, 3, 0)
+
+
+        container = QWidget()
+        container.setLayout(layout)
+
+        self.setCentralWidget(container)
+
+    def RechercherCitoyen(self):
+        citoyen_id = self.input_id_citoyen.text()
+        resultat = getCitoyen(citoyen_id)
+        nom_citoyen = &quot;Le citoyen n'existe pas&quot;
+        if resultat is not None:
+            nom_citoyen, classe, score = resultat
+        self.label_nom_citoyen.setText(nom_citoyen)
+
+
+app = QApplication(sys.argv)
+
+window = MainWindows()
+window.show()
+
+app.exec()
+</code></pre>
+<p><strong>db_citoyen.py</strong></p>
+<pre><code class="language-python">import mysql.connector as mysql
+
+db_config = {
+    'host' : 'localhost',
+    'user' : 'root',
+    'password' : '********',
+    'database' : 'credit_social'
+}
+
+# Sélectionne le nom, la classe et le score d'un citoyen selon son id
+def getCitoyen(id):
+    &quot;&quot;&quot;
+    Sélectionne un citoyen
+    Arguments:
+        id: le id du citoyen (integer)
+    Returns:
+        Un tuple avec le nom, la classe et le score d'un citoyen
+    &quot;&quot;&quot;
+
+    query = &quot;&quot;&quot;
+        select concat(c.prenom, ' ', c.nom) as nom,
+        cl.titre as classe,
+        calcul_credit(c.id) as score
+        from citoyen c
+            inner join classe cl on cl.id = c.classe_id 
+        where c.id = %(citoyen_id)s;
+    &quot;&quot;&quot;
+    parametres = {
+        'citoyen_id' : id
+        }
+    result = ()
+    try:
+        connection = mysql.connect(**db_config)
+        cursor = connection.cursor()
+        cursor.execute(query, parametres)
+        result = cursor.fetchone()
+    except mysql.Error as erreur:
+        print(erreur)
+    finally:
+        cursor.close() 
+        connection.close()
+
+    return result
 </code></pre>
 
 
