@@ -1130,11 +1130,12 @@
 <p><img alt="qtdesigner_06" src="\img\qtdesigner_06.png" /></p>
 <p>Vous pouvez modifier le texte affiché sur un widget avec la propriété <strong>text</strong>. Vous pouvez ajuter le format du texte avec plusieurs propriétés, dont <strong>font</strong> et <strong>alignment</strong>.</p>
 <p><img alt="qtdesigner_07" src="\img\qtdesigner_07.png" /></p>
-<p>Dernière chose, on va associer une fonction à un événement, ici un clique de la souris sur le bouton. Dans le menu principal, sous <strong>Édition</strong> sélectionnez <strong>Éditer signaux/slots</strong>. Ensuite cliquez sur le bouton et sans relâcher le bouton glisser la souris vers la fenêtre principale (attention on cible la fenêtre principale et non le widget <strong>layout</strong>). Vous devriez avoir une ligne rouge avec à son bout une flèche composée de barre rouge. Relâcher maintenant le bouton de la souris et la fenêtre <strong>Configurer connexion</strong> va s'afficher.</p>
+<p>Dernière chose, on va associer une fonction à un événement, ici un clique de la souris sur le bouton. On peut le faire depuis l'interface de Qt Designer ou dans notre script python. Pour le faire depuis Qt Designer, dDans le menu principal, sous <strong>Édition</strong> sélectionnez <strong>Éditer signaux/slots</strong>. Ensuite cliquez sur le bouton et sans relâcher le bouton glisser la souris vers la fenêtre principale (attention on cible la fenêtre principale et non le widget <strong>layout</strong>). Vous devriez avoir une ligne rouge avec à son bout une flèche composée de barre rouge. Relâcher maintenant le bouton de la souris et la fenêtre <strong>Configurer connexion</strong> va s'afficher.</p>
 <p><img alt="qtdesigner_08" src="\img\qtdesigner_08.png" /></p>
 <p>Sélectionnez <strong>clicked()</strong> et cliquez sur <strong>Éditer</strong>. Dans la fenêtre qui va apparaître cliquez sur le bouton avec une croix verte dans la section <strong>Slots</strong>. Modifier ensuite le nom de la fonction (slot1() par défaut) pour le nom que vous allez donner à votre fonction. Cliquez ensuite sur ok. Dans la fenêtre précédente vous avez maintenant votre fonction dans la section de droite, sélectionnez la et cliquez sur ok.</p>
 <p><img alt="qtdesigner_09" src="\img\qtdesigner_09.png" /></p>
 <p><img alt="qtdesigner_10" src="\img\qtdesigner_10.png" /></p>
+<p>Pour connecter un événement depuis le script python, voir plus bas dans l'exemble du fichier <strong>app.py</strong>.</p>
 <p>Voila le travail pour notre interface vous pouvez sauvegarder le tout et ouvrir un terminal dans le répertoire où le fichier se trouve.  Utilisez la commande qu'on a vu plus haut pour convertir le fichier <strong>ui</strong> et fichier python.</p>
 <pre><code class="language-bash">pyuic5 exemple.ui -o MainWindow.py
 </code></pre>
@@ -1152,6 +1153,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         super(MainWindow, self).__init__(*args, **kwargs)
         # On va créer la fenêtre avec cette commande
         self.setupUi(self)
+        # On connecter un événement sur le line edit
+        self.editIdCitoyen.returnPressed.connect(self.test)
 
     # On défini la fonction qu'on avait déclaré pour le clique sur le bouton
     def recherche_citoyen(self):
@@ -1163,6 +1166,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.lblResultat.setText(citoyen_id)
         # editIdCitoyen et lblResultat sont les noms qu'on a donné au widget
         # dans l'éditeur Qt Designer
+
+    def test(self):
+        self.lblResultat.setText('Tu as appuyé sur Enter')
 
 app = QApplication(sys.argv)
 
