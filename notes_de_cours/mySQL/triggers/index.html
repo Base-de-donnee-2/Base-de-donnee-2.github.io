@@ -586,8 +586,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#creation-dun-trigger" class="md-nav__link">
-    Création d'un trigger
+  <a href="#syntaxe" class="md-nav__link">
+    Syntaxe
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#new-et-old" class="md-nav__link">
+    NEW et OLD
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#erreur-dans-un-trigger" class="md-nav__link">
+    Erreur dans un trigger
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supprimer-un-trigger" class="md-nav__link">
+    Supprimer un trigger
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#restrictions" class="md-nav__link">
+    Restrictions
   </a>
   
 </li>
@@ -603,6 +631,48 @@
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gestion_utilisateurs/" class="md-nav__link">
+        Gestion des utilisateurs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gestion_autorisations/" class="md-nav__link">
+        Gestion des autorisations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gestion_role/" class="md-nav__link">
+        Gestion des rôles
+      </a>
     </li>
   
 
@@ -878,6 +948,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../exercices/ex12/ex12_enonce/" class="md-nav__link">
+        Exercice 12 - Gestion des usagers
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1020,8 +1104,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#creation-dun-trigger" class="md-nav__link">
-    Création d'un trigger
+  <a href="#syntaxe" class="md-nav__link">
+    Syntaxe
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#new-et-old" class="md-nav__link">
+    NEW et OLD
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#erreur-dans-un-trigger" class="md-nav__link">
+    Erreur dans un trigger
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supprimer-un-trigger" class="md-nav__link">
+    Supprimer un trigger
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#restrictions" class="md-nav__link">
+    Restrictions
   </a>
   
 </li>
@@ -1054,21 +1166,37 @@
 
 
 <h1 id="les-triggers">Les triggers</h1>
-<p>Un trigger est une série d'instructions SQL qui sont stocké un peu comme un procédure stocké mais qui sont exécutées automatiquement en réponse à un évènement. Chaque trigger est associé à une table et va réagir à une commande INSERT, UPDATE ou DELETE en spécifiant aussi si le trigger sera lancé avant ou après l'exécution de la commande. Par exemple je pourrais en créant un trigger exécuter automatiquement une intruction avant la suppression d'un enregistrement.</p>
-<h2 id="creation-dun-trigger">Création d'un trigger</h2>
-<p><strong>Syntaxe</strong></p>
-<pre><code class="language-sql">CREATE TRIGGER nom_du_trigger
-    {BEFORE|AFTER} {INSERT|UPDATE|DELETE}
-    ON nom_table FOR EACH ROW
-    BEGIN
-        'Les instructions SQL'
-    END
+<p>Un trigger (ou déclencheur) est une sorte de procédure stockée, une série d'instruction enregistrée, qui est relié à une table de la base de données. Les instructions seront exécuté automatiquement lors d'une insertion, d'une mise à jour ou d'une suppression dans la table à laquelle le trigger est attaché et ça pour chacune des lignes affectées par la requête.  On doit aussi spécifier à quel moment il sera déclenché, avant l'instruction SQL ou après. On peut donc définir jusqu'à 6 triggers par tables : avant ou après une insertion, avant ou après une mise à jour, avant ou après une suppression.</p>
+<p>On peut depuis un trigger modifier et insérer des données dans n'importe quel table de la base de données à l'exception des tables utilisées dans la requête qui l'a déclenché. Si on veut travailler sur la table à laquelle le trigger est attaché, on n'a accès qu'à la ligne qu'on est en train de traiter.</p>
+<p>### Pourquoi utiliser des triggers ?</p>
+<ul>
+<li>S'assurer de la validité des données avant leur insertion ou leur modification.</li>
+<li>Pour pouvoir utiliser des traitements plus complexe lors d'opération qui affectent plusieurs tables. Par exemple si on veut supprimer des données qui sont reliées à d'autres tables par des clés étrangères et que les options offerte ne nous suffise pas.</li>
+<li>Pour garder une trace des opérations effectuées dans la base de données.</li>
+<li>Mettre à jour des informations qu'on utilise régulièrement pour pouvoir les retrouver facilement, comme par exemple le solde actif d'un compte client.</li>
+</ul>
+<h3 id="syntaxe">Syntaxe</h3>
+<p>On utilise la commande <strong>CREATE TRIGGER</strong> pour la création d'un trigger. Le nom du trigger doit être unique dans la base de données. Il est d'usage de nommer le trigger avec le moment de son déclenchement, de l'opération effectuée et du nom de la table associée, ex je veux créer un trigger sur la table usager qui se déclenchera avant un insertion, je vais le nommer before_insert_usager. </p>
+<pre><code class="language-sql">CREATE TRIGGER nomTrigger 
+    momentDuDeclenchement operationSQL ON nomTable
+    FOR EACH ROW
+    corpsDuTrigger;
 </code></pre>
-<p>Dans le trigger on peut accéder aux valeurs des colonnes affectées. On a même accès à la valeur avant et après l'exécution de la commande SQL. Pour ce faire un va utiliser le mot <strong>OLD</strong> et <strong>NEW</strong> suivi d'un point et du nom de la colonne. Par exemple mon trigger est exécuté lors de la mise à jour d'un citoyen, je peux avoir accès à la valeur de la colonne nom avant la mise à jour en faisant OLD.nom et à ça valeur après avec NEW.nom. Old et new ne sont pas accessible dans toutes les commandes.</p>
+<ul>
+<li>Le moment du déclenchement est BEFORE ou AFTER</li>
+<li>L'opération SQL est soit INSERT, UPDATE ou DELETE</li>
+<li>Si le corps du trigger contient plus d'une requête et/ou opération, on doit les englober par un BEGIN END.</li>
+</ul>
+<h3 id="new-et-old">NEW et OLD</h3>
+<p>On peut utiliser les mots clés dans le corps du trigger pour accéder aux données avant ou après leur modification. </p>
+<ul>
+<li>OLD représente les données avant qu'elles ne soient modifié par le trigger. Ces données ne peuvent pas être modifiées. Old est disponible pour les UPDATE et DELETE</li>
+<li>NEW représente les données après qu'elles aient été modifié. C'est données peuvent être lu et modifiés. New est disponible pour les INSERT et UPDATE.</li>
+</ul>
 <table>
 <thead>
 <tr>
-<th>Événement</th>
+<th>Requête</th>
 <th align="center">OLD</th>
 <th align="center">NEW</th>
 </tr>
@@ -1076,22 +1204,37 @@
 <tbody>
 <tr>
 <td>INSERT</td>
-<td align="center"></td>
-<td align="center">X</td>
+<td align="center">-</td>
+<td align="center">OUI</td>
 </tr>
 <tr>
 <td>UPDATE</td>
-<td align="center">X</td>
-<td align="center">X</td>
+<td align="center">OUI</td>
+<td align="center">OUI</td>
 </tr>
 <tr>
 <td>DELETE</td>
-<td align="center">X</td>
-<td align="center"></td>
+<td align="center">OUI</td>
+<td align="center">-</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Exemple</strong></p>
+<h3 id="erreur-dans-un-trigger">Erreur dans un trigger</h3>
+<p>Si un trigger exécuté avant (BEFORE) une requête cause une erreur, la requête ne sera pas exécutée. Les triggers exécutés après (AFTER) une requête qui génère une erreur feront échouer celle-ci. Il est donc important de bien concevoir les triggers et d'inclure une gestion des erreurs dans notre traitement.</p>
+<h3 id="supprimer-un-trigger">Supprimer un trigger</h3>
+<p>Pour supprimer un trigger, on utilise la commande DROP TRIGGER suivie du nom du trigger. Si on supprimer une table, tous les triggers qui lui sont associée seront aussi supprimés.</p>
+<pre><code class="language-sql">DROP TRIGGER before_insert_usager;
+</code></pre>
+<h3 id="restrictions">Restrictions</h3>
+<ul>
+<li>On en peut pas utiliser de transaction dans un trigger, START TRANSACTION, COMMIT ou ROLLBACK</li>
+<li>On peut utiliser une procédure stockée mais avec les restrictions suivantes : </li>
+<li>La procédure ne peut pas retourner d'informations, à part en utilisant un paramètre OUT ou IN/OUT. </li>
+<li>La procédure ne doit pas utiliser de transaction.</li>
+<li>On ne peut pas modifier les données d'une table qui est utilisée dans la requête qui déclenche le trigger. Ça compte pour toutes les tables de la requête et non seulement la table associée au trigger.</li>
+<li>Une suppression ou modification de données déclenchée par une clé étrangère ne provoquera pas l'exécution du trigger associé à cette table.</li>
+</ul>
+<p><strong>Exemple de triggers</strong></p>
 <p>J'ai une table joueur, un table guilde et une table joueur_guilde_log. Dans la table joueur il y a un champ guilde_id qui fait référence à la clé primaire de la table guilde. Quand on modifie la guilde d'un joueur, je voudrais sauvegarder les informations dans une autre table (le id du joueur, l'id de son acienne guile, l'id de la nouvelle et la date de la modification). Je vais créer un trigger AFTER sur la table joueur. Je vais aussi valider que la colonne guilde_id a été modifié avant d'ajouter les informations dans la table joueur_guilde_log. </p>
 <pre><code class="language-sql">CREATE TRIGGER joueur_after_update
     AFTER UPDATE
@@ -1159,13 +1302,13 @@
       
       
         
-        <a href="../../python/mysql_connector/" class="md-footer__link md-footer__link--next" aria-label="Suivant: Connecteur MsSQL" rel="next">
+        <a href="../gestion_utilisateurs/" class="md-footer__link md-footer__link--next" aria-label="Suivant: Gestion des utilisateurs" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Suivant
               </span>
-              Connecteur MsSQL
+              Gestion des utilisateurs
             </div>
           </div>
           <div class="md-footer__button md-icon">
