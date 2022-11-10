@@ -1171,11 +1171,11 @@ CREATE USER IF NOT EXISTS 'math'@'%' IDENTIFIED BY 'qwerty4ever';
 <pre><code class="language-mysql">DROP USER 'Math'@'localhost'
 </code></pre>
 <h2 id="afficher-la-liste-des-utilisateurs">Afficher la liste des utilisateurs</h2>
-<p>En mysql il n'y a pas de commande <code>SHOW USERS</code> pour nous afficher la liste de tous les utilisateurs. On a vu plus haut que les informations de l'utilisateur était stocké dans la table <strong>user</strong> de la base de données <strong>mysql</strong>. On peut donc avec une requête SELECT sur cette table afficher la liste des utilisateurs. Les usagers et les rôles sont stockés ensemble dans cette table, ce qui les différencie est la colonne <strong>is_role</strong> qui prend la valeur "N" quand c'est un usager et "Y" quand c'est un rôle. </p>
+<p>En mysql il n'y a pas de commande <code>SHOW USERS</code> pour nous afficher la liste de tous les utilisateurs. On a vu plus haut que les informations de l'utilisateur était stocké dans la table <strong>user</strong> de la base de données <strong>mysql</strong>. On peut donc avec une requête SELECT sur cette table afficher la liste des utilisateurs. Les usagers et les rôles sont stockés ensemble dans cette table. Avec MariaDB on peut les différenciers avec la colonne <strong>is_role</strong> qui prend la valeur "N" quand c'est un usager et "Y" quand c'est un rôle. </p>
 <pre><code class="language-sql">-- Affiche tout les usagers
 SELECT * FROM mysql.user WHERE is_role = 'N';
 -- Si on veut uniquement la liste des usagers et de leur hôte
-SELECT User, Hote FROM mysql.user WHERE is_role = 'N';
+SELECT user, host FROM mysql.user WHERE is_role = 'N';
 </code></pre>
 
 
