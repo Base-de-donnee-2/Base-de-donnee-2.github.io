@@ -1122,7 +1122,7 @@
 
 
 <h1 id="exercice-12-gestion-des-usagers">Exercice 12 - Gestion des usagers</h1>
-<p>Vous devez me produire un script SQL qui va effectuer les opérations suivantes. Assurez-vous de tester que les permissions sont bien appliquées. L'exercice doit être fait <u>depuis une console</u>, pas de workbench, phpmyadmin, etc.</p>
+<p>Pour cet exercice nous allons utiliser la base de données <strong>credit_social</strong> (voir le script de création dans l'<a href="../../ex06/ex06_enonce/">exercice 6</a>).Vous devez me produire un script SQL qui va effectuer les opérations suivantes. Assurez-vous de tester que les permissions sont bien appliquées. L'exercice doit être fait <u>depuis une console</u>, pas de workbench, phpmyadmin, etc. Vous pouvez ajouter les réponses des sections "C" dans le même script en commentaire.</p>
 <h2 id="1-usager-citoyen_alpha">1. Usager citoyen_alpha</h2>
 <p>a) Créez un usager avec les informations suivantes : </p>
 <ul>
@@ -1139,7 +1139,7 @@
 <p>c) Testez les éléments suivants</p>
 <ul>
 <li>Inscrivez le résultat d'une requête SELECT sur une table d'une autre base de données que credit_social.</li>
-<li>Faites création de l'usager suivant avec cet usager. Est-ce que ça fonctionne?</li>
+<li>Faites la création de l'usager suivant (le point #2) avec cet usager. Est-ce que ça fonctionne?</li>
 </ul>
 <h2 id="2-usager-citoyen_beta">2. Usager citoyen_beta</h2>
 <p>a) Créer un usager avec les informations suivantes : </p>
@@ -1148,14 +1148,14 @@
 <li>mot de passe : !b3ta</li>
 <li>hôte accepté : tous</li>
 </ul>
-<p>b) Donner les permissions suivantes à cette usager : </p>
+<p>b) Donnez les permissions suivantes à cet usager : </p>
 <ul>
 <li>Il peut faire des requêtes SELECT, UPDATE, INSERT sur les tables citoyen et evenement de la base de données credit_social.</li>
 <li>Il peut exécuter toutes les procédures stockées.</li>
 </ul>
 <p>c) Testez les éléments suivants</p>
 <ul>
-<li>Essayez de supprimez l'événement avec le id 6 de la table evenement. Inscrivez la requête effectuée et le résultat.</li>
+<li>Essayez de supprimer l'événement avec le id 6 de la table evenement. Inscrivez la requête effectuée et le résultat.</li>
 <li>Exécutez une procédure stockée de la base de données credit_social. Inscrivez la requête effectuée.</li>
 <li>Modifiez le crédit initial du citoyen avec le id 2107 pour 800. Inscrivez la requête effectuée.</li>
 </ul>
@@ -1166,7 +1166,7 @@
 <li>mot de passe : !g2mm2</li>
 <li>hôte accepté : tous</li>
 </ul>
-<p>b) Donner les permissions suivantes à cette usager : </p>
+<p>b) Donnez les permissions suivantes à cet usager : </p>
 <ul>
 <li>Il peut faire des requêtes SELECT sur les colonnes nom, prenom et pin de la table citoyen de la base de données credit_social.</li>
 <li>Il peut exécuter uniquement la procédure stockée update_classe de la base de données credit_social</li>
