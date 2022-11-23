@@ -566,6 +566,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../transaction/" class="md-nav__link">
+        Les transactions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../error_handling/" class="md-nav__link">
+        Gestion d'erreur dans une procédure stockée
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../gestion_utilisateurs/" class="md-nav__link">
         Gestion des utilisateurs
       </a>
@@ -666,6 +694,26 @@
   <a href="#activer-un-role" class="md-nav__link">
     Activer un rôle
   </a>
+  
+    <nav class="md-nav" aria-label="Activer un rôle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#afficher-le-role-qui-est-actif" class="md-nav__link">
+    Afficher le rôle qui est actif
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#definir-un-role-par-defaut" class="md-nav__link">
+    Définir un rôle par défaut
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -962,6 +1010,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../exercices/ex13/ex13_enonce/" class="md-nav__link">
+        Exercice 13 - Révisions - Facture garage
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1143,6 +1205,26 @@
     Activer un rôle
   </a>
   
+    <nav class="md-nav" aria-label="Activer un rôle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#afficher-le-role-qui-est-actif" class="md-nav__link">
+    Afficher le rôle qui est actif
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#definir-un-role-par-defaut" class="md-nav__link">
+    Définir un rôle par défaut
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1166,6 +1248,7 @@
 
 
 <h1 id="gestion-des-roles">Gestion des rôles</h1>
+<p>(Attention, il peut y avoir quelques différences entre MySQL et MariaDB, les notes présentées ici sont en MariaDB)</p>
 <p>Un rôle est une regroupement nommé de privilèges qu'on peut accorder à un ou plusieurs utilisateurs. On retrouve le même fonctionnement qu'avec l'utilisateur : on va créer un rôle et ensuite lui octroyer des privilèges. </p>
 <h2 id="creer-un-role">Créer un rôle</h2>
 <p>On va créer un ou plusieurs rôles avec la commande <code>CREATE ROLE</code> suivi du nom du rôle. On peut créer plus d'un rôle à la fois en séparant chaque nom de rôle par une virgule.</p>
@@ -1185,7 +1268,15 @@
 <pre><code class="language-sql">DROP ROLE 'nomRole1';
 </code></pre>
 <h2 id="activer-un-role">Activer un rôle</h2>
-<p>Une fois le rôle créé il faut qu'il soit activer pour qu'il puisse être appliqué entre le connexion. Attention un usager ne peut avoir qu'un role d'activé à la fois.</p>
+<p>Une fois le rôle créé il faut qu'il soit activer pour qu'il puisse être appliqué entre le connexion. Attention un usager ne peut avoir qu'un role d'activé à la fois. On doit être connecté à l'usager pour activer son rôle.</p>
+<pre><code class="language-sql">SET ROLE nomRole
+</code></pre>
+<h3 id="afficher-le-role-qui-est-actif">Afficher le rôle qui est actif</h3>
+<p>On peut connaître le rôle présentement activé pour l'utilisateur de cette façon. Le résultat sera null si aucun rôle n'est activé.</p>
+<pre><code class="language-sql">SELECT current_role();
+</code></pre>
+<h3 id="definir-un-role-par-defaut">Définir un rôle par défaut</h3>
+<p>Lors de la connexion, le rôle défini de cette façon sera automatiquement activé.</p>
 <pre><code class="language-sql">SET DEFAULT ROLE nomRole FOR nomUsager
 </code></pre>
 
