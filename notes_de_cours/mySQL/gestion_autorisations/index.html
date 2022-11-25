@@ -1251,6 +1251,13 @@ les tables de la base de données credit_social
 GRANT SELECT, INSERT
 ON credit_social.*
 TO test@localhost;
+
+/* Octroyer à l'usager test2 le droit de faire des requêtes select uniquement sur la table citoyen de la base de données credit_social.
+   De plus, seulement les colonnes id, nom et prenom seront accessible pour cette table
+ */
+GRANT SELECT (id, nom, prenom)
+ON credit_social.citoyen
+TO test2@localhost;
 </code></pre>
 <h3 id="liste-des-privileges">Liste des privilèges</h3>
 <p>Voici une courte liste de privilèges qu'on peut ajouter à un usager : </p>
