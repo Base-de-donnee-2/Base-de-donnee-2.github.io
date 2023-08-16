@@ -10,20 +10,21 @@
       
         <link rel="canonical" href="https://base-de-donnee-2.github.io/notes_de_cours/mySQL/error_handling/">
       
+      
+      
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.3">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.9">
     
     
       
-        <title>Gestion d'erreur dans une procédure stockée - Base de données 2 420-3B4-VI</title>
+        <title>Gestion des erreurs dans les procédures stockées - Base de données 2 420-3B4-VI</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.7a952b86.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.85bb2934.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cbb835fc.min.css">
-        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a6bdf11c.min.css">
       
       
 
@@ -38,6 +39,8 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
     
     <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -82,7 +85,7 @@
 
   
 
-<header class="md-header md-header--lifted" data-md-component="header">
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="En-tête">
     <a href="../../.." title="Base de données 2 420-3B4-VI" class="md-header__button md-logo" aria-label="Base de données 2 420-3B4-VI" data-md-component="logo">
       
@@ -103,34 +106,38 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Gestion d'erreur dans une procédure stockée
+              Gestion des erreurs dans les procédures stockées
             
           </span>
         </div>
       </div>
     </div>
     
-      <form class="md-header__option" data-md-component="palette">
-        
+      
+        <form class="md-header__option" data-md-component="palette">
           
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="light-green"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+              </label>
+            
           
-          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="light-green"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="light-blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+              </label>
+            
           
-            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
-            </label>
-          
-        
-          
-          
-          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="light-blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
-          
-            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
-            </label>
-          
-        
-      </form>
+        </form>
+      
     
     
     
@@ -146,7 +153,7 @@
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="Search">
+      <nav class="md-search__options" aria-label="Recherche">
         
         <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
@@ -160,7 +167,7 @@
           <div class="md-search-result__meta">
             Initialisation de la recherche
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
@@ -172,7 +179,7 @@
         <a href="https://github.com/Base-de-donnee-2/Base-de-donnee-2.github.io" title="Aller au dépôt" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -185,7 +192,7 @@
     
       
 <nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
-  <div class="md-tabs__inner md-grid">
+  <div class="md-grid">
     <ul class="md-tabs__list">
       
         
@@ -203,8 +210,6 @@
         
   
   
-    
-  
 
 
   
@@ -216,7 +221,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../analyse/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../definition/" class="md-tabs__link">
         Notes de cours
       </a>
     </li>
@@ -234,33 +239,10 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../exercices/ex01/ex01_enonce/" class="md-tabs__link">
+      <a href="../../../exercices/ex01_enonce/" class="md-tabs__link">
         Exercices
       </a>
     </li>
-  
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../examen/intra/intra_formatif_01/" class="md-tabs__link">
-        Examen
-      </a>
-    </li>
-  
-
   
 
       
@@ -304,7 +286,7 @@
       <a href="https://github.com/Base-de-donnee-2/Base-de-donnee-2.github.io" title="Aller au dépôt" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     GitHub
@@ -335,24 +317,23 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-        <label class="md-nav__link" for="__nav_2">
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
           Notes de cours
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Notes de cours" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
           Notes de cours
@@ -368,20 +349,21 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_2_1">
-          Analyse de modélisation
+        <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+          Analyse et modélisation
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Analyse de modélisation" data-md-level="2">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_2_1">
           <span class="md-nav__icon md-icon"></span>
-          Analyse de modélisation
+          Analyse et modélisation
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -391,7 +373,21 @@
   
   
     <li class="md-nav__item">
-      <a href="../../analyse/" class="md-nav__link">
+      <a href="../../definition/" class="md-nav__link">
+        Définition
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modele/" class="md-nav__link">
         Modèle entité-association
       </a>
     </li>
@@ -405,8 +401,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../type_relation/" class="md-nav__link">
-        Types de relations
+      <a href="../../schema_conceptuel/" class="md-nav__link">
+        Schéma conceptuel
       </a>
     </li>
   
@@ -419,13 +415,61 @@
   
   
     <li class="md-nav__item">
-      <a href="../../formes_normales/" class="md-nav__link">
-        Les formes normales
+      <a href="../../type_relation/" class="md-nav__link">
+        Type de relation
       </a>
     </li>
   
 
             
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../normalisation/" class="md-nav__link">
+        Normalisation
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+          MySQL
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          MySQL
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
           
             
               
@@ -441,55 +485,6 @@
 
             
           
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-    
-  
-  
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" checked>
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_2_2">
-          MySQL
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="MySQL" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_2">
-          <span class="md-nav__icon md-icon"></span>
-          MySQL
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../insert/" class="md-nav__link">
-        INSERT
-      </a>
-    </li>
-  
-
-            
-          
             
               
   
@@ -497,242 +492,7 @@
   
     <li class="md-nav__item">
       <a href="../../view/" class="md-nav__link">
-        Les Views
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../curseur/" class="md-nav__link">
-        Les curseurs
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../join/" class="md-nav__link">
-        Les jointures entre les tables
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../operateur/" class="md-nav__link">
-        Les opérateurs logiques
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../triggers/" class="md-nav__link">
-        Les triggers
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../transaction/" class="md-nav__link">
-        Les transactions
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Gestion d'erreur dans une procédure stockée
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        Gestion d'erreur dans une procédure stockée
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table des matières
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#handler" class="md-nav__link">
-    HANDLER
-  </a>
-  
-    <nav class="md-nav" aria-label="HANDLER">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#handler_action" class="md-nav__link">
-    handler_action
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#condition_value" class="md-nav__link">
-    condition_value
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exemple" class="md-nav__link">
-    Exemple
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#signal" class="md-nav__link">
-    SIGNAL
-  </a>
-  
-    <nav class="md-nav" aria-label="SIGNAL">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#condition_value_1" class="md-nav__link">
-    condition_value
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#signal_information_item" class="md-nav__link">
-    signal_information_item
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exemple_1" class="md-nav__link">
-    Exemple
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#source" class="md-nav__link">
-    Source
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../gestion_utilisateurs/" class="md-nav__link">
-        Gestion des utilisateurs
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../gestion_autorisations/" class="md-nav__link">
-        Gestion des autorisations
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../gestion_role/" class="md-nav__link">
-        Gestion des rôles
+        Views
       </a>
     </li>
   
@@ -751,71 +511,10 @@
   
   
   
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_2_3">
-          Python
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Python" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_3">
-          <span class="md-nav__icon md-icon"></span>
-          Python
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
     <li class="md-nav__item">
-      <a href="../../python/mysql_connector/" class="md-nav__link">
-        Connecteur MsSQL
+      <a href="../../outils/" class="md-nav__link">
+        Outils de travail
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../python/pyQT5/" class="md-nav__link">
-        pyQT5
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../python/qtdesigner/" class="md-nav__link">
-        Qt Designer
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
     </li>
   
 
@@ -838,17 +537,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
       
       
       
-      
-        <label class="md-nav__link" for="__nav_3">
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
           Exercices
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Exercices" data-md-level="1">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           Exercices
@@ -861,8 +561,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../exercices/ex01/ex01_enonce/" class="md-nav__link">
-        Exercice 01 - Revision
+      <a href="../../../exercices/ex01_enonce/" class="md-nav__link">
+        Exercice 01 - Revision MySQL
       </a>
     </li>
   
@@ -875,8 +575,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../exercices/ex02/ex02_enonce/" class="md-nav__link">
-        Exercice 02 - Analyse du système de stationnement
+      <a href="../../../exercices/ex02_enonce/" class="md-nav__link">
+        Exercice 02 - Système de prise de présence en cours
       </a>
     </li>
   
@@ -889,319 +589,9 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../exercices/ex03/ex03_enonce/" class="md-nav__link">
-        Exercice 03 - Modélisation d'un livre de recettes
+      <a href="../../../exercices/ex03_enonce/" class="md-nav__link">
+        Exercice 03 - Système de stationnement du cégep
       </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../exercices/ex04/ex04_enonce/" class="md-nav__link">
-        Exercice 04 - Insert
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../exercices/ex05/ex05_enonce/" class="md-nav__link">
-        Exercice 05 - Les Views
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../exercices/ex06/ex06_enonce/" class="md-nav__link">
-        Exercice 06 - Crédit social
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../exercices/ex07/ex07_enonce/" class="md-nav__link">
-        Exercice 07 - Opérateurs logiques
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../exercices/ex08/ex08_enonce/" class="md-nav__link">
-        Exercice 08 - pyCRUD
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../exercices/ex09/ex09_enonce/" class="md-nav__link">
-        Exercice 09 - pyQT5
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../exercices/ex10/ex10_enonce/" class="md-nav__link">
-        Exercice 10 - Triggers
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../exercices/ex11/ex11_enonce/" class="md-nav__link">
-        Exercice 11 - LDVELH
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../exercices/ex12/ex12_enonce/" class="md-nav__link">
-        Exercice 12 - Gestion des usagers
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../exercices/ex13/ex13_enonce/" class="md-nav__link">
-        Exercice 13 - Révisions - Facture garage
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_4">
-          Examen
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Examen" data-md-level="1">
-        <label class="md-nav__title" for="__nav_4">
-          <span class="md-nav__icon md-icon"></span>
-          Examen
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_4_1">
-          Examen intra
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Examen intra" data-md-level="2">
-        <label class="md-nav__title" for="__nav_4_1">
-          <span class="md-nav__icon md-icon"></span>
-          Examen intra
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../examen/intra/intra_formatif_01/" class="md-nav__link">
-        Formatif 01 - Voyage vers Mars
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../examen/intra/intra_formatif_02/" class="md-nav__link">
-        Formatif 02 - xLabs
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../examen/intra/examen_intra/" class="md-nav__link">
-        Examen intra - Dune
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_4_2">
-          Épreuve final
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Épreuve final" data-md-level="2">
-        <label class="md-nav__title" for="__nav_4_2">
-          <span class="md-nav__icon md-icon"></span>
-          Épreuve final
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../examen/epreuve_finale/formatif_part01/" class="md-nav__link">
-        Formatif partie 01
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../examen/epreuve_finale/formatif_part02/" class="md-nav__link">
-        Formatif partie 02
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
     </li>
   
 
@@ -1328,18 +718,16 @@
                 
                   
 
-  <a href="https://github.com/Base-de-donnee-2/Base-de-donnee-2.github.io/edit/master/docs/notes_de_cours/mySQL/error_handling.md" title="Editer cette page" class="md-content__button md-icon">
-    
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
-  </a>
+  
+  
 
 
 <h1 id="gestion-des-erreurs-dans-les-procedures-stockees">Gestion des erreurs dans les procédures stockées</h1>
 <p>Pour intercepter les erreurs dans un procédure stocké on va utiliser des <strong>handlers</strong>. On peut aussi générer une erreur avec la commande <strong>SIGNAL</strong>.</p>
 <h2 id="handler">HANDLER</h2>
-<p>La syntaxe de déclaration d'un handler est la suivante : </p>
-<pre><code class="language-sql">DECLARE handler_action HANDLER FOR condition_value statement;
-</code></pre>
+<p>La syntaxe de déclaration d'un handler est la suivante : 
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">DECLARE</span><span class="w"> </span><span class="n">handler_action</span><span class="w"> </span><span class="k">HANDLER</span><span class="w"> </span><span class="k">FOR</span><span class="w"> </span><span class="n">condition_value</span><span class="w"> </span><span class="k">statement</span><span class="p">;</span>
+</span></code></pre></div></p>
 <h3 id="handler_action">handler_action</h3>
 <p>De qu'elle façon l'exécution des instructions va être affectée lorsque l'erreur survient.</p>
 <ul>
@@ -1351,102 +739,99 @@
 <ul>
 <li>mysql_error_code : Un code d'erreur MySQL. En voici la liste <a href="https://dev.mysql.com/doc/mysql-errors/8.0/en/server-error-reference.html">ici</a></li>
 <li>SQLSTATE [VALUE] : Où VALUE représente un code de 5 caractère qui représente un code d'état MySQL. Très similaire à mysql_error_code. Vous pouvez consulter la liste <a href="https://dev.mysql.com/doc/mysql-errors/8.0/en/server-error-reference.html">ici</a></li>
-<li>condition_name : On peut définir un nom de condition qui est associé à un code d'erreur ou d'état et l'utiliser ensuite dans le handler.</li>
-</ul>
-<pre><code class="language-sql">DECLARE no_such_table CONDITION FOR 1051;
-DECLARE CONTINUE HANDLER FOR no_such_table
-  BEGIN
-    -- body of handler
-  END;
-</code></pre>
-<ul>
+<li>condition_name : On peut définir un nom de condition qui est associé à un code d'erreur ou d'état et l'utiliser ensuite dans le handler.
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">DECLARE</span><span class="w"> </span><span class="n">no_such_table</span><span class="w"> </span><span class="n">CONDITION</span><span class="w"> </span><span class="k">FOR</span><span class="w"> </span><span class="mi">1051</span><span class="p">;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">DECLARE</span><span class="w"> </span><span class="k">CONTINUE</span><span class="w"> </span><span class="k">HANDLER</span><span class="w"> </span><span class="k">FOR</span><span class="w"> </span><span class="n">no_such_table</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="k">BEGIN</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="c1">-- body of handler</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="k">END</span><span class="p">;</span>
+</span></code></pre></div></li>
 <li>SQLWARNINGS : Un raccourci pour les code d'état SQLSTATE qui commence par 01, le plus souvent des messages d'avertissements</li>
 <li>NOT FOUND: On l'a vue dans notre utilisation des <strong>cursors</strong>. Se déclenche quand le curseur arrive à la fin de ses résultats</li>
 <li>SQLEXCEPTION: Un raccourci pour les code d'état SQLSTATE qui ne commence pas par 00, 01 ou 02.</li>
 </ul>
 <h3 id="exemple">Exemple</h3>
 <p>Quand ma procédure stockée provoque une erreur, je veux annuler les opérations déjà effectuées et quitter le traitement en affichant un message d'erreur. On va utiliser ROLLBACK pour annuler les opérations et SELECT avec notre message d'erreur.</p>
-<pre><code class="language-sql">CREATE PROCEDURE exemplebd.test_error(valeur INT)
-BEGIN
-
-    DECLARE EXIT HANDLER FOR SQLEXCEPTION
-    BEGIN
-        ROLLBACK;
-        SELECT 'Une erreur est survenue, les opérations ont été annulé.';
-    END;
-
-    START TRANSACTION;
-
-    ...
-
-    COMMIT;
-END
-</code></pre>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">PROCEDURE</span><span class="w"> </span><span class="n">exemplebd</span><span class="p">.</span><span class="n">test_error</span><span class="p">(</span><span class="n">valeur</span><span class="w"> </span><span class="nb">INT</span><span class="p">)</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">BEGIN</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="k">DECLARE</span><span class="w"> </span><span class="n">EXIT</span><span class="w"> </span><span class="k">HANDLER</span><span class="w"> </span><span class="k">FOR</span><span class="w"> </span><span class="k">SQLEXCEPTION</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="k">BEGIN</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">        </span><span class="k">ROLLBACK</span><span class="p">;</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">        </span><span class="k">SELECT</span><span class="w"> </span><span class="s1">&#39;Une erreur est survenue, les opérations ont été annulé.&#39;</span><span class="p">;</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="k">END</span><span class="p">;</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="k">START</span><span class="w"> </span><span class="k">TRANSACTION</span><span class="p">;</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span><span class="p">...</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">    </span><span class="k">COMMIT</span><span class="p">;</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="k">END</span>
+</span></code></pre></div>
 <h2 id="signal">SIGNAL</h2>
 <p>Avec <strong>SIGNAL</strong> on va pouvoir géréner une erreur qui va stopper l'éxécution de la procédure stockée. On peut aussi jumeler <strong>SIGNAL</strong> avec un <strong>HANDLER</strong></p>
-<p>La syntaxe de déclaration de SIGNAL est la suivante :</p>
-<pre><code class="language-sql">SIGNAL condition_value SET signal_information_item;
-
-</code></pre>
+<p>La syntaxe de déclaration de SIGNAL est la suivante :
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">SIGNAL</span><span class="w"> </span><span class="n">condition_value</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">signal_information_item</span><span class="p">;</span>
+</span></code></pre></div></p>
 <h3 id="condition_value_1">condition_value</h3>
 <p>Comme pour le HANDLER, on va utiliser un SQLSTATE ou une condition qu'on aura défini auparavant. Le plus souvent on va utiliser SQLSTATE = '45000' qui indique une erreur définie par l'utilisateur.</p>
 <h3 id="signal_information_item">signal_information_item</h3>
 <p>On peut ensuite définir des valeurs à des variables prédéfinis associés à <strong>SIGNAL</strong>. Une de cess variables est <strong>MESSAGE_TEXT</strong> qui nous permet de retourner un message d'erreur. La liste complête est <a href="https://dev.mysql.com/doc/refman/8.0/en/signal.html">ici</a>.</p>
 <h3 id="exemple_1">Exemple</h3>
 <p>Dans une procédure je veux arrêter l'éxécution si la valeur de la variable nombre est inférieur à 0</p>
-<pre><code class="language-sql">CREATE PROCEDURE exemplebd.test_error(nombre INT)
-BEGIN
-    IF (nombre &lt; 0) THEN
-        SIGNAL SQLSTATE SET MESSAGE_TEXT = &quot;La valeur doit être supérieure à 0&quot;;
-    END IF;
-
-    SELECT nombre;
-
-END
-</code></pre>
-<p>résultat</p>
+<p><div class="language-sql highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">PROCEDURE</span><span class="w"> </span><span class="n">exemplebd</span><span class="p">.</span><span class="n">test_error</span><span class="p">(</span><span class="n">nombre</span><span class="w"> </span><span class="nb">INT</span><span class="p">)</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">BEGIN</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="k">IF</span><span class="w"> </span><span class="p">(</span><span class="n">nombre</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">THEN</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">        </span><span class="n">SIGNAL</span><span class="w"> </span><span class="k">SQLSTATE</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="k">MESSAGE_TEXT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;La valeur doit être supérieure à 0&quot;</span><span class="p">;</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="k">END</span><span class="w"> </span><span class="k">IF</span><span class="p">;</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="k">END</span>
+</span></code></pre></div>
+résultat</p>
 <p><img alt="error_handling_01" src="\img\error_handling_01.png" /></p>
-<p>Le même exemple avec un <strong>HANDLER</strong>.</p>
-<pre><code class="language-sql">CREATE PROCEDURE exemplebd.test_error(nombre INT)
-BEGIN
-
-    DECLARE EXIT HANDLER FOR SQLSTATE '45000' 
-    BEGIN 
-        SELECT &quot;La valeur doit être supérieure à 0&quot; AS message_erreur;
-    END;
-
-    IF (nombre &lt; 0) THEN
-        SIGNAL SQLSTATE '45000';
-    END IF;
-
-    SELECT nombre;
-
-END
-</code></pre>
-<p>résultat</p>
+<p>Le même exemple avec un <strong>HANDLER</strong>.
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">PROCEDURE</span><span class="w"> </span><span class="n">exemplebd</span><span class="p">.</span><span class="n">test_error</span><span class="p">(</span><span class="n">nombre</span><span class="w"> </span><span class="nb">INT</span><span class="p">)</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="k">BEGIN</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="k">DECLARE</span><span class="w"> </span><span class="n">EXIT</span><span class="w"> </span><span class="k">HANDLER</span><span class="w"> </span><span class="k">FOR</span><span class="w"> </span><span class="k">SQLSTATE</span><span class="w"> </span><span class="s1">&#39;45000&#39;</span><span class="w"> </span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="k">BEGIN</span><span class="w"> </span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">        </span><span class="k">SELECT</span><span class="w"> </span><span class="ss">&quot;La valeur doit être supérieure à 0&quot;</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">message_erreur</span><span class="p">;</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="k">END</span><span class="p">;</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">    </span><span class="k">IF</span><span class="w"> </span><span class="p">(</span><span class="n">nombre</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">THEN</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">        </span><span class="n">SIGNAL</span><span class="w"> </span><span class="k">SQLSTATE</span><span class="w"> </span><span class="s1">&#39;45000&#39;</span><span class="p">;</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">    </span><span class="k">END</span><span class="w"> </span><span class="k">IF</span><span class="p">;</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="k">END</span>
+</span></code></pre></div>
+résultat</p>
 <p><img alt="error_handling_02" src="\img\error_handling_02.png" /></p>
 <p>L'avantage d'utiliser le handler est qu'on pourrait éxécuter un traitement lors de l'erreur alors qu'avec signal on ne peut pas. La méthode pour récupérer l'erreur dans notre code ne sera pas la même selon ce qu'on utilise. </p>
 <p>Avec le handler, c'est selon le traitement utilisé. Dans notre exemple pus haut, quand on lance la procédure on s'attend à recevoir un résultat de requête. Si une erreur est retournée, on pourrait vérifier qu'il y a un champ message_erreur dans le résultat et l'afficher.</p>
 <p>Avec signal uniquement, on va devoir récupérer l'exception avec un try .. catch. Voici un exemple en Python avec MySQL Connector</p>
-<pre><code class="language-python">def TestError():
-
-    result = []
-    try:
-        connection = mysql.connect(**db_config)
-        cursor = connection.cursor()
-        cursor.callproc('test_error', (12,))
-        for result in cursor.stored_results():
-            # Si j'utilise un handler avec le signal
-            # mon message d'erreur se retrouvera ici
-            print(result.fetchall())
-
-    except mysql.Error as erreur:
-        # Le message d'erreur avec signal est ici
-        print(erreur.msg)
-    finally:
-        cursor.close()
-        connection.close()
-</code></pre>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">def</span> <span class="nf">TestError</span><span class="p">():</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>    <span class="k">try</span><span class="p">:</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>        <span class="n">connection</span> <span class="o">=</span> <span class="n">mysql</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="o">**</span><span class="n">db_config</span><span class="p">)</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>        <span class="n">cursor</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>        <span class="n">cursor</span><span class="o">.</span><span class="n">callproc</span><span class="p">(</span><span class="s1">&#39;test_error&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">12</span><span class="p">,))</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>        <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">cursor</span><span class="o">.</span><span class="n">stored_results</span><span class="p">():</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>            <span class="c1"># Si j&#39;utilise un handler avec le signal</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>            <span class="c1"># mon message d&#39;erreur se retrouvera ici</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>            <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">fetchall</span><span class="p">())</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>    <span class="k">except</span> <span class="n">mysql</span><span class="o">.</span><span class="n">Error</span> <span class="k">as</span> <span class="n">erreur</span><span class="p">:</span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>        <span class="c1"># Le message d&#39;erreur avec signal est ici</span>
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">erreur</span><span class="o">.</span><span class="n">msg</span><span class="p">)</span>
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>    <span class="k">finally</span><span class="p">:</span>
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>        <span class="n">cursor</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>        <span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></code></pre></div>
 <h2 id="source">Source</h2>
 <ul>
 <li><a href="https://dev.mysql.com/doc/refman/8.0/en/declare-handler.html">https://dev.mysql.com/doc/refman/8.0/en/declare-handler.html</a></li>
@@ -1465,50 +850,14 @@ END
           
         </div>
         
-          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
             Retour en haut de la page
-          </a>
+          </button>
         
       </main>
       
         <footer class="md-footer">
-  
-    
-    <nav class="md-footer__inner md-grid" aria-label="Pied de page" >
-      
-        
-        <a href="../transaction/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: Les transactions" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Précédent
-              </span>
-              Les transactions
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../gestion_utilisateurs/" class="md-footer__link md-footer__link--next" aria-label="Suivant: Gestion des utilisateurs" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Suivant
-              </span>
-              Gestion des utilisateurs
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -1531,10 +880,10 @@ END
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking"], "search": "../../../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version.title": "S\u00e9lectionner la version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.37e9125f.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.fac441b0.min.js"></script>
       
     
   </body>

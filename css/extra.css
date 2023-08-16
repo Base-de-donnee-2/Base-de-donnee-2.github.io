@@ -1,0 +1,14 @@
+img {
+    display: block;
+}
+
+p {
+    text-align: justify;
+}
+
+/* Centrer un élément (une image) */
+.center {
+    display: block;
+    margin: 0 auto;
+}
+
