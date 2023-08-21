@@ -554,8 +554,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#environnement-de-developpement" class="md-nav__link">
-    Environnement de développement
+  <a href="#devilbox" class="md-nav__link">
+    Devilbox
   </a>
   
 </li>
@@ -693,8 +693,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#environnement-de-developpement" class="md-nav__link">
-    Environnement de développement
+  <a href="#devilbox" class="md-nav__link">
+    Devilbox
   </a>
   
 </li>
@@ -732,11 +732,38 @@
 
 
 <h1 id="outils">Outils</h1>
-<h2 id="environnement-de-developpement">Environnement de développement</h2>
+<h2 id="devilbox">Devilbox</h2>
 <p>L'environnement de développement que nous allons utiliser pour le cours s'appelle <a href="http://devilbox.org/">Devilbox</a>. </p>
-<p>Christiane Lagacé a créé une fiche pour vous guider avec l'installation : <a href="https://apical.xyz/fiches/travailler_avec_devilbox_002/installation_de_devilbox" target="_blank">https://apical.xyz/fiches/travailler_avec_devilbox_002/installation_de_devilbox</a></p>
+<p>Christiane Lagacé a créé une fiche pour vous guider avec l'installation : </p>
+<ul>
+<li><a href="https://apical.xyz/fiches/travailler_avec_devilbox_002/installation_de_devilbox" target="_blank">Installation de devilbox</a></li>
+</ul>
+<p>Vous trouverez aussi de l'information pertinente sur la façon d'accéder au terminal des différents conteneurs de Devilbox : </p>
+<ul>
+<li><a href="https://apical.xyz/fiches/travailler_avec_devilbox_002/acceder_au_terminal_d_un_conteneur_docker" target="_blank">Acceder au terminal d'un conteneur docker</a></li>
+</ul>
+<div class="admonition astuce">
+<p class="admonition-title">Astuce</p>
+<p>Prenez le temps de vous créer des scripts pour démarrer rapidement l'environnement Devilbox et accéder au terminal Php.</p>
+</div>
+<p>Pour ma part j'utilise la console Git Bash pour démarrer mon environnement et je me suis créer des alias au lieu d'un script : </p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>alias devilbox=&quot;cd c:\devilbox ; docker-compose up&quot;
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>alias dphp=&quot;cd c:\devilbox ; docker exec -it devilbox-php-1 bash&quot;
+</span></code></pre></div>
+<ul>
+<li><a href="https://stackoverflow.com/questions/37104273/how-to-set-aliases-in-git-bash-for-windows" target="_blank">Une solution ici</a></li>
+</ul>
 <h2 id="dbeaver">DBeaver</h2>
+<p>DBeaver est un outil de gestion de base de données que nous utiliserons pour le cours. Il est gratuit, multiplateforme et supporte beaucoup de type de base de données. </p>
+<ul>
+<li>Téléchargez l'installateur ici : <a href="https://dbeaver.io/" target="_blank">https://dbeaver.io</a></li>
+</ul>
 <h2 id="drawio">Draw.io</h2>
+<p>Draw.io est un logiciel de création de diagramme. Il en existe une version en ligne et desktop, je vous conseille d'installer la version desktop.</p>
+<ul>
+<li>Version en ligne : <a href="https://app.diagrams.net/" target="_blank">https://app.diagrams.net/</a></li>
+<li>Version desktop : <a href="https://www.drawio.com/" target="_blank">https://www.drawio.com/</a></li>
+</ul>
 
 
 
