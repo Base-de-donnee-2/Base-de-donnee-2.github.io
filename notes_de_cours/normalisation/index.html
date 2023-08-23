@@ -493,6 +493,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ressources" class="md-nav__link">
+    Ressources
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -715,6 +722,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ressources" class="md-nav__link">
+    Ressources
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -742,8 +756,19 @@
 </ul>
 <p>Il existe 8 niveaux de formes normales, mais le plus souvent seulement les trois premières sont appliquées. C'est aussi ce que nous verrons dans le cadre du cours. Chaque forme normale doit respecter toutes les formes qui la précèdent. Pour qu'on puisse dire qu'on est en troisième forme normale, il faut que la première et deuxième forme soit respectée.</p>
 <h3 id="premiere-forme-normale-1fn">Première forme normale (1FN)</h3>
+<p>Les règles de la première forme normale sont : </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ol>
+<li>Chaque table doit avoir une clé primaire</li>
+<li>Chaque attribut doit être atomique et ne pas être une liste de valeur.</li>
+<li>Un attribut ne doit contenir qu'un type de valeur.</li>
+<li>On ne doit pas répéter la même information sur plusieurs colonnes</li>
+</ol>
+</div>
+<p>Une table doit toujours comporter une clé primaire. Si aucune données ne peut remplir se rôle naturellement, on va ajouter un champ autoincrémenté comme clé primaire.</p>
 <p>Dans la première forme normale, on doit s'assurer que chaque attribut soit atomique, c'est-à-dire qu'il n'est pas une liste de valeurs ou bien composé (si on le décompose, on obtient d'autres informations). </p>
-<p>Exemple d'une table usager qui n'est pas 1FN</p>
+<p>Exemple de deux tables usager qui ne sont pas 1FN</p>
 <table>
 <thead>
 <tr>
@@ -770,7 +795,37 @@
 </tr>
 </tbody>
 </table>
-<p>La forme n'est pas respectée, car les valeurs de l'attribut nom sont composées et l'attribut email contient parfois une liste de valeur. Pour être 1FN, on devrait créer une nouvelle table avec l'attribut email et séparer l'attribut nom en deux, nom et prénom :  </p>
+<table>
+<thead>
+<tr>
+<th><u>id</u></th>
+<th>nom</th>
+<th>email1</th>
+<th>email2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Fréchette, Mathieu</td>
+<td>math.frechette@gmail.com</td>
+<td>null</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Fréchette, Jérôme</td>
+<td>jero@gmail.com</td>
+<td>jerome.frechette@caramail.com</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Mathis, Jennifer</td>
+<td>jennyM@gmail.com</td>
+<td>null</td>
+</tr>
+</tbody>
+</table>
+<p>La forme n'est pas respectée, car les valeurs de l'attribut nom sont composées et l'attribut email contient une liste de valeur dans la première table et est étalé sur deux colonnes dans la deuxième table. Pour être 1FN, on devrait créer une nouvelle table avec l'attribut email et séparer l'attribut nom en deux, nom et prénom :  </p>
 <p>table <strong>usager</strong></p>
 <table>
 <thead>
@@ -833,16 +888,18 @@
 <p><strong>Impact de l'application de la règle</strong></p>
 <ul>
 <li>Aucun attribut n’est composé ou de valeurs multiples</li>
-<li>Impose par ce fait qu'un attribut membre de la clé primaire est toujours à valeur unique</li>
 <li>Augmente grandement la performance en évitant de parcourir des attributs sous forme de liste et en créant des indexes plus performants.</li>
 </ul>
 <h3 id="deuxieme-forme-normale-2fn">Deuxième forme normale (2FN)</h3>
 <p>Pour être en 2FN, il faut : </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <ul>
 <li>Respecter la première forme normale</li>
 <li>Que tous les attributs qui ne sont pas une clé primaire soient dépendant en totalité de la ou des clés primaires.</li>
-<li>Supposons la table note_cours dans laquelle on veut enregistrer la note obtenue par cours par étudiant :  </li>
 </ul>
+</div>
+<p>Supposons la table note_cours dans laquelle on veut enregistrer la note obtenue par cours par étudiant :  </p>
 <table>
 <thead>
 <tr>
@@ -873,7 +930,19 @@
 </tr>
 </tbody>
 </table>
-<p>Cette table n'est pas 2FN, car l'attribut NOM_COURS est dépendant de la clé COURS_ID, mais pas de la clé ETUDIANT_ID. L'attribut devrait être enregistré dans une autre table.</p>
+<p>On peut noter rapidement quelques problèmes dans cette disposition : </p>
+<ol>
+<li>Il faut gérer les possibles doublons si on veut obtenir le nom d'un cours, par exemple le cours de Programmation 1.</li>
+<li>Est-ce que j'ai encore accès au nom du cours de Design Web si je supprime l'entrée de l'étudiant avec le id 1 pour ce cours?</li>
+<li>Si je modifie le nom Programmation 1 mais qu'il y a un problème et que seulement le premier est modifié, on se retrouve avec une inconsistence de données.</li>
+<li>Qu'est-ce qui se passe si je veux ajouter un nouveau cours mais que je n'ai pas encore de notes d'étudiants?</li>
+</ol>
+<p>Cette table n'est pas 2FN car: </p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> NOTE est dépendant de ETUDIANT_ID et COURS_ID</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> NOM_COURS est seulement dépendant de COURS_ID</li>
+</ul>
+<p>Comment on pourrait normaliser cette table? Le cours est un concept qui mérite sa propre entité, alors on doit créer une nouvelle table pour stocker le nom de cours.</p>
 <p>table <strong>note_cours</strong></p>
 <table>
 <thead>
@@ -927,10 +996,13 @@
 </ul>
 <h3 id="troisieme-forme-normale-3fn">Troisième forme normale (3FN)</h3>
 <p>Pour respecter la troisième forme normale, on doit : </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <ul>
 <li>Remplir toutes les exigences de la deuxième règle normale, donc implicitement de la première règle aussi.</li>
 <li>Tous les attributs qui ne sont pas une clé primaire doivent dépendre directement de la clé primaire et non d'autres attributs de la table.</li>
 </ul>
+</div>
 <p>Prenons par exemple la table <strong>inventaire</strong> suivante</p>
 <table>
 <thead>
@@ -956,13 +1028,17 @@
 </tr>
 </tbody>
 </table>
-<p>Ici l'attribut <strong>DESCRIPTION</strong> est dépendant de l'attribut <strong>ITEM_ID</strong>, mais pas de la clé primaire <strong>ID</strong>. La solution ici serait de supprimer l'attribut <strong>description</strong> de la table, en supposant que l'information se retrouve dans la table <strong>item</strong>.</p>
+<p>Ici l'attribut <strong>DESCRIPTION</strong> est dépendant de <mark class="critic">l'attribut</mark> <strong>ITEM_ID</strong>, mais pas de la <mark class="critic">clé primaire</mark> <strong>ID</strong>. La solution ici serait de supprimer l'attribut <strong>description</strong> de la table, en supposant que l'information se retrouve dans la table <strong>item</strong>.</p>
 <p><strong>Impact de l'application de la règle</strong></p>
 <ul>
 <li>Permets d'éliminer plusieurs redondances des données.</li>
 <li>Facilite la mise à jour des données</li>
 </ul>
 <p>Dans certaines situations, une fois la troisième forme atteinte, il peut être acceptable de briser la règle à cause de certaines exigences ou problématiques précise. Par exemple dans une table où on enregistre le détail d'une ligne de facture, le total de la ligne ne doit pas être sauvegardé, car il peut être calculé à partir de la quantité et du prix unitaire. Par contre, si on a à faire beaucoup d'opération avec le total de la ligne, on pourrait conserver le total dans une colonne pour faciliter le traitement.</p>
+<h2 id="ressources">Ressources</h2>
+<ul>
+<li>Une vidéo qui explique très bien la normalisation (en anglais) : <a href="https://youtu.be/GFQaEYEc8_8" target="_blank">https://youtu.be/GFQaEYEc8_8</a></li>
+</ul>
 
 
 
