@@ -8,23 +8,25 @@
       
       
       
-        <link rel="canonical" href="https://base-de-donnee-2.github.io/notes_de_cours/mySQL/gestion_autorisations/">
+        <link rel="canonical" href="https://base-de-donnee-2.github.io/exercices/ex04_enonce/">
       
       
+        <link rel="prev" href="../ex03_enonce/">
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.9">
     
     
       
-        <title>Gestion des autorisations - Base de données 2 420-3B4-VI</title>
+        <title>Exercice 04 - Modélisation d'un livre de recettes - Base de données 2 420-3B4-VI</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.85bb2934.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.85bb2934.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a6bdf11c.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a6bdf11c.min.css">
       
       
 
@@ -40,9 +42,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../css/extra.css">
+      <link rel="stylesheet" href="../../css/extra.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -71,7 +73,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#gestion-des-autorisations" class="md-skip">
+        <a href="#exercice-04-modelisation-dun-livre-de-recettes" class="md-skip">
           Aller au contenu
         </a>
       
@@ -87,7 +89,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="En-tête">
-    <a href="../../.." title="Base de données 2 420-3B4-VI" class="md-header__button md-logo" aria-label="Base de données 2 420-3B4-VI" data-md-component="logo">
+    <a href="../.." title="Base de données 2 420-3B4-VI" class="md-header__button md-logo" aria-label="Base de données 2 420-3B4-VI" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2 0-.68.06-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.923 7.923 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8.008 8.008 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.65 15.65 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2Z"/></svg>
@@ -106,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Gestion des autorisations
+              Exercice 04 - Modélisation d'un livre de recettes
             
           </span>
         </div>
@@ -201,7 +203,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../.." class="md-tabs__link">
+    <a href="../.." class="md-tabs__link">
       Accueil
     </a>
   </li>
@@ -221,7 +223,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../definition/" class="md-tabs__link">
+      <a href="../../notes_de_cours/definition/" class="md-tabs__link">
         Notes de cours
       </a>
     </li>
@@ -233,13 +235,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../../exercices/ex01_enonce/" class="md-tabs__link">
+      <a href="../ex01_enonce/" class="md-tabs__link md-tabs__link--active">
         Exercices
       </a>
     </li>
@@ -273,7 +277,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Base de données 2 420-3B4-VI" class="md-nav__button md-logo" aria-label="Base de données 2 420-3B4-VI" data-md-component="logo">
+    <a href="../.." title="Base de données 2 420-3B4-VI" class="md-nav__button md-logo" aria-label="Base de données 2 420-3B4-VI" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2 0-.68.06-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.923 7.923 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8.008 8.008 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.65 15.65 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2Z"/></svg>
@@ -304,7 +308,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         Accueil
       </a>
     </li>
@@ -373,7 +377,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../definition/" class="md-nav__link">
+      <a href="../../notes_de_cours/definition/" class="md-nav__link">
         Définition
       </a>
     </li>
@@ -387,7 +391,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modele/" class="md-nav__link">
+      <a href="../../notes_de_cours/modele/" class="md-nav__link">
         Modèle entité-association
       </a>
     </li>
@@ -401,7 +405,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../schema_conceptuel/" class="md-nav__link">
+      <a href="../../notes_de_cours/schema_conceptuel/" class="md-nav__link">
         Schéma conceptuel
       </a>
     </li>
@@ -415,7 +419,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../type_relation/" class="md-nav__link">
+      <a href="../../notes_de_cours/type_relation/" class="md-nav__link">
         Type de relation
       </a>
     </li>
@@ -429,7 +433,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../normalisation/" class="md-nav__link">
+      <a href="../../notes_de_cours/normalisation/" class="md-nav__link">
         Normalisation
       </a>
     </li>
@@ -477,7 +481,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../create_database/" class="md-nav__link">
+      <a href="../../notes_de_cours/create_database/" class="md-nav__link">
         Création de base de données
       </a>
     </li>
@@ -491,7 +495,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../create_table/" class="md-nav__link">
+      <a href="../../notes_de_cours/create_table/" class="md-nav__link">
         Création de table
       </a>
     </li>
@@ -505,7 +509,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../convention/" class="md-nav__link">
+      <a href="../../notes_de_cours/convention/" class="md-nav__link">
         Convention de nommage MySQL
       </a>
     </li>
@@ -519,7 +523,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../view/" class="md-nav__link">
+      <a href="../../notes_de_cours/view/" class="md-nav__link">
         Views
       </a>
     </li>
@@ -567,7 +571,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devilbox/" class="md-nav__link">
+      <a href="../../notes_de_cours/devilbox/" class="md-nav__link">
         Devilbox
       </a>
     </li>
@@ -581,7 +585,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../dbeaver/" class="md-nav__link">
+      <a href="../../notes_de_cours/dbeaver/" class="md-nav__link">
         DBeaver
       </a>
     </li>
@@ -595,7 +599,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../drawio/" class="md-nav__link">
+      <a href="../../notes_de_cours/drawio/" class="md-nav__link">
         draw.io
       </a>
     </li>
@@ -622,14 +626,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
       
       
       
@@ -638,7 +644,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           Exercices
@@ -651,7 +657,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../exercices/ex01_enonce/" class="md-nav__link">
+      <a href="../ex01_enonce/" class="md-nav__link">
         Exercice 01 - Revision MySQL
       </a>
     </li>
@@ -665,7 +671,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../exercices/ex02_enonce/" class="md-nav__link">
+      <a href="../ex02_enonce/" class="md-nav__link">
         Exercice 02 - Système de prise de présence en cours
       </a>
     </li>
@@ -679,7 +685,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../exercices/ex03_enonce/" class="md-nav__link">
+      <a href="../ex03_enonce/" class="md-nav__link">
         Exercice 03 - Système de stationnement du cégep
       </a>
     </li>
@@ -691,11 +697,79 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../../exercices/ex04_enonce/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Exercice 04 - Modélisation d'un livre de recettes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Exercice 04 - Modélisation d'un livre de recettes
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#consignes" class="md-nav__link">
+    Consignes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#images" class="md-nav__link">
+    Images
+  </a>
+  
+    <nav class="md-nav" aria-label="Images">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#recette-1" class="md-nav__link">
+    Recette 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recette-2" class="md-nav__link">
+    Recette 2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -734,30 +808,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#ajouter-ou-enlever-de-privileges" class="md-nav__link">
-    Ajouter ou enlever de privilèges
+  <a href="#consignes" class="md-nav__link">
+    Consignes
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#liste-des-privileges" class="md-nav__link">
-    Liste des privilèges
+  <a href="#images" class="md-nav__link">
+    Images
+  </a>
+  
+    <nav class="md-nav" aria-label="Images">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#recette-1" class="md-nav__link">
+    Recette 1
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#niveau-des-privileges" class="md-nav__link">
-    Niveau des privilèges
+        
+          <li class="md-nav__item">
+  <a href="#recette-2" class="md-nav__link">
+    Recette 2
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#afficher-les-autorisations-dun-utilisateur-ou-dun-role" class="md-nav__link">
-    Afficher les autorisations d'un utilisateur ou d'un rôle
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -779,63 +859,31 @@
   
 
 
-<h1 id="gestion-des-autorisations">Gestion des autorisations</h1>
-<h3 id="ajouter-ou-enlever-de-privileges">Ajouter ou enlever de privilèges</h3>
-<div class="language-mysql highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">-- Syntaxe pour ajouter un privilège</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">GRANT</span><span class="w"> </span><span class="n">nomDuPrivilege</span><span class="w"> </span><span class="p">(</span><span class="n">listeDesColonnes</span><span class="p">)</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">ON</span><span class="w"> </span><span class="n">niveauPrivilege</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">TO</span><span class="w"> </span><span class="n">nomUsager_nomRole</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1">-- Syntaxe pour enlever un privilège</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="k">REVOKE</span><span class="w"> </span><span class="n">nomDuPrivilege</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="k">ON</span><span class="w"> </span><span class="n">niveauPrivilege</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="k">FROM</span><span class="w"> </span><span class="n">nomUsager_nomRole</span>
-</span></code></pre></div>
+<h1 id="exercice-04-modelisation-dun-livre-de-recettes">Exercice 04 - Modélisation d'un livre de recettes</h1>
+<h2 id="consignes">Consignes</h2>
+<p>Vous devez analyser et modéliser un livre de recettes. Les deux images qui suivent vous indique ce qui doit être inclus dans la base de données. <strong><u>Toutes les informations</u></strong> présentent doivent être sauvegardées.</p>
+<p>Précision sur les pictogrammes dans les recettes : </p>
 <ul>
-<li>nomDuPrivilege : Le nom du privilège à ajouter (SELECT, INSERT, CREATE TABLE, etc.). On peut en mettre plusieurs en les séparant par une virgule.</li>
-<li>listeDesColonnes : C'est optionnel mais on peut spécifier les colonnes sur lesquelles le privilège est appliqué. On pourrait par exemple accorder le droit à un usager de faire un UPDATE mais seulement pour des colonnes spécifiques d'une table.</li>
-<li>niveauPrivilege : À quel niveau s'applique le privilège. (Globalement, seulement pour une base de données en particulier, pour une table précise, etc.)</li>
-<li>nomUsager_nomRole: À quel usager ou role on veut octroyer le privilège.</li>
+<li>Le bol représente le temps de préparation de la recette</li>
+<li>La flamme est le temps de cuisson</li>
+<li>La main est un temps de préparation autre</li>
 </ul>
-<p>Exemple</p>
-<div class="language-mysql highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cm">/* Octroyer à l&#39;usager test le droit de faire des requêtes select et insert sur toutes </span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="cm">les tables de la base de données credit_social</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="cm"> */</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">GRANT</span><span class="w"> </span><span class="k">SELECT</span><span class="p">,</span><span class="w"> </span><span class="k">INSERT</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="k">ON</span><span class="w"> </span><span class="n">credit_social</span><span class="p">.</span><span class="o">*</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="k">TO</span><span class="w"> </span><span class="n">test</span><span class="nv">@localhost</span><span class="p">;</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="cm">/* Octroyer à l&#39;usager test2 le droit de faire des requêtes select uniquement sur la table citoyen de la base de données credit_social.</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="cm">   De plus, seulement les colonnes id, nom et prenom seront accessible pour cette table</span>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="cm"> */</span>
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="k">GRANT</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">nom</span><span class="p">,</span><span class="w"> </span><span class="n">prenom</span><span class="p">)</span>
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="k">ON</span><span class="w"> </span><span class="n">credit_social</span><span class="p">.</span><span class="n">citoyen</span>
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="k">TO</span><span class="w"> </span><span class="n">test2</span><span class="nv">@localhost</span><span class="p">;</span>
-</span></code></pre></div>
-<h3 id="liste-des-privileges">Liste des privilèges</h3>
-<p>Voici une courte liste de privilèges qu'on peut ajouter à un usager : </p>
-<ul>
-<li>ALL, tous les privilèges, sauf celui d'en accorder.</li>
-<li>USAGE, aucun privilèges</li>
-<li>GRANT OPTION, accorde le droit d'ajouter des privilèges (il n'est pas inclus quand on utilise ALL)</li>
-<li>SELECT, INSERT, UPDATE, DELETE, pour les requêtes CRUD correspondante</li>
-<li>CREATE TABLE, ALTER, DROP, REFERENCES pour des opérations sur les tables et la base de données.</li>
-<li>CREATE ROUTINE, ALTER ROUTINE, EXECUTE, pour des opérations sur les procédures stockées.</li>
+<p>Vous devez me produire et remettre : </p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Le modèle entité-association en format image.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Un diagramme de classes UML, aussi à remettre en format image.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Un script sql de génération de la base de données et des tables qui inclus la création de la base de données, des tables et des clés primaires et étrangères.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> La base de données doit se nommer <strong>ex04_recette</strong> et avoir comme collation <code>utf8mb4_unicode_ci</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> La table qui contiendra les recettes doit avoir une clé primaire qui débute à la valeur 1000</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Le script doit pouvoir être lancé consécutivement sans causer d'erreur (Pensez à ajouter des commandes <strong>drop ... if exists</strong>)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Vous devez respecter les trois première forme normale et la convention de nommage qui est décrite dans les notes de cours.</li>
 </ul>
-<p>Il y a beaucoup d'autres privilèges qu'on peut octroyer, vous pouvez consulter une liste plus complète dans la documentation de MySQL : </p>
-<ul>
-<li><a href="https://dev.mysql.com/doc/refman/8.0/en/privileges-provided.html">https://dev.mysql.com/doc/refman/8.0/en/privileges-provided.html</a></li>
-</ul>
-<h3 id="niveau-des-privileges">Niveau des privilèges</h3>
-<p>L'indicateur du niveau de privilèges se compose en deux sections, la ou les base de données et ensuite le nom de la table ou de la procédure stockée.</p>
-<ul>
-<li>*.* : Toutes les bases de données et toutes les tables/procédures stockées</li>
-<li>credit_social.* : Pour la base de données credit_social, toutes les tables</li>
-<li>credit_social.classe : Pour la base de données credit_social, la table classe uniquement.</li>
-</ul>
-<h3 id="afficher-les-autorisations-dun-utilisateur-ou-dun-role">Afficher les autorisations d'un utilisateur ou d'un rôle</h3>
-<div class="language-mysql highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">SHOW</span><span class="w"> </span><span class="k">GRANTS</span><span class="w"> </span><span class="k">FOR</span><span class="w"> </span><span class="s1">&#39;usager_role&#39;</span><span class="nv">@&#39;localhost&#39;</span><span class="p">;</span>
-</span></code></pre></div>
+<p>Le tout dans un dossier compressé dans le devoir sur Teams</p>
+<h2 id="images">Images</h2>
+<h3 id="recette-1">Recette 1</h3>
+<p><img alt="Recette01" class="center shadow" src="\img\ex04_a.jpg" /></p>
+<h3 id="recette-2">Recette 2</h3>
+<p><img alt="Recette02" class="center shadow" src="\img\ex04_b.jpg" /></p>
 
 
 
@@ -878,10 +926,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "content.code.copy"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.fac441b0.min.js"></script>
+      <script src="../../assets/javascripts/bundle.fac441b0.min.js"></script>
       
     
   </body>
