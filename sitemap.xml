@@ -2,292 +2,302 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://base-de-donnee-2.github.io/</loc>
-         <lastmod>2023-08-29</lastmod>
+         <lastmod>2023-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/examen/epreuve_finale/formatif_part01/</loc>
-         <lastmod>2023-08-29</lastmod>
+         <lastmod>2023-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/examen/epreuve_finale/formatif_part02/</loc>
-         <lastmod>2023-08-29</lastmod>
+         <lastmod>2023-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/examen/intra/examen_intra/</loc>
-         <lastmod>2023-08-29</lastmod>
+         <lastmod>2023-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/examen/intra/intra_formatif_01/</loc>
-         <lastmod>2023-08-29</lastmod>
+         <lastmod>2023-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/examen/intra/intra_formatif_02/</loc>
-         <lastmod>2023-08-29</lastmod>
+         <lastmod>2023-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/exercices/ex/</loc>
-         <lastmod>2023-08-29</lastmod>
+         <lastmod>2023-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/exercices/ex01_enonce/</loc>
-         <lastmod>2023-08-29</lastmod>
+         <lastmod>2023-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/exercices/ex02_enonce/</loc>
-         <lastmod>2023-08-29</lastmod>
+         <lastmod>2023-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/exercices/ex03_enonce/</loc>
-         <lastmod>2023-08-29</lastmod>
+         <lastmod>2023-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/exercices/ex04_enonce/</loc>
-         <lastmod>2023-08-29</lastmod>
+         <lastmod>2023-09-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://base-de-donnee-2.github.io/exercices/ex05_enonce/</loc>
+         <lastmod>2023-09-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://base-de-donnee-2.github.io/exercices/ex06_enonce/</loc>
+         <lastmod>2023-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/exercices/ex03/ex03_enonce/</loc>
-         <lastmod>2023-08-29</lastmod>
+         <lastmod>2023-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/exercices/ex04/ex04_enonce/</loc>
-         <lastmod>2023-08-29</lastmod>
+         <lastmod>2023-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/exercices/ex05/ex05_enonce/</loc>
-         <lastmod>2023-08-29</lastmod>
+         <lastmod>2023-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/exercices/ex06/ex06_corrige/</loc>
-         <lastmod>2023-08-29</lastmod>
+         <lastmod>2023-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/exercices/ex06/ex06_enonce/</loc>
-         <lastmod>2023-08-29</lastmod>
+         <lastmod>2023-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/exercices/ex07/ex07_corrige/</loc>
-         <lastmod>2023-08-29</lastmod>
+         <lastmod>2023-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/exercices/ex07/ex07_enonce/</loc>
-         <lastmod>2023-08-29</lastmod>
+         <lastmod>2023-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/exercices/ex08/ex08_corrige/</loc>
-         <lastmod>2023-08-29</lastmod>
+         <lastmod>2023-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/exercices/ex08/ex08_corrige_delete/</loc>
-         <lastmod>2023-08-29</lastmod>
+         <lastmod>2023-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/exercices/ex08/ex08_corrige_insert/</loc>
-         <lastmod>2023-08-29</lastmod>
+         <lastmod>2023-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/exercices/ex08/ex08_corrige_select/</loc>
-         <lastmod>2023-08-29</lastmod>
+         <lastmod>2023-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/exercices/ex08/ex08_corrige_update/</loc>
-         <lastmod>2023-08-29</lastmod>
+         <lastmod>2023-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/exercices/ex08/ex08_enonce/</loc>
-         <lastmod>2023-08-29</lastmod>
+         <lastmod>2023-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/exercices/ex09/ex09_enonce/</loc>
-         <lastmod>2023-08-29</lastmod>
+         <lastmod>2023-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/exercices/ex10/ex10_corrige/</loc>
-         <lastmod>2023-08-29</lastmod>
+         <lastmod>2023-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/exercices/ex10/ex10_enonce/</loc>
-         <lastmod>2023-08-29</lastmod>
+         <lastmod>2023-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/exercices/ex11/ex11_enonce/</loc>
-         <lastmod>2023-08-29</lastmod>
+         <lastmod>2023-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/exercices/ex12/ex12_enonce/</loc>
-         <lastmod>2023-08-29</lastmod>
+         <lastmod>2023-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/exercices/ex13/ex13_enonce/</loc>
-         <lastmod>2023-08-29</lastmod>
+         <lastmod>2023-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/notes_de_cours/convention/</loc>
-         <lastmod>2023-08-29</lastmod>
+         <lastmod>2023-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/notes_de_cours/create_database/</loc>
-         <lastmod>2023-08-29</lastmod>
+         <lastmod>2023-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/notes_de_cours/create_table/</loc>
-         <lastmod>2023-08-29</lastmod>
+         <lastmod>2023-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/notes_de_cours/curseur/</loc>
-         <lastmod>2023-08-29</lastmod>
+         <lastmod>2023-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/notes_de_cours/dbeaver/</loc>
-         <lastmod>2023-08-29</lastmod>
+         <lastmod>2023-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/notes_de_cours/definition/</loc>
-         <lastmod>2023-08-29</lastmod>
+         <lastmod>2023-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/notes_de_cours/devilbox/</loc>
-         <lastmod>2023-08-29</lastmod>
+         <lastmod>2023-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/notes_de_cours/diagramme_classe/</loc>
-         <lastmod>2023-08-29</lastmod>
+         <lastmod>2023-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/notes_de_cours/drawio/</loc>
-         <lastmod>2023-08-29</lastmod>
+         <lastmod>2023-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/notes_de_cours/function/</loc>
-         <lastmod>2023-08-29</lastmod>
+         <lastmod>2023-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/notes_de_cours/insert/</loc>
-         <lastmod>2023-08-29</lastmod>
+         <lastmod>2023-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/notes_de_cours/join/</loc>
-         <lastmod>2023-08-29</lastmod>
+         <lastmod>2023-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/notes_de_cours/modele/</loc>
-         <lastmod>2023-08-29</lastmod>
+         <lastmod>2023-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/notes_de_cours/normalisation/</loc>
-         <lastmod>2023-08-29</lastmod>
+         <lastmod>2023-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/notes_de_cours/operateur/</loc>
-         <lastmod>2023-08-29</lastmod>
+         <lastmod>2023-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/notes_de_cours/schema_conceptuel/</loc>
-         <lastmod>2023-08-29</lastmod>
+         <lastmod>2023-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/notes_de_cours/type_relation/</loc>
-         <lastmod>2023-08-29</lastmod>
+         <lastmod>2023-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/notes_de_cours/view/</loc>
-         <lastmod>2023-08-29</lastmod>
+         <lastmod>2023-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/notes_de_cours/mySQL/Assurer%20la%20confidentialit%C3%A9%20et%20la%20coh%C3%A9rence%20des%20donn%C3%A9es/</loc>
-         <lastmod>2023-08-29</lastmod>
+         <lastmod>2023-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/notes_de_cours/mySQL/error_handling/</loc>
-         <lastmod>2023-08-29</lastmod>
+         <lastmod>2023-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/notes_de_cours/mySQL/gestion_autorisations/</loc>
-         <lastmod>2023-08-29</lastmod>
+         <lastmod>2023-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/notes_de_cours/mySQL/gestion_role/</loc>
-         <lastmod>2023-08-29</lastmod>
+         <lastmod>2023-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/notes_de_cours/mySQL/gestion_utilisateurs/</loc>
-         <lastmod>2023-08-29</lastmod>
+         <lastmod>2023-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/notes_de_cours/mySQL/transaction/</loc>
-         <lastmod>2023-08-29</lastmod>
+         <lastmod>2023-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/notes_de_cours/mySQL/triggers/</loc>
-         <lastmod>2023-08-29</lastmod>
+         <lastmod>2023-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/notes_de_cours/python/mysql_connector/</loc>
-         <lastmod>2023-08-29</lastmod>
+         <lastmod>2023-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/notes_de_cours/python/pyQT5/</loc>
-         <lastmod>2023-08-29</lastmod>
+         <lastmod>2023-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://base-de-donnee-2.github.io/notes_de_cours/python/qtdesigner/</loc>
-         <lastmod>2023-08-29</lastmod>
+         <lastmod>2023-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
