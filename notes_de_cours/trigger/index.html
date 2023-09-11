@@ -8,20 +8,20 @@
       
       
       
-        <link rel="canonical" href="https://base-de-donnee-2.github.io/notes_de_cours/insert/">
+        <link rel="canonical" href="https://base-de-donnee-2.github.io/notes_de_cours/trigger/">
       
       
-        <link rel="prev" href="../view/">
+        <link rel="prev" href="../insert/">
       
       
-        <link rel="next" href="../trigger/">
+        <link rel="next" href="../mySQL/error_handling/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.9">
     
     
       
-        <title>Insert - Base de données 2 420-3B4-VI</title>
+        <title>Trigger - Base de données 2 420-3B4-VI</title>
       
     
     
@@ -75,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#insert" class="md-skip">
+        <a href="#les-triggers" class="md-skip">
           Aller au contenu
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Insert
+              Trigger
             
           </span>
         </div>
@@ -541,6 +541,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../insert/" class="md-nav__link">
+        Insert
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -553,12 +567,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Insert
+          Trigger
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Insert
+        Trigger
       </a>
       
         
@@ -577,63 +591,57 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#syntaxe-de-base" class="md-nav__link">
-    Syntaxe de base
-  </a>
-  
-    <nav class="md-nav" aria-label="Syntaxe de base">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#la-methode-la-plus-simple" class="md-nav__link">
-    La méthode la plus simple
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#la-methode-la-plus-precise" class="md-nav__link">
-    La méthode la plus précise
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#inserer-des-donnees-seulement-dans-certaines-colonnes" class="md-nav__link">
-    Insérer des données seulement dans certaines colonnes
+  <a href="#pourquoi-utiliser-des-triggers" class="md-nav__link">
+    Pourquoi utiliser des triggers ?
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#inserer-plusieurs-lignes-dans-la-meme-requete" class="md-nav__link">
-    Insérer plusieurs lignes dans la même requête
+  <a href="#syntaxe" class="md-nav__link">
+    Syntaxe
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#inserer-des-valeurs-provenant-dune-autre-table" class="md-nav__link">
-    Insérer des valeurs provenant d'une autre table
+  <a href="#new-et-old" class="md-nav__link">
+    NEW et OLD
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#les-colonnes-de-type-auto-increment" class="md-nav__link">
-    Les colonnes de type auto-incrément
+  <a href="#erreur-dans-un-trigger" class="md-nav__link">
+    Erreur dans un trigger
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#recuperer-la-valeur-dune-colonne-auto-increment" class="md-nav__link">
-    Récupérer la valeur d'une colonne auto-incrément
+  <a href="#supprimer-un-trigger" class="md-nav__link">
+    Supprimer un trigger
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gestion-derreurs-dans-un-trigger" class="md-nav__link">
+    Gestion d'erreurs dans un trigger
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#restrictions" class="md-nav__link">
+    Restrictions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation" class="md-nav__link">
+    Documentation
   </a>
   
 </li>
@@ -642,20 +650,6 @@
   
 </nav>
       
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../trigger/" class="md-nav__link">
-        Trigger
-      </a>
     </li>
   
 
@@ -924,63 +918,57 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#syntaxe-de-base" class="md-nav__link">
-    Syntaxe de base
-  </a>
-  
-    <nav class="md-nav" aria-label="Syntaxe de base">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#la-methode-la-plus-simple" class="md-nav__link">
-    La méthode la plus simple
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#la-methode-la-plus-precise" class="md-nav__link">
-    La méthode la plus précise
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#inserer-des-donnees-seulement-dans-certaines-colonnes" class="md-nav__link">
-    Insérer des données seulement dans certaines colonnes
+  <a href="#pourquoi-utiliser-des-triggers" class="md-nav__link">
+    Pourquoi utiliser des triggers ?
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#inserer-plusieurs-lignes-dans-la-meme-requete" class="md-nav__link">
-    Insérer plusieurs lignes dans la même requête
+  <a href="#syntaxe" class="md-nav__link">
+    Syntaxe
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#inserer-des-valeurs-provenant-dune-autre-table" class="md-nav__link">
-    Insérer des valeurs provenant d'une autre table
+  <a href="#new-et-old" class="md-nav__link">
+    NEW et OLD
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#les-colonnes-de-type-auto-increment" class="md-nav__link">
-    Les colonnes de type auto-incrément
+  <a href="#erreur-dans-un-trigger" class="md-nav__link">
+    Erreur dans un trigger
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#recuperer-la-valeur-dune-colonne-auto-increment" class="md-nav__link">
-    Récupérer la valeur d'une colonne auto-incrément
+  <a href="#supprimer-un-trigger" class="md-nav__link">
+    Supprimer un trigger
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gestion-derreurs-dans-un-trigger" class="md-nav__link">
+    Gestion d'erreurs dans un trigger
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#restrictions" class="md-nav__link">
+    Restrictions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation" class="md-nav__link">
+    Documentation
   </a>
   
 </li>
@@ -1003,70 +991,133 @@
   
 
 
-<h1 id="insert">INSERT</h1>
-<p>La commande <strong>INSERT</strong> est utilisée pour ajouter des enregistrements dans une table.</p>
-<h2 id="syntaxe-de-base">Syntaxe de base</h2>
-<h3 id="la-methode-la-plus-simple">La méthode la plus simple</h3>
-<p><div class="language-sql highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">ma_table</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="n">valeur1</span><span class="p">,</span><span class="w"> </span><span class="n">valeur2</span><span class="p">,</span><span class="w"> </span><span class="n">valeur3</span><span class="p">);</span>
-</span></code></pre></div>
-<strong>Avantages</strong>
-- Requête plus courte
-- Si on modifie les noms de colonnes, pas besoin de modifier la requête.</p>
-<p><strong>Inconvénients</strong></p>
+<h1 id="les-triggers">Les triggers</h1>
+<p>Un trigger (ou déclencheur) est une sorte de procédure stockée, une série d'instruction enregistrée, qui est relié à une table de la base de données. Les instructions seront exécuté automatiquement lors d'une insertion, d'une mise à jour ou d'une suppression dans la table à laquelle le trigger est attaché et ça pour chacune des lignes affectées par la requête.  On doit aussi spécifier à quel moment il sera déclenché, avant l'instruction SQL ou après. On peut donc définir jusqu'à 6 triggers par tables : avant ou après une insertion, avant ou après une mise à jour, avant ou après une suppression.</p>
+<p>On peut depuis un trigger modifier et insérer des données dans n'importe quel table de la base de données à l'exception des tables utilisées dans la requête qui l'a déclenché. Si on veut travailler sur la table à laquelle le trigger est attaché, on n'a accès qu'à la ligne qu'on est en train de traiter.</p>
+<h3 id="pourquoi-utiliser-des-triggers">Pourquoi utiliser des triggers ?</h3>
 <ul>
-<li>Possibilité d'erreurs plus grande, il faut que les valeurs concordent avec le nombre de colonnes et leur position.</li>
+<li>S'assurer de la validité des données avant leur insertion ou leur modification.</li>
+<li>Pour pouvoir utiliser des traitements plus complexe lors d'opération qui affectent plusieurs tables. Par exemple si on veut supprimer des données qui sont reliées à d'autres tables par des clés étrangères et que les options offerte ne nous suffise pas.</li>
+<li>Pour garder une trace des opérations effectuées dans la base de données.</li>
+<li>Mettre à jour des informations qu'on utilise régulièrement pour pouvoir les retrouver facilement, comme par exemple le solde actif d'un compte client.</li>
 </ul>
-<h3 id="la-methode-la-plus-precise">La méthode la plus précise</h3>
-<p><div class="language-sql highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">ma_table</span><span class="w"> </span><span class="p">(</span><span class="n">colonne1</span><span class="p">,</span><span class="w"> </span><span class="n">colonne2</span><span class="p">,</span><span class="w"> </span><span class="n">colonne3</span><span class="p">)</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="n">valeur1</span><span class="p">,</span><span class="w"> </span><span class="n">valeur2</span><span class="p">,</span><span class="w"> </span><span class="n">valeur3</span><span class="p">);</span>
+<h3 id="syntaxe">Syntaxe</h3>
+<p>On utilise la commande <strong>CREATE TRIGGER</strong> pour la création d'un trigger. Le nom du trigger doit être unique dans la base de données. Il est d'usage de nommer le trigger avec le nom de la table associée, du moment de son déclenchement et de l'opération effectuée, ex je veux créer un trigger sur la table usager qui se déclenchera avant un insertion, je vais le nommer usager_before_insert. </p>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TRIGGER</span><span class="w"> </span><span class="n">nomTrigger</span><span class="w"> </span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="n">momentDuDeclenchement</span><span class="w"> </span><span class="n">operationSQL</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">nomTable</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="k">FOR</span><span class="w"> </span><span class="k">EACH</span><span class="w"> </span><span class="k">ROW</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="n">corpsDuTrigger</span><span class="p">;</span>
 </span></code></pre></div>
-<strong>Avantages</strong>
-- Plus de précisions dans la requête
-- On n'est pas forcé de suivre l'ordre des colonnes ni d'ajouter une valeur pour chacune d'entre elles.</p>
-<p><strong>Inconvénient</strong>
-- Les requêtes sont plus longue à écrire.</p>
 <ul>
-<li>Au niveau de la maintenance, si on modifie un nom de colonne, il faut modifier toutes les requêtes ajoutant des valeurs dans cette colonne.</li>
+<li>Le moment du déclenchement est BEFORE ou AFTER</li>
+<li>L'opération SQL est soit INSERT, UPDATE ou DELETE</li>
+<li>Si le corps du trigger contient plus d'une requête et/ou opération, on doit les englober par un BEGIN END.</li>
 </ul>
-<h2 id="inserer-des-donnees-seulement-dans-certaines-colonnes">Insérer des données seulement dans certaines colonnes</h2>
-<p><div class="language-sql highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">ma_table</span><span class="w"> </span><span class="p">(</span><span class="n">colonne1</span><span class="p">)</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="n">valeur1</span><span class="p">);</span>
+<h3 id="new-et-old">NEW et OLD</h3>
+<p>On peut utiliser les mots clés dans le corps du trigger pour accéder aux données avant ou après leur modification. </p>
+<ul>
+<li>OLD représente les données avant qu'elles ne soient modifié par le trigger. Ces données ne peuvent pas être modifiées. Old est disponible pour les UPDATE et DELETE</li>
+<li>NEW représente les données après qu'elles aient été modifié. C'est données peuvent être lu et modifiés. New est disponible pour les INSERT et UPDATE.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Requête</th>
+<th align="center">OLD</th>
+<th align="center">NEW</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>INSERT</td>
+<td align="center">-</td>
+<td align="center">OUI</td>
+</tr>
+<tr>
+<td>UPDATE</td>
+<td align="center">OUI</td>
+<td align="center">OUI</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td align="center">OUI</td>
+<td align="center">-</td>
+</tr>
+</tbody>
+</table>
+<h3 id="erreur-dans-un-trigger">Erreur dans un trigger</h3>
+<p>Si un trigger exécuté avant (BEFORE) une requête cause une erreur, la requête ne sera pas exécutée. Les triggers exécutés après (AFTER) une requête qui génère une erreur feront échouer celle-ci. Il est donc important de bien concevoir les triggers et d'inclure une gestion des erreurs dans notre traitement.</p>
+<h3 id="supprimer-un-trigger">Supprimer un trigger</h3>
+<p>Pour supprimer un trigger, on utilise la commande DROP TRIGGER suivie du nom du trigger. Si on supprimer une table, tous les triggers qui lui sont associée seront aussi supprimés.</p>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">DROP</span><span class="w"> </span><span class="k">TRIGGER</span><span class="w"> </span><span class="n">before_insert_usager</span><span class="p">;</span>
 </span></code></pre></div>
-Les autres champs non spécifiés prendront la valeur par défaut si elle est défini ou NULL sinon.</p>
-<h2 id="inserer-plusieurs-lignes-dans-la-meme-requete">Insérer plusieurs lignes dans la même requête</h2>
-<p>La syntaxe est la même, on doit seulement séparer les séries de valeurs par une virgule : 
-<div class="language-sql highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">ma_table</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="k">VALUES</span><span class="w">  </span><span class="p">(</span><span class="n">valeur_a1</span><span class="p">,</span><span class="w"> </span><span class="n">valeur_a2</span><span class="p">,</span><span class="w"> </span><span class="n">valeur_a3</span><span class="p">),</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">        </span><span class="p">(</span><span class="n">valeur_b1</span><span class="p">,</span><span class="w"> </span><span class="n">valeur_b2</span><span class="p">,</span><span class="w"> </span><span class="n">valeur_b3</span><span class="p">),</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">        </span><span class="p">(</span><span class="n">valeur_c1</span><span class="p">,</span><span class="w"> </span><span class="n">valeur_c2</span><span class="p">,</span><span class="w"> </span><span class="n">valeur_c3</span><span class="p">),</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">        </span><span class="p">(</span><span class="n">valeur_d1</span><span class="p">,</span><span class="w"> </span><span class="n">valeur_d2</span><span class="p">,</span><span class="w"> </span><span class="n">valeur_d3</span><span class="p">);</span>
+<h3 id="gestion-derreurs-dans-un-trigger">Gestion d'erreurs dans un trigger</h3>
+<p>MySQL gère les erreurs dans les triggers de la façon suivante : </p>
+<ul>
+<li>Si un trigger de type BEFORE échoue, l'opération sur la ligne correspondante ne sera pas effectuée.</li>
+<li>Un trigger BEFORE est activé par l'essaie d'insérer ou de modifier la ligne, même s'il y a échec de l'opération.</li>
+<li>Un trigger AFTER est exécuté seulement après qu'un trigger BEFORE et l'opération sur la ligne ont réussi.</li>
+<li>Une erreur dans un trigger BEFORE et AFTER cause l'échec de toute l'opération.</li>
+</ul>
+<p>On peut aussi gérer les erreurs, les exceptions et même les contraintes à l'aide de <strong>HANDLER</strong> ou de la commande <strong>SIGNAL</strong>. Voir les notes sur <a href="\notes_de_cours\mySQL\error_handling">la gestions des erreurs</a></p>
+<p>Voici un court exemple de gestion avec <strong>SIGNAL</strong>. On a une table compte avec un champ solde qui ne peut être initialisé à une valeur inférieur à 0.</p>
+<div class="language-sql highlight"><span class="filename">Exemple gestion d'exceptions</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">DELIMITER</span><span class="w"> </span><span class="err">$$</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TRIGGER</span><span class="w"> </span><span class="n">compte_before_insert</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="k">BEFORE</span><span class="w"> </span><span class="k">INSERT</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="k">ON</span><span class="w"> </span><span class="n">compte</span><span class="w"> </span><span class="k">FOR</span><span class="w"> </span><span class="k">EACH</span><span class="w"> </span><span class="k">ROW</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="k">BEGIN</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">        </span><span class="k">IF</span><span class="w"> </span><span class="k">NEW</span><span class="p">.</span><span class="n">solde</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">            </span><span class="n">SIGNAL</span><span class="w"> </span><span class="k">SQLSTATE</span><span class="w"> </span><span class="s1">&#39;45000&#39;</span><span class="w"> </span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">            </span><span class="k">SET</span><span class="w"> </span><span class="k">MESSAGE_TEXT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Le solde du nouveau compte ne peut être négatif&#39;</span><span class="p">;</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">        </span><span class="k">END</span><span class="w"> </span><span class="k">IF</span><span class="p">;</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">    </span><span class="k">END</span><span class="w"> </span><span class="err">$$</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="k">DELIMITER</span><span class="w"> </span><span class="p">;</span>
 </span></code></pre></div>
-<div class="language-sql highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">ma_table</span><span class="w"> </span><span class="p">(</span><span class="n">colonne1</span><span class="p">,</span><span class="w"> </span><span class="n">colonne2</span><span class="p">,</span><span class="w"> </span><span class="n">colonne3</span><span class="p">)</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">VALUES</span><span class="w">  </span><span class="p">(</span><span class="n">valeur_a1</span><span class="p">,</span><span class="w"> </span><span class="n">valeur_a2</span><span class="p">,</span><span class="w"> </span><span class="n">valeur_a3</span><span class="p">),</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">        </span><span class="p">(</span><span class="n">valeur_b1</span><span class="p">,</span><span class="w"> </span><span class="n">valeur_b2</span><span class="p">,</span><span class="w"> </span><span class="n">valeur_b3</span><span class="p">),</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">        </span><span class="p">(</span><span class="n">valeur_c1</span><span class="p">,</span><span class="w"> </span><span class="n">valeur_c2</span><span class="p">,</span><span class="w"> </span><span class="n">valeur_c3</span><span class="p">),</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">        </span><span class="p">(</span><span class="n">valeur_d1</span><span class="p">,</span><span class="w"> </span><span class="n">valeur_d2</span><span class="p">,</span><span class="w"> </span><span class="n">valeur_d3</span><span class="p">);</span>
-</span></code></pre></div></p>
-<h2 id="inserer-des-valeurs-provenant-dune-autre-table">Insérer des valeurs provenant d'une autre table</h2>
-<p>On peut insérer les valeurs d'autres tables en utilisant une sous-requête de sélection au lieu de spécifier les valeurs dans la section <strong>VALUES</strong>.</p>
-<p><div class="language-sql highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">ma_table</span><span class="w"> </span><span class="p">(</span><span class="n">colonne1</span><span class="p">,</span><span class="w"> </span><span class="n">colonne2</span><span class="p">,</span><span class="w"> </span><span class="n">colonne3</span><span class="p">)</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">valeur1</span><span class="p">,</span><span class="w"> </span><span class="n">valeur2</span><span class="p">,</span><span class="w"> </span><span class="n">valeur3</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">table_source</span><span class="p">;</span>
+<h3 id="restrictions">Restrictions</h3>
+<ul>
+<li>On en peut pas utiliser de transaction dans un trigger, START TRANSACTION, COMMIT ou ROLLBACK</li>
+<li>On peut utiliser une procédure stockée mais avec les restrictions suivantes : <ul>
+<li>La procédure ne peut pas retourner d'informations, à part en utilisant un paramètre OUT ou IN/OUT. </li>
+<li>La procédure ne doit pas utiliser de transaction.</li>
+</ul>
+</li>
+<li>On ne peut pas modifier les données d'une table qui est utilisée dans la requête qui déclenche le trigger. Ça compte pour toutes les tables de la requête et non seulement la table associée au trigger.</li>
+<li>Une suppression ou modification de données déclenchée par une clé étrangère ne provoquera pas l'exécution du trigger associé à cette table.</li>
+</ul>
+<p><strong>Exemple de triggers</strong></p>
+<p>J'ai une table joueur, un table guilde et une table joueur_guilde_log. Dans la table joueur il y a un champ guilde_id qui fait référence à la clé primaire de la table guilde. Quand on modifie la guilde d'un joueur, je voudrais sauvegarder les informations dans une autre table (le id du joueur, l'id de son acienne guile, l'id de la nouvelle et la date de la modification). Je vais créer un trigger AFTER sur la table joueur. Je vais aussi valider que la colonne guilde_id a été modifié avant d'ajouter les informations dans la table joueur_guilde_log. </p>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">DELIMITER</span><span class="w"> </span><span class="err">$$</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TRIGGER</span><span class="w"> </span><span class="n">joueur_after_update</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="k">AFTER</span><span class="w"> </span><span class="k">UPDATE</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="k">ON</span><span class="w"> </span><span class="n">joueur</span><span class="w"> </span><span class="k">FOR</span><span class="w"> </span><span class="k">EACH</span><span class="w"> </span><span class="k">ROW</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="k">BEGIN</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">        </span><span class="k">IF</span><span class="w"> </span><span class="k">OLD</span><span class="p">.</span><span class="n">guilde_id</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="k">NEW</span><span class="p">.</span><span class="n">guilde_id</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">            </span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">joueur_guild_log</span><span class="w"> </span><span class="p">(</span><span class="n">joueur_id</span><span class="p">,</span><span class="w"> </span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">                                          </span><span class="n">old_guild_id</span><span class="p">,</span><span class="w"> </span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">                                          </span><span class="n">new_guild_id</span><span class="p">,</span><span class="w"> </span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">                                          </span><span class="n">mod_date</span><span class="p">)</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">            </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="k">old</span><span class="p">.</span><span class="n">id</span><span class="p">,</span><span class="w"> </span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">                    </span><span class="k">old</span><span class="p">.</span><span class="n">guilde_id</span><span class="p">,</span><span class="w"> </span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">                    </span><span class="k">new</span><span class="p">.</span><span class="n">guilde_id</span><span class="p">,</span><span class="w"> </span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">                    </span><span class="n">NOW</span><span class="p">());</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">        </span><span class="k">END</span><span class="w"> </span><span class="k">IF</span><span class="p">;</span>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">    </span><span class="k">END</span><span class="w"> </span><span class="err">$$</span>
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="k">DELIMITER</span><span class="w"> </span><span class="p">;</span>
 </span></code></pre></div>
-La requête <strong>SELECT</strong> n'a pas de contraintes et peut contenir plusieurs jointures, des conditions <strong>WHERE</strong> et <strong>HAVING</strong>, d'autres sous-requête, etc. </p>
-<p>Si on veut insérer tout le contenu d'une table dans une autre, on peut utiliser l'instruction <strong>TABLE</strong> et le nom de la table d'où proviennent les données à insérer.</p>
-<div class="language-sql highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">ma_table</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">table_source</span>
-</span></code></pre></div>
-<h2 id="les-colonnes-de-type-auto-increment">Les colonnes de type auto-incrément</h2>
-<p>Ce type de colonne est incrémentée automatiquement lors d'une insertion de données, on ne doit pas les ajouter dans nos requêtes d'insertion.</p>
-<h2 id="recuperer-la-valeur-dune-colonne-auto-increment">Récupérer la valeur d'une colonne auto-incrément</h2>
-<p>On peut récupérer la première valeur provenant d'un champ auto-incrément qui a été insérer avec succès en utilisant la fonction <strong>last_insert_id()</strong>. </p>
-<div class="language-sql highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">ma_table</span><span class="w"> </span><span class="p">(</span><span class="n">colonne1</span><span class="p">)</span><span class="w"> </span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="n">valeur1</span><span class="p">);</span>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">last_insert_id</span><span class="p">();</span>
-</span></code></pre></div>
+<h2 id="documentation">Documentation</h2>
+<ul>
+<li><a href="https://www.mysqltutorial.org/mysql-triggers/">https://www.mysqltutorial.org/mysql-triggers/</a></li>
+<li><a href="https://www.javatpoint.com/mysql-trigger">https://www.javatpoint.com/mysql-trigger</a></li>
+<li><a href="https://dev.mysql.com/doc/refman/8.0/en/trigger-syntax.html">https://dev.mysql.com/doc/refman/8.0/en/trigger-syntax.html</a></li>
+</ul>
 
 
 

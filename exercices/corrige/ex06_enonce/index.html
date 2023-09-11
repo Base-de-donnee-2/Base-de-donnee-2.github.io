@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://base-de-donnee-2.github.io/exercices/ex03/ex03_enonce/">
+        <link rel="canonical" href="https://base-de-donnee-2.github.io/exercices/corrige/ex06_enonce/">
       
       
       
@@ -17,7 +17,7 @@
     
     
       
-        <title>Exercice 03 - Modélisation d'un livre de recettes - Base de données 2 420-3B4-VI</title>
+        <title>Exercice 6 - VIEW - Base de données 2 420-3B4-VI</title>
       
     
     
@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#exercice-03-modelisation-dun-livre-de-recettes" class="md-skip">
+        <a href="#exercice-6-view" class="md-skip">
           Aller au contenu
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Exercice 03 - Modélisation d'un livre de recettes
+              Exercice 6 - VIEW
             
           </span>
         </div>
@@ -541,6 +541,34 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notes_de_cours/trigger/" class="md-nav__link">
+        Trigger
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notes_de_cours/mySQL/error_handling/" class="md-nav__link">
+        Gestion des erreurs
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -743,6 +771,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ex07_enonce/" class="md-nav__link">
+        Exercice 07 - Exercice sur les TRIGGERs
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -776,36 +818,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#consignes" class="md-nav__link">
-    Consignes
+  <a href="#corrige" class="md-nav__link">
+    Corrigé
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#images" class="md-nav__link">
-    Images
-  </a>
-  
-    <nav class="md-nav" aria-label="Images">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#recette-1" class="md-nav__link">
-    Recette 1
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#recette-2" class="md-nav__link">
-    Recette 2
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -827,27 +842,68 @@
   
 
 
-<h1 id="exercice-03-modelisation-dun-livre-de-recettes">Exercice 03 - Modélisation d'un livre de recettes</h1>
-<h2 id="consignes">Consignes</h2>
-<p>En équipe de 4 vous devez analyser et modéliser un livre de recettes. Les deux images qui suivent vous indique ce qui doit être inclus dans la base de données. <strong><u>Toutes les informations</u></strong> présentent doivent être sauvegardées.</p>
-<p>Précision sur les pictogrammes dans les recettes : </p>
-<ul>
-<li>Le bol représente le temps de préparation de la recette</li>
-<li>La flamme est le temps de cuisson</li>
-<li>La main est un temps de préparation autre</li>
-</ul>
-<p>Vous devez me produire et remettre : </p>
-<ul>
-<li>Le modèle entité-association fait sur papier en classe. ( ou une photo de votre oeuvre d'art sur le tableau)</li>
-<li>Un diagramme des classes complet, avec les types de données, les relations et qui respecte les trois premières formes normale. Vous pouvez me remettre le diagramme sous la forme que vous voulez.</li>
-<li>Un script sql de génération de la base de données</li>
-<li>Vous devez respecter les trois première forme normale et la convention de nommage qui est décrite dans les notes de cours.</li>
-</ul>
-<h2 id="images">Images</h2>
-<h3 id="recette-1">Recette 1</h3>
-<p><img alt="Recette01" src="\img\ex03_a.jpg" /></p>
-<h3 id="recette-2">Recette 2</h3>
-<p><img alt="Recette02" src="\img\ex03_b.jpg" /></p>
+<h1 id="exercice-6-view">Exercice 6 - VIEW</h1>
+<p>À partir de la base de données athlète de l'exercice 01, (le script sql de génération est disponible <a href="\ressources\bd_athlete.sql"><strong>ici</strong></a>), creez les views suivantes : </p>
+<ol>
+<li>Créez une view nommée <strong>resultat_hhmmss</strong> qui affiche le résultat formaté en heures, minutes, secondes (hh:mm:ss). Les colonnes de la view doivent être les mêmes que la table resultat mais en ajoutant une colonne nommée <strong>resultat_hhmmss</strong> dans laquelle le calcul sera fait (id, athlete_id, epreuve_id, date_resultat, resultat_ms, resultat_hhmmss).</li>
+<li>Créez une view nommée <strong>athlete_complet</strong> qui, en combinant les tables nécessaires, affiche les athlètes avec les colonnes suivantes, (id, nom prénom concat, date_epreuve, nom_epreuve, résultat). Attention, je veux que les noms de colonnes de la view soit identique à ce que je demande entre parenthèse)</li>
+<li>À partir de la view précédente, athlete_complet, sélectionné les informations des athlètes qui ont participé à un marathon. </li>
+<li>Créez une view nommée <strong>resultat_21juillet2020</strong> qui va contenir toutes les informations de la table résultat mais uniquement pour la date du 21 juillet 2020.</li>
+<li>Modifier la view <strong>resultat_21juillet2020</strong> pour qu'elle affiche les résultats du 14 juillet 2019. Modifier aussi son nom pour <strong>resultat_14juillet2019</strong></li>
+<li>Supprimer la view <strong>resultat_14juillet2019</strong></li>
+</ol>
+<p>Je veux que vous me remettiez les requêtes dans un script SQL.</p>
+<h2 id="corrige">Corrigé</h2>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">-- #1</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="k">REPLACE</span><span class="w"> </span><span class="k">VIEW</span><span class="w"> </span><span class="n">resultat_hhmmss</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">AS</span><span class="w"> </span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">id</span><span class="p">,</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">           </span><span class="n">r</span><span class="p">.</span><span class="n">athlete_id</span><span class="p">,</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">           </span><span class="n">r</span><span class="p">.</span><span class="n">epreuve_id</span><span class="p">,</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">           </span><span class="n">r</span><span class="p">.</span><span class="n">date_resultat</span><span class="p">,</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">           </span><span class="n">r</span><span class="p">.</span><span class="n">resultat_ms</span><span class="p">,</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">           </span><span class="n">TIME_FORMAT</span><span class="p">(</span><span class="n">SEC_TO_TIME</span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">resultat_ms</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">1000</span><span class="p">),</span><span class="w"> </span><span class="s1">&#39;%H:%i:%s&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">resultat_hhmmss</span><span class="w"> </span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">resultat</span><span class="w"> </span><span class="n">r</span><span class="p">;</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="c1">-- #2</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="k">REPLACE</span><span class="w"> </span><span class="k">VIEW</span><span class="w"> </span><span class="n">athlete_complet</span><span class="w"> </span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">nom</span><span class="p">,</span><span class="w"> </span><span class="n">date_epreuve</span><span class="p">,</span><span class="w"> </span><span class="n">nom_epreuve</span><span class="p">,</span><span class="w"> </span><span class="n">resultat</span><span class="p">)</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="k">AS</span><span class="w"> </span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">id</span><span class="p">,</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">           </span><span class="n">CONCAT</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">prenom</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">nom</span><span class="p">),</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">           </span><span class="n">rh</span><span class="p">.</span><span class="n">date_resultat</span><span class="p">,</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">           </span><span class="n">e</span><span class="p">.</span><span class="n">description</span><span class="p">,</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">           </span><span class="n">rh</span><span class="p">.</span><span class="n">resultat_hhmmss</span><span class="w"> </span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">athlete</span><span class="w"> </span><span class="n">a</span><span class="w"> </span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">        </span><span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">resultat_hhmmss</span><span class="w"> </span><span class="n">rh</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">rh</span><span class="p">.</span><span class="n">athlete_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">id</span><span class="w"> </span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">            </span><span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">epreuve</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rh</span><span class="p">.</span><span class="n">epreuve_id</span><span class="p">;</span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="c1">-- J&#39;ai réutiliser ici la view créé au numéro 1 pour vous montrer </span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="c1">-- qu&#39;on peut très bien utiliser une view dans une view</span>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="c1">-- #3</span>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="k">FROM</span><span class="w"> </span><span class="n">athlete_complet</span><span class="w"> </span><span class="n">ac</span><span class="w"> </span>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">ac</span><span class="p">.</span><span class="n">nom_epreuve</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Marathon&#39;</span><span class="p">;</span>
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="c1">-- #4</span>
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="k">REPLACE</span><span class="w"> </span><span class="k">VIEW</span><span class="w"> </span><span class="n">resultat_21juillet2020</span>
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="k">AS</span>
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">resultat</span><span class="w"> </span><span class="n">r</span><span class="w"> </span>
+</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">date_resultat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;2020-07-21&#39;</span><span class="p">;</span>
+</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>
+</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="c1">-- #5</span>
+</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a><span class="k">ALTER</span><span class="w"> </span><span class="k">VIEW</span><span class="w"> </span><span class="n">resultat_21juillet2020</span>
+</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a><span class="k">AS</span>
+</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span>
+</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a><span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">resultat</span><span class="w"> </span><span class="n">r</span><span class="w"> </span>
+</span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a><span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">date_resultat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;2019-07-14&#39;</span><span class="p">;</span>
+</span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>
+</span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a><span class="k">RENAME</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">resultat_21juillet2020</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">resultat_14juillet2019</span><span class="p">;</span>
+</span><span id="__span-0-47"><a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a>
+</span><span id="__span-0-48"><a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a><span class="c1">-- #6</span>
+</span><span id="__span-0-49"><a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a><span class="k">DROP</span><span class="w"> </span><span class="k">VIEW</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="n">resultat_14juillet2019</span><span class="p">;</span>
+</span></code></pre></div>
 
 
 
