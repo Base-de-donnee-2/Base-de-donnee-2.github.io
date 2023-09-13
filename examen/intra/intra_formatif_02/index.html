@@ -785,6 +785,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../exercices/ff_enonce/" class="md-nav__link">
+        Formatif formel
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -845,13 +859,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#corrige" class="md-nav__link">
-    Corrigé
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -882,19 +889,25 @@
 </ul>
 <h2 id="mise-en-situation">Mise en situation</h2>
 <p>Le centre de recherche xLabs se spécialise dans des recherches dites marginales. Elle emploie une pléthore de cobayes pour ses différents projets et présentement il est difficile de garder une trace de l'état de tous ces "volontaires". La direction vous a donné le mandat de modéliser leur opération.</p>
-<p>Pour chaque cobaye, on veut connaitre sa date de naissance, la date à laquelle il a commencé sa première expérience et aussi sa date de décès s'il y a lieu, car chez xlabs on est cobaye à vie. Un numéro d'identification unique est attribué aux cobayes. Par contre ce numéro peut être réutilisé à la mort du cobaye. Le centre utilise une grande variété d'animaux pour ses recherches et l'on vous demande aussi de sauvegarder les informations de classification suivante : le nom de l'espèce, sa classe, son ordre et sa famille. </p>
-<p>Les cobayes peuvent participer à plus d'une expérience à la fois. On veut connaitre la date de début et de fin de la participation de chaque cobaye à chaque expérience. Chaque expérience à un titre, un niveau de sécurité qui se situe entre 0 et 10 et une courte description qui défini le sujet de l'expérience. Un ou plusieurs chercheurs peuvent être associés à une expérience et un chercheur peut participer à plus d'une expérience à la fois. Parmi les chercheurs impliqués, un rôle est attribué à chacun. Il y a présentement trois rôles disponible (directeur de recherche, assistant, appariteur) mais il n'est pas impossible que ça change dans l'avenir. Le rôle d'un chercheur peut aussi varier d'une expérience à l'autre. Au niveau des chercheurs, on veut connaitre uniquement leur nom et leur numéro d'identification personnelle. </p>
+<p>Pour chaque cobaye, on veut connaitre sa date de naissance, la date à laquelle il a commencé sa première expérience et aussi sa date de décès s'il y a lieu, car chez xlabs on est cobaye à vie. Un surnom et un numéro d'identification unique est attribué aux cobayes. Par contre ce numéro peut être réutilisé à la mort du cobaye.</p>
+<p>Les cobayes peuvent participer à plus d'une expérience à la fois et chaque expérience doit comporter au minimum un cobaye mais peut en avoir plusieurs. On veut connaitre la date de début et de fin de la participation de chaque cobaye à chaque expérience. Chaque expérience à un titre, un niveau de sécurité qui se situe entre 0 et 10 et une courte description qui défini le sujet de l'expérience. Un ou plusieurs chercheurs peuvent être associés à une expérience et un chercheur peut participer à plus d'une expérience à la fois. Parmi les chercheurs impliqués, un rôle est attribué à chacun. Il y a présentement trois rôles disponible (directeur de recherche, assistant, appariteur) mais il n'est pas impossible que ça change dans l'avenir. Le rôle d'un chercheur peut aussi varier d'une expérience à l'autre. Au niveau des chercheurs, on veut connaitre uniquement leur nom et leur numéro d'identification personnelle. </p>
 <p>Durant le temps que dure une expérience, les chercheurs vont faire des observations. Pour chaque observation, il y a un chercheur impliqué, un cobaye, une expérience, une date d'observation et les notes de l'observation. </p>
 <p>Afin de s'assurer de la bonne rentabilité des cobayes, un chercheur effectue chaque jour une évaluation générale de ceux-ci. L'évaluation consiste uniquement en une prise de notes. On veut donc conserver pour chaque évaluation le cobaye évalué, le chercheur impliqué, la date de l'évaluation ainsi que les notes prises. </p>
 <h2 id="directives">Directives</h2>
-<p>Vous devez créer un diagramme de classes qui répond aux besoins de la mise en situation en respectant les points suivants : </p>
-<ul>
-<li>Votre modèle doit répondre à la convention de nomenclature telle que décrite dans les notes de cours "Analyse et modélisation de systèmes".</li>
+<p>À partir de cette mise en situation vous devez créer: </p>
+<ol>
+<li>Un schema conceptuel en format image portant le nom <strong>NomPrenom_shema</strong></li>
+<li>Un diagramme de classes en format image portant le nom <strong>NomPrenom_diagramme</strong></li>
+<li>
+<p>Un script de création des tables portant le nom <strong>NomPrenom_script</strong></p>
+</li>
+<li>
+<p>Votre modèle doit répondre à la convention de nomenclature telle que décrite dans les notes de cours "Analyse et modélisation de systèmes".</p>
+</li>
 <li>Vous devez spécifier un type de données pertinent pour chaque colonne de chaque table du diagramme.</li>
-<li>Pour les relations entre les tables, vous devez m'indiquer le type de relation en utilisant la notation (1 -- 1..n).</li>
+<li>Pour les relations entre les tables, vous devez m'indiquer la multiplicité.</li>
 <li>Votre modélisation doit répondre aux règles de la troisième forme normale.</li>
-<li>Sur le diagramme, ajoutez le titre "Confidentiel - xLabs industries" ainsi que votre nom. </li>
-</ul>
+</ol>
 <h2 id="grille-de-correction">Grille de correction</h2>
 <table>
 <thead>
@@ -905,8 +918,8 @@
 </thead>
 <tbody>
 <tr>
-<td align="left">Total</td>
-<td>/100</td>
+<td align="left"><strong>Shéma conceptuel</strong></td>
+<td></td>
 </tr>
 <tr>
 <td align="left">La convention de nomenclature est respectée</td>
@@ -930,9 +943,6 @@
 </tr>
 </tbody>
 </table>
-<h2 id="corrige">Corrigé</h2>
-<p>Ma version du diagramme
-<img alt="Corrige" src="\img\examen_intra_formatif_02.png" /></p>
 
 
 
