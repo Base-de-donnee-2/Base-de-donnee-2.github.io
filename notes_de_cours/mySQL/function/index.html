@@ -8,27 +8,27 @@
       
       
       
-        <link rel="canonical" href="https://base-de-donnee-2.github.io/notes_de_cours/convention/">
+        <link rel="canonical" href="https://base-de-donnee-2.github.io/notes_de_cours/mySQL/function/">
       
       
-        <link rel="prev" href="../create_table/">
+        <link rel="prev" href="../trigger/">
       
       
-        <link rel="next" href="../view/">
+        <link rel="next" href="../error_handling/">
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.9">
     
     
       
-        <title>Convention de nommage MySQL - Base de données 2 420-3B4-VI</title>
+        <title>Fonction - Base de données 2 420-3B4-VI</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.85bb2934.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.85bb2934.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.a6bdf11c.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a6bdf11c.min.css">
       
       
 
@@ -44,9 +44,9 @@
       
     
     
-      <link rel="stylesheet" href="../../css/extra.css">
+      <link rel="stylesheet" href="../../../css/extra.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -75,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#convention-de-nommage-mysql" class="md-skip">
+        <a href="#les-fonctions-stockees-stored-function" class="md-skip">
           Aller au contenu
         </a>
       
@@ -91,7 +91,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="En-tête">
-    <a href="../.." title="Base de données 2 420-3B4-VI" class="md-header__button md-logo" aria-label="Base de données 2 420-3B4-VI" data-md-component="logo">
+    <a href="../../.." title="Base de données 2 420-3B4-VI" class="md-header__button md-logo" aria-label="Base de données 2 420-3B4-VI" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2 0-.68.06-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.923 7.923 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8.008 8.008 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.65 15.65 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2Z"/></svg>
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Convention de nommage MySQL
+              Fonction
             
           </span>
         </div>
@@ -205,7 +205,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../.." class="md-tabs__link">
+    <a href="../../.." class="md-tabs__link">
       Accueil
     </a>
   </li>
@@ -227,7 +227,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../definition/" class="md-tabs__link md-tabs__link--active">
+      <a href="../../definition/" class="md-tabs__link md-tabs__link--active">
         Notes de cours
       </a>
     </li>
@@ -245,7 +245,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../exercices/ex01_enonce/" class="md-tabs__link">
+      <a href="../../../exercices/ex01_enonce/" class="md-tabs__link">
         Exercices
       </a>
     </li>
@@ -279,7 +279,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Base de données 2 420-3B4-VI" class="md-nav__button md-logo" aria-label="Base de données 2 420-3B4-VI" data-md-component="logo">
+    <a href="../../.." title="Base de données 2 420-3B4-VI" class="md-nav__button md-logo" aria-label="Base de données 2 420-3B4-VI" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2 0-.68.06-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.923 7.923 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8.008 8.008 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.65 15.65 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2Z"/></svg>
@@ -310,7 +310,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         Accueil
       </a>
     </li>
@@ -381,7 +381,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../definition/" class="md-nav__link">
+      <a href="../../definition/" class="md-nav__link">
         Définition
       </a>
     </li>
@@ -395,7 +395,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../modele/" class="md-nav__link">
+      <a href="../../modele/" class="md-nav__link">
         Modèle entité-association
       </a>
     </li>
@@ -409,7 +409,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../schema_conceptuel/" class="md-nav__link">
+      <a href="../../schema_conceptuel/" class="md-nav__link">
         Schéma conceptuel
       </a>
     </li>
@@ -423,7 +423,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../type_relation/" class="md-nav__link">
+      <a href="../../type_relation/" class="md-nav__link">
         Type de relation
       </a>
     </li>
@@ -437,7 +437,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../normalisation/" class="md-nav__link">
+      <a href="../../normalisation/" class="md-nav__link">
         Normalisation
       </a>
     </li>
@@ -513,66 +513,25 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Convention de nommage MySQL
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../convention/" class="md-nav__link">
         Convention de nommage MySQL
       </a>
-      
-        
+    </li>
+  
 
-<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+            
+          
+            
+              
   
   
   
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table des matières
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#regles-generales" class="md-nav__link">
-    Règles générales
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#nom-des-tables" class="md-nav__link">
-    Nom des tables
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#nom-des-champs" class="md-nav__link">
-    Nom des champs
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
+    <li class="md-nav__item">
+      <a href="../join/" class="md-nav__link">
+        Type de jointure
+      </a>
     </li>
   
 
@@ -624,9 +583,85 @@
               
   
   
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Fonction
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Fonction
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#creation-dune-fonction" class="md-nav__link">
+    Création d'une fonction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utilisation-dune-fonction" class="md-nav__link">
+    Utilisation d'une fonction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modification-dune-fonction" class="md-nav__link">
+    Modification d'une fonction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#suppression-dune-fonction" class="md-nav__link">
+    Suppression d'une fonction
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
   
     <li class="md-nav__item">
-      <a href="../mySQL/error_handling/" class="md-nav__link">
+      <a href="../error_handling/" class="md-nav__link">
         Gestion des erreurs
       </a>
     </li>
@@ -674,7 +709,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../devilbox/" class="md-nav__link">
+      <a href="../../devilbox/" class="md-nav__link">
         Devilbox
       </a>
     </li>
@@ -688,7 +723,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../dbeaver/" class="md-nav__link">
+      <a href="../../dbeaver/" class="md-nav__link">
         DBeaver
       </a>
     </li>
@@ -702,7 +737,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../drawio/" class="md-nav__link">
+      <a href="../../drawio/" class="md-nav__link">
         draw.io
       </a>
     </li>
@@ -758,7 +793,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../exercices/ex01_enonce/" class="md-nav__link">
+      <a href="../../../exercices/ex01_enonce/" class="md-nav__link">
         Exercice 01 - Revision MySQL
       </a>
     </li>
@@ -772,7 +807,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../exercices/ex02_enonce/" class="md-nav__link">
+      <a href="../../../exercices/ex02_enonce/" class="md-nav__link">
         Exercice 02 - Système de prise de présence en cours
       </a>
     </li>
@@ -786,7 +821,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../exercices/ex03_enonce/" class="md-nav__link">
+      <a href="../../../exercices/ex03_enonce/" class="md-nav__link">
         Exercice 03 - Système de stationnement du cégep
       </a>
     </li>
@@ -800,7 +835,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../exercices/ex04_enonce/" class="md-nav__link">
+      <a href="../../../exercices/ex04_enonce/" class="md-nav__link">
         Exercice 04 - Modélisation d'un livre de recettes
       </a>
     </li>
@@ -814,7 +849,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../exercices/ex05_enonce/" class="md-nav__link">
+      <a href="../../../exercices/ex05_enonce/" class="md-nav__link">
         Exercice 05 - Exercice sur les INSERTs
       </a>
     </li>
@@ -828,7 +863,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../exercices/ex06_enonce/" class="md-nav__link">
+      <a href="../../../exercices/ex06_enonce/" class="md-nav__link">
         Exercice 06 - Exercice sur les VIEWs
       </a>
     </li>
@@ -842,7 +877,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../exercices/ex07_enonce/" class="md-nav__link">
+      <a href="../../../exercices/ex07_enonce/" class="md-nav__link">
         Exercice 07 - Exercice sur les TRIGGERs
       </a>
     </li>
@@ -856,8 +891,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../../exercices/ff_enonce/" class="md-nav__link">
+      <a href="../../../exercices/ff_enonce/" class="md-nav__link">
         Formatif formel
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../exercices/ex08_enonce/" class="md-nav__link">
+        Exercice 08 - Exercice sur les fonctions
       </a>
     </li>
   
@@ -897,22 +946,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#regles-generales" class="md-nav__link">
-    Règles générales
+  <a href="#creation-dune-fonction" class="md-nav__link">
+    Création d'une fonction
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#nom-des-tables" class="md-nav__link">
-    Nom des tables
+  <a href="#utilisation-dune-fonction" class="md-nav__link">
+    Utilisation d'une fonction
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#nom-des-champs" class="md-nav__link">
-    Nom des champs
+  <a href="#modification-dune-fonction" class="md-nav__link">
+    Modification d'une fonction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#suppression-dune-fonction" class="md-nav__link">
+    Suppression d'une fonction
   </a>
   
 </li>
@@ -935,31 +991,76 @@
   
 
 
-<h1 id="convention-de-nommage-mysql">Convention de nommage MySQL</h1>
-<p>Bien que MySQL n'a pas vraiment de convention de nommage officiel, voici certaines des règles les plus utilisées : </p>
-<h3 id="regles-generales">Règles générales</h3>
+<h1 id="les-fonctions-stockees-stored-function">Les fonctions stockées (Stored function)</h1>
+<p>Une fonction est une petite routine qui retourne une valeur unique et qu'on peut réutiliser. MySQL comporte déjà plusieurs fonctions (<strong>NOW()</strong>, <strong>CONCAT()</strong>) mais il est aussi possible d'en créer de nouvelle.</p>
+<h2 id="creation-dune-fonction">Création d'une fonction</h2>
+<p>Voici la syntaxe de création d'une fonction</p>
+<p><div class="language-sql highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">DELIMITER</span><span class="w"> </span><span class="err">$$</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">CREATE</span><span class="w"> </span><span class="p">[</span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="p">]</span><span class="w"> </span><span class="k">FUNCTION</span><span class="w"> </span><span class="n">nom_fonction</span><span class="p">(</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="n">paramêtre1</span><span class="p">,</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="n">paramêtre2</span><span class="p">,</span><span class="err">…</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">)</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="k">RETURNS</span><span class="w"> </span><span class="n">type_de_donnée</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="p">[</span><span class="k">NOT</span><span class="p">]</span><span class="w"> </span><span class="k">DETERMINISTIC</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="k">BEGIN</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w"> </span><span class="c1">-- Le traitement</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="k">END</span><span class="w"> </span><span class="err">$$</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="k">DELIMITER</span><span class="w"> </span><span class="p">;</span>
+</span></code></pre></div>
+<strong>paramètres</strong></p>
 <ul>
-<li>Toujours écrire les noms en minuscule. Ça peut aider à éviter les erreurs, car MySQL est sensible à la case</li>
-<li>Ne jamais utiliser d'espace, la remplacer par une barre de soulignement "_"</li>
-<li>Utilisez seulement des lettres dans les noms, pas de nombres ni de caractères spéciaux</li>
-<li>Évitez d'utiliser un préfix dans le nom, ça complique inutilement le nom et nuit à la visibilité.</li>
+<li>Les paramètres sont définis par un nom, un type de données et un indicateur IN, OUT ou INOUT.</li>
+<li>IN indique que le paramêtre est en entrée, OUT en sortie et INOUT pour les deux. La valeur d'un paramêtre IN est "passée" dans la fonction et utilisée dans celle-ci. Pour un paramêtre OUT on peut récupérer sa valeur à la sortie de la fonction. Ce n'est pas la même valeur que le retour de la fonction, on peut donc s'en servir pour retourner plus d'une valeur à la fonction. INOUT permet les deux. Par défaut et si on ne l'indique pas le paramêtre sera IN.</li>
+<li>Chaque paramêtre est séparé par une virgule.</li>
 </ul>
-<h3 id="nom-des-tables">Nom des tables</h3>
+<p><strong>Type de retour</strong></p>
+<p>Après le mot-clé RETURNS on indique le type de données de la valeur de retour de la fonction. Ça peut être n'importe quel type MySQL valide (INTEGER, VARCHAR(), TINYINT(1))</p>
+<p><strong>DETERMINISTIC vs NOT DETERMINISTIC</strong></p>
+<p>Une fonction DETERMINISTIC va toujours retourner la même valeur si on lui donne les mêmes paramètres. Une fonction NOT DETERMINISTIC peut retourner un résultat différent même si on lui donne les mêmes paramètres. C'est une valeur "indicative" et MySQL fait confiance au développeur quand à la véracité de l'affimation. Par contre pour une question d'optimisation et de performance il est préférable d'indiquer le bon type. Par défaut la fonction sera NOT DETERMINISTIC.</p>
+<div class="admonition note">
+<p class="admonition-title">Note<p>On peut se donner comme trucs qu'une fonction qui va retourner un résultat en fonction d'un ou plusieurs champs d'une table sera NOT DETERMINISTIC</p>
+</p>
+</div>
+<p><strong>Le traitement</strong></p>
 <ul>
-<li>Le nom doit être au singulier</li>
-<li>Le nom doit être en minuscule</li>
-<li>Ne pas utiliser de préfix sauf si c'est inévitable.</li>
-<li>Le nom doit être clair et explicite</li>
-<li>Ne pas utiliser d'abréviation</li>
+<li>Habituellement dans le traitment on va déclarer une variavble au tout début qui sera utilisée pour contenir le résultat de retour de la fonction. </li>
+<li>Le traitement doit absolument contenir un instruction RETURN qui marque la fin de la fonction et retourne la valeur.</li>
+<li>On peut utiliser des HANDLERs dans une fonction pour controller les erreurs et le traitement.</li>
 </ul>
-<h3 id="nom-des-champs">Nom des champs</h3>
-<ul>
-<li>Le nom doit être en minuscule, sans espace et sans nombres.</li>
-<li>On doit éviter les préfixes</li>
-<li>Utilisez un nom court, sans utiliser abréviation par contre.</li>
-<li>Ne pas utiliser de mot réservé comme nom de champs, comme date par exemple</li>
-<li>Le nom d'une clé étrangère devrait contenir le nom de la table et de sa clé primaire. Une clé étrangère vers la table usager dont la clé primaire est le champ id devrait être nommée usager_id</li>
-</ul>
+<p>Exemple d'une fonction qui reçoit en paramètre une note et qui retourne un commentaire selon la note.
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">DELIMITER</span><span class="w"> </span><span class="err">$$</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">FUNCTION</span><span class="w"> </span><span class="n">note_commentaire</span><span class="p">(</span><span class="n">resultat</span><span class="w"> </span><span class="nb">INTEGER</span><span class="p">)</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">RETURNS</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="k">DETERMINISTIC</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="k">BEGIN</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="k">DECLARE</span><span class="w"> </span><span class="n">commentaire</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="k">IF</span><span class="w"> </span><span class="n">resultat</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="k">THEN</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">        </span><span class="k">SET</span><span class="w"> </span><span class="n">commentaire</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;Réussite&quot;</span><span class="p">;</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="k">ELSE</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">        </span><span class="k">SET</span><span class="w"> </span><span class="n">commentaire</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;Échec&quot;</span><span class="p">;</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="k">END</span><span class="w"> </span><span class="k">IF</span><span class="p">;</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">    </span><span class="k">RETURN</span><span class="w"> </span><span class="n">commentaire</span><span class="p">;</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="k">END</span><span class="err">$$</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="k">DELIMITER</span><span class="w"> </span><span class="p">;</span>
+</span></code></pre></div></p>
+<h2 id="utilisation-dune-fonction">Utilisation d'une fonction</h2>
+<p>On peut utiliser la fonction dans n'importe quel instruction MySQL et dans une procédure stockée.</p>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">note_commentaire</span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">note</span><span class="p">)</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">FROM</span><span class="w"> </span><span class="n">resultat</span><span class="w"> </span><span class="n">r</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">etudiant_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1234</span><span class="p">;</span><span class="w"> </span>
+</span></code></pre></div>
+<h2 id="modification-dune-fonction">Modification d'une fonction</h2>
+<p>On ne peut pas modifier le traitement d'une fonction. Si on doit faire des modifications, on devra la supprimer et la créer à nouveau.</p>
+<h2 id="suppression-dune-fonction">Suppression d'une fonction</h2>
+<div class="language-sql highlight"><span class="filename">Syntaxe</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">DROP</span><span class="w"> </span><span class="k">FUNCTION</span><span class="w"> </span><span class="p">[</span><span class="k">IF</span><span class="w"> </span><span class="k">EXISTS</span><span class="p">]</span><span class="w"> </span><span class="n">function_name</span><span class="p">;</span>
+</span></code></pre></div>
 
 
 
@@ -1002,10 +1103,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "content.code.copy"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.fac441b0.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.fac441b0.min.js"></script>
       
     
   </body>

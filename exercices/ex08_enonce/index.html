@@ -11,13 +11,15 @@
         <link rel="canonical" href="https://base-de-donnee-2.github.io/exercices/ex08_enonce/">
       
       
+        <link rel="prev" href="../ff_enonce/">
+      
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.9">
     
     
       
-        <title>Exercice 06 - Crédit social - Base de données 2 420-3B4-VI</title>
+        <title>Exercice 08 - Exercice sur les fonctions - Base de données 2 420-3B4-VI</title>
       
     
     
@@ -71,7 +73,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#exercice-06-credit-social" class="md-skip">
+        <a href="#exercice-8-fonctions" class="md-skip">
           Aller au contenu
         </a>
       
@@ -106,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Exercice 06 - Crédit social
+              Exercice 08 - Exercice sur les fonctions
             
           </span>
         </div>
@@ -233,13 +235,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../ex01_enonce/" class="md-tabs__link">
+      <a href="../ex01_enonce/" class="md-tabs__link md-tabs__link--active">
         Exercices
       </a>
     </li>
@@ -477,7 +481,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../notes_de_cours/create_database/" class="md-nav__link">
+      <a href="../../notes_de_cours/mySQL/create_database/" class="md-nav__link">
         Création de base de données
       </a>
     </li>
@@ -491,7 +495,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../notes_de_cours/create_table/" class="md-nav__link">
+      <a href="../../notes_de_cours/mySQL/create_table/" class="md-nav__link">
         Création de table
       </a>
     </li>
@@ -505,7 +509,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../notes_de_cours/convention/" class="md-nav__link">
+      <a href="../../notes_de_cours/mySQL/convention/" class="md-nav__link">
         Convention de nommage MySQL
       </a>
     </li>
@@ -519,7 +523,21 @@
   
   
     <li class="md-nav__item">
-      <a href="../../notes_de_cours/view/" class="md-nav__link">
+      <a href="../../notes_de_cours/mySQL/join/" class="md-nav__link">
+        Type de jointure
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notes_de_cours/mySQL/view/" class="md-nav__link">
         Views
       </a>
     </li>
@@ -533,7 +551,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../notes_de_cours/insert/" class="md-nav__link">
+      <a href="../../notes_de_cours/mySQL/insert/" class="md-nav__link">
         Insert
       </a>
     </li>
@@ -547,8 +565,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../../notes_de_cours/trigger/" class="md-nav__link">
+      <a href="../../notes_de_cours/mySQL/trigger/" class="md-nav__link">
         Trigger
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notes_de_cours/mySQL/function/" class="md-nav__link">
+        Fonction
       </a>
     </li>
   
@@ -664,14 +696,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
       
       
       
@@ -680,7 +714,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           Exercices
@@ -799,6 +833,68 @@
 
             
           
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Exercice 08 - Exercice sur les fonctions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Exercice 08 - Exercice sur les fonctions
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#formater-un-resutlat" class="md-nav__link">
+    Formater un résutlat
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fonction-de-calcul-de-moyenne-au-5-kilometres" class="md-nav__link">
+    Fonction de calcul de moyenne au 5 kilomètres
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -832,97 +928,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
-    Installation
+  <a href="#formater-un-resutlat" class="md-nav__link">
+    Formater un résutlat
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#diagramme-des-classes" class="md-nav__link">
-    Diagramme des classes
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#descriptions" class="md-nav__link">
-    Descriptions
-  </a>
-  
-    <nav class="md-nav" aria-label="Descriptions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#calcul-du-credit-social" class="md-nav__link">
-    Calcul du crédit social
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#calcul-de-la-classe-du-citoyen" class="md-nav__link">
-    Calcul de la classe du citoyen
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#exercices" class="md-nav__link">
-    Exercices
-  </a>
-  
-    <nav class="md-nav" aria-label="Exercices">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-fonction-calcul_credit" class="md-nav__link">
-    1. Fonction calcul_credit()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-fonction-privilege_valide" class="md-nav__link">
-    2. Fonction privilege_valide()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-vue-citoyen_avec_credit" class="md-nav__link">
-    3. Vue citoyen_avec_credit
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-procedure-stockee-liste_manifestant" class="md-nav__link">
-    4. Procédure stockée liste_manifestant
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-procedure-stockee-update_classe" class="md-nav__link">
-    5. Procédure stockée update_classe
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#corrige" class="md-nav__link">
-    Corrigé
+  <a href="#fonction-de-calcul-de-moyenne-au-5-kilometres" class="md-nav__link">
+    Fonction de calcul de moyenne au 5 kilomètres
   </a>
   
 </li>
@@ -945,210 +959,25 @@
   
 
 
-<h1 id="exercice-06-credit-social">Exercice 06 - Crédit social</h1>
-<h2 id="installation">Installation</h2>
-<p>Les scripts sql de génération de la base de données sont disponible sur Teams dans la section <strong>Fichiers &gt; Supports de cours &gt; Exercices &gt; Exercice06 - Crédit social</strong>.</p>
-<ol>
-<li>Créez une nouvelle base de données nommée <strong>credit_social</strong></li>
-<li>Créez les tables en exécutant le script sql <strong>01_create_table.sql</strong></li>
-<li>Insérez les données en exécutant les scripts suivants (<u><strong>l'ordre est important</strong></u>). Certains scripts comportent beaucoup de ligne, 50 000 pour 04_insert_citoyen, c'est normale que le temps exécution soit long. </li>
-<li>Créez un script SQL par numéro. Une fois terminé remettez moi les 5 scripts dans le devoir sur Teams.</li>
-</ol>
-<p>Liste des scripts à exécuter</p>
-<ul>
-<li>
-<p>02_insert_classe</p>
-</li>
-<li>
-<p>03_insert_evenement_type</p>
-</li>
-<li>
-<p>04_insert_citoyen</p>
-</li>
-<li>
-<p>05_insert_evenement</p>
-</li>
-<li>
-<p>06_insert_citoyen_evenement</p>
-</li>
-</ul>
-<h2 id="diagramme-des-classes">Diagramme des classes</h2>
-<p><img alt="ex06" src="\img\ex06.png" /></p>
-<h2 id="descriptions">Descriptions</h2>
-<p>La base de données sert à stocker des informations sur les citoyens pour établir leur score de crédit social, une note de bon comportement qui détermine dans quel classe le citoyen est situé. </p>
-<h3 id="calcul-du-credit-social">Calcul du crédit social</h3>
-<p>En naissant, un citoyen se voit octroyer un crédit initial de 500 (par contre ce nombre pourrait être modifié par le parti). Tout au long de sa vie, le total de ce crédit va fluctuer selon des événements auquel le citoyen va participer. Donc le crédit social de chaque citoyen est la somme de son crédit initial et du score de tous les événements auxquels il a participé. Les événements sont défini par un type et un score par défaut (dans la table <strong>evenement_type</strong>, mais ce score peut être ajusté selon la nature de l'événement (le champ <strong>score_ajustement</strong> de la table <strong>citoyen_evenement</strong>, s'il est à <strong>null</strong> ne pas en tenir compte, sinon il outrepasse le score par défaut de l'événement). Le score de crédit social peut varier entre 0 et 1000.</p>
-<h3 id="calcul-de-la-classe-du-citoyen">Calcul de la classe du citoyen</h3>
-<p>Chaque citoyen appartient à une classe selon son score de crédit social. Ça lui donne droit à certain avantage de sa classe mais aussi aux avantages de toutes les classes inférieurs. Pour appartenir à une classe, le score de crédit social du citoyen doit être supérieur au crédit minimum de cette classe ( colonne <strong>credit_min</strong> de la table <strong>classe</strong>). La classe est recalculé chaque nuit selon son score actuel. Donc pour connaitre la classe d'un citoyen vous n'avez qu'à utiliser le champ classe_id de la table citoyen.</p>
-<h2 id="exercices">Exercices</h2>
-<h3 id="1-fonction-calcul_credit">1. Fonction calcul_credit()</h3>
-<p>Créez une fonction nommée <strong>calcul_credit</strong> qui prends en paramètre le id d'un citoyen et retourne le total du calcul de son crédit social. </p>
-<table>
-<thead>
-<tr>
-<th>Paramêtres</th>
-<th>IN/OUT</th>
-<th>tYPE</th>
-<th>Valeur test</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>id</td>
-<td>IN</td>
-<td>INT</td>
-<td>20958</td>
-</tr>
-<tr>
-<td>RETURNS</td>
-<td>OUT</td>
-<td>INT</td>
-<td>365</td>
-</tr>
-</tbody>
-</table>
-<p>Ex. Le citoyen Harry Walsh, id 20958, pin 51d8fbc8-d473-45f5-991e-15aea899e8f9, a un score de crédit social de 365. </p>
-<div class="language-sql highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">select</span><span class="w"> </span><span class="n">calcul_credit</span><span class="p">(</span><span class="mi">20958</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">score_credit</span>
+<h1 id="exercice-8-fonctions">Exercice 8 - Fonctions</h1>
+<p>Dans la base de données que vous avec importée à l'exercice 7 créez les deux fonctions suivantes : </p>
+<h2 id="formater-un-resutlat">Formater un résutlat</h2>
+<p>Créez une fonction nommée <strong>resultatHMS</strong> qui prendra en paramètre un résultat en millisecondes et qui le retournera en texte sous le format heures minutes et secondes (HH:MM:SS).</p>
+<h2 id="fonction-de-calcul-de-moyenne-au-5-kilometres">Fonction de calcul de moyenne au 5 kilomètres</h2>
+<p>Ajoutez les informations suivantes : </p>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">-- Insertion de l&#39;athlète John Smith avec trois résultats au 5 km</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">athlete</span><span class="w"> </span><span class="p">(</span><span class="n">nom</span><span class="p">,</span><span class="w"> </span><span class="n">prenom</span><span class="p">,</span><span class="w"> </span><span class="n">date_naissance</span><span class="p">,</span><span class="w"> </span><span class="n">adresse</span><span class="p">,</span><span class="w"> </span><span class="n">ville</span><span class="p">,</span><span class="w"> </span><span class="n">province</span><span class="p">,</span><span class="w"> </span><span class="n">pays</span><span class="p">,</span><span class="w"> </span><span class="n">courriel</span><span class="p">)</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;Smith&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;John&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;1980-01-01&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;475 Rue Notre Dame E&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Victoriaville&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Québec&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Canada&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;john.smith@gmail.com&#39;</span><span class="p">);</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="k">SET</span><span class="w"> </span><span class="o">@</span><span class="n">id_athlete</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="n">LAST_INSERT_ID</span><span class="p">();</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">resultat</span><span class="w"> </span><span class="p">(</span><span class="n">athlete_id</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">epreuve_type_id</span><span class="p">,</span><span class="w"> </span><span class="n">date_resultat</span><span class="p">,</span><span class="w"> </span><span class="n">resultat_ms</span><span class="p">,</span><span class="w"> </span><span class="n">evenement_id</span><span class="p">)</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="o">@</span><span class="n">id_athlete</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2023-07-17&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1529499</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">),</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">       </span><span class="p">(</span><span class="o">@</span><span class="n">id_athlete</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2023-08-17&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1995742</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">),</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">       </span><span class="p">(</span><span class="o">@</span><span class="n">id_athlete</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2023-09-17&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1480882</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
 </span></code></pre></div>
-<h3 id="2-fonction-privilege_valide">2. Fonction privilege_valide()</h3>
-<p>Créez une fonction nommée <strong>privilege_valide</strong> qui prend en paramètre le code pin du citoyen ainsi que le id d'une classe. Si la classe du citoyen est égale ou supérieur à la classe passée en paramètre, retournez TRUE, sinon retournez FALSE. Pour déterminé si une classe est supérieur à une autre, vous devez vous fiez à la colonne <strong>credit_min</strong> de la table <strong>classe</strong>.</p>
-<table>
-<thead>
-<tr>
-<th>Paramêtres</th>
-<th>IN/OUT</th>
-<th>tYPE</th>
-<th>Valeur test</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>pin</td>
-<td>IN</td>
-<td>VARCHAR(100)</td>
-<td>51d8fbc8-d473-45f5-991e-15aea899e8f9</td>
-</tr>
-<tr>
-<td>classe_id</td>
-<td>IN</td>
-<td>INT</td>
-<td>4</td>
-</tr>
-<tr>
-<td>RETURNS</td>
-<td>OUT</td>
-<td>BOOLEAN</td>
-<td>FALSE</td>
-</tr>
-</tbody>
-</table>
-<p>Ex. Le citoyen Harry Walsh, id 20958, pin 51d8fbc8-d473-45f5-991e-15aea899e8f9 appartient à la classe Delta. </p>
-<div class="language-sql highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">-- Cette requête retournera 1</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">select</span><span class="w"> </span><span class="n">privilege_valide</span><span class="p">(</span><span class="s1">&#39;51d8fbc8-d473-45f5-991e-15aea899e8f9&#39;</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">valide</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1">-- Cette requête retournera 0</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">select</span><span class="w"> </span><span class="n">privilege_valide</span><span class="p">(</span><span class="s1">&#39;51d8fbc8-d473-45f5-991e-15aea899e8f9&#39;</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">valide</span>
-</span></code></pre></div>
-<h3 id="3-vue-citoyen_avec_credit">3. Vue citoyen_avec_credit</h3>
-<p>Créez une vue nommée <strong>citoyen_avec_credit</strong> qui contiendra les champs suivants</p>
-<table>
-<thead>
-<tr>
-<th>Nom colonne</th>
-<th>table</th>
-<th>colonne</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>citoyen_id</td>
-<td>citoyen</td>
-<td>id</td>
-</tr>
-<tr>
-<td>nom</td>
-<td>citoyen</td>
-<td>nom, prenom ("Walsh, Harry")</td>
-</tr>
-<tr>
-<td>pin</td>
-<td>citoyen</td>
-<td>pin</td>
-</tr>
-<tr>
-<td>classe</td>
-<td>classe</td>
-<td>titre</td>
-</tr>
-<tr>
-<td>credit</td>
-<td>calculé</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>Faites ensuite une requête sur cette view pour afficher les informations du citoyen id 20958</p>
-<h3 id="4-procedure-stockee-liste_manifestant">4. Procédure stockée liste_manifestant</h3>
-<p>Créez une procédure stockée nommée <strong>liste_manifestant</strong> qui prend une date en paramètre et retourne une liste de manifestants qui était présent. Assurez-vous que pour la date sélectionnée s'il y a un événement il soit de type manifestation. Le résultat doit être classé en ordre alphabétique de nom et prénom.</p>
-<table>
-<thead>
-<tr>
-<th>Nom colonne</th>
-<th>table</th>
-<th>colonne</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>citoyen_id</td>
-<td>citoyen</td>
-<td>id</td>
-</tr>
-<tr>
-<td>evenement_id</td>
-<td>evenement</td>
-<td>id</td>
-</tr>
-<tr>
-<td>nom</td>
-<td>citoyen</td>
-<td>nom, prenom ("Walsh, Harry")</td>
-</tr>
-<tr>
-<td>pin</td>
-<td>citoyen</td>
-<td>pin</td>
-</tr>
-<tr>
-<td>classe</td>
-<td>classe</td>
-<td>titre</td>
-</tr>
-<tr>
-<td>date_evenement</td>
-<td>evenement</td>
-<td>date_evenement</td>
-</tr>
-<tr>
-<td>notes</td>
-<td>evenement</td>
-<td>notes</td>
-</tr>
-</tbody>
-</table>
-<p>Faite ensuite une validation avec la date 2021-04-01, vous devriez avoir 17 enregistrements. Si vous essayer avec la date 2022-09-15 vous devriez en avoir aucun.</p>
-<h3 id="5-procedure-stockee-update_classe">5. Procédure stockée update_classe</h3>
-<p>Créez une procédure stockée nommée <strong>update_classe</strong> qui va updater la classe de chaque citoyen. Il vous faudra calculer le crédit social de chacun, ensuite déterminer dans quelle classe il appartient selon le crédit minimum de chaque classe. </p>
-<ul>
-<li>Vous devez parcourir tous les enregistrements de la table <strong>citoyen</strong> en utilisant un curseur.</li>
-<li>Si vous détectez une différence entre la classe du citoyen et votre calcul, vous devez "logger" le problème dans la table <strong>log_update_classe</strong>.</li>
-</ul>
-<p>Pour tester votre procedure, limitez la requête <strong>SELECT</strong> qui alimente le curseur à un seul citoyen et modifier la valeur du champs credit_initial de ce citoyen pour que la valeur du champs classe_id ne soit plus valide. Dans l'exemple plus bas j'ai modifié la valeur du crédit initial du citoyen 2 pour 850, ce qui lui donne une classe de 2 (Beta) au lieu de 4 (Delta).</p>
-<p><img alt="ex06_a" src="\img\ex06_a.png" /> </p>
-<p>Après avoir lancer ma procédure, on peut voir que la valeur de classe_id a bien été modifié et que l'opération a été enregistré dans la table log_update_classe.</p>
-<p><img alt="ex06_b" src="\img\ex06_b.png" /></p>
-<p><img alt="ex06_c" src="\img\ex06_c.png" /></p>
-<h2 id="corrige">Corrigé</h2>
-<p>Le corrigé est disponible <a href="ex06_corrige.md">ici</a></p>
+<p>Créez une fonction nommée <strong>moyenne5k</strong> qui va prendre en paramètre le id d'un athlète et qui va retourner la moyenne de ses résultats pour toutes ses résultats au 5 km. La valeur de sortie doit être la moyenne des résultats exprimées en heures, minutes, secondes (hh:mm:ss) et de type VARCHAR(). </p>
+<p>Utilisez l'athlète John Smith qu'on vient d'ajouter pour tester la fonction, le résultat devrait être <code>00:27:48</code>.</p>
 
 
 
