@@ -11,13 +11,17 @@
         <link rel="canonical" href="https://base-de-donnee-2.github.io/notes_de_cours/mySQL/transaction/">
       
       
+        <link rel="prev" href="../stored_proc/">
+      
+      
+        <link rel="next" href="../error_handling/">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.9">
     
     
       
-        <title>Transactions - Base de données 2 420-3B4-VI</title>
+        <title>Transaction - Base de données 2 420-3B4-VI</title>
       
     
     
@@ -106,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Transactions
+              Transaction
             
           </span>
         </div>
@@ -210,6 +214,8 @@
         
   
   
+    
+  
 
 
   
@@ -221,7 +227,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../definition/" class="md-tabs__link">
+      <a href="../../definition/" class="md-tabs__link md-tabs__link--active">
         Notes de cours
       </a>
     </li>
@@ -317,14 +323,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
       
       
       
@@ -333,7 +341,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
           Notes de cours
@@ -448,14 +456,16 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
       
       
       
@@ -464,7 +474,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_2_2">
           <span class="md-nav__icon md-icon"></span>
           MySQL
@@ -592,6 +602,149 @@
       <a href="../stored_proc/" class="md-nav__link">
         Procedures stockées
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Transaction
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Transaction
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#demarrer-une-transaction" class="md-nav__link">
+    Démarrer une transaction
+  </a>
+  
+    <nav class="md-nav" aria-label="Démarrer une transaction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#autocommit" class="md-nav__link">
+    AUTOCOMMIT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#start-transaction" class="md-nav__link">
+    START TRANSACTION
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#terminer-une-transaction" class="md-nav__link">
+    Terminer une transaction
+  </a>
+  
+    <nav class="md-nav" aria-label="Terminer une transaction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#commit" class="md-nav__link">
+    COMMIT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rollback" class="md-nav__link">
+    ROLLBACK
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utiliser-des-points-de-sauvegarde" class="md-nav__link">
+    Utiliser des points de sauvegarde
+  </a>
+  
+    <nav class="md-nav" aria-label="Utiliser des points de sauvegarde">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#savepoint" class="md-nav__link">
+    SAVEPOINT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rollback-to-savepoint" class="md-nav__link">
+    ROLLBACK TO SAVEPOINT
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commandes-qui-terminent-automatiquement-une-transaction" class="md-nav__link">
+    Commandes qui terminent automatiquement une transaction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sources" class="md-nav__link">
+    Sources
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1045,7 +1198,7 @@
 </span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="c1">-- l&#39;insertion ne sera permanente qu&#39;après avoir validé la transaction</span>
 </span></code></pre></div>
 <h3 id="start-transaction">START TRANSACTION</h3>
-<p>La façon la plus courante de démarrer une transaction est d'utiliser la commande <strong>START TRANSACTION</strong>. Une fois la commande lancée, toutes les requêtes suivantes seront "en attente" tant que la transaction ne sera pas terminée. </p>
+<p>La façon la plus courante de démarrer une transaction est d'utiliser la commande <strong>START TRANSACTION</strong>. Une fois la commande lancée, toutes les requêtes suivantes seront "en attente" tant que la transaction ne sera pas validée. </p>
 <p><strong>Exemple</strong></p>
 <div class="language-sql highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">-- Pour l&#39;exemple, je m&#39;assure que la valeur de la variable autocommit est bien à TRUE.</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1">-- C&#39;est la valeur par défaut, on n&#39;est pas obligé de le spécifié en temps normal.</span>
@@ -1082,7 +1235,7 @@
 </span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="k">ROLLBACK</span><span class="p">;</span>
 </span></code></pre></div>
 <h2 id="utiliser-des-points-de-sauvegarde">Utiliser des points de sauvegarde</h2>
-<p>On ne peut pas débuter une seconde transaction "à l'intérieur" d'une transaction déjà débutée. Par contre on peut créer des points de sauvegarde qui nous permettront d'annuler uniquement les opérations effectuées depuis un point de sauvegarde. </p>
+<p>On ne peut pas débuter une seconde transaction "à l'intérieur" d'une transaction déjà débutée, ça va causer la validation de la première et lancer la seconde. Par contre on peut créer des points de sauvegarde qui nous permettront d'annuler uniquement les opérations effectuées depuis un point de sauvegarde. </p>
 <h3 id="savepoint">SAVEPOINT</h3>
 <p>Pour créer un point de sauvegarde, on va utiliser la commande <strong>SAVEPOINT</strong>.  On peut définir plusieurs point de sauvegarde à l'intérieur d'une même transaction.</p>
 <div class="language-sql highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">SAVEPOINT</span><span class="w"> </span><span class="n">nom_du_savepoint</span>
@@ -1115,11 +1268,13 @@
 <h2 id="commandes-qui-terminent-automatiquement-une-transaction">Commandes qui terminent automatiquement une transaction</h2>
 <p>Attention, certaines commandes SQL vont clôturer automatiquement une transaction et aussi valider toutes les opérations, comme si on aurait utilisé la commande <strong>COMMIT</strong>. Voici une liste de ces commandes</p>
 <ul>
-<li>Toutes les commandes qui apportent une modification à la base de données vont valider une transaction</li>
+<li>Toutes les commandes qui apportent une modification à la structure de la base de données vont valider une transaction<ul>
 <li>La création ou suppression d'une base de données</li>
 <li>Toutes les modifications apportées aux tables, création, modification, etc...</li>
 <li>La création ou suppression d'un index.</li>
 <li>La création de procédures stockées, de fonctions ou de vues.</li>
+</ul>
+</li>
 <li>La création, suppression ou modification d'un utilisateur.</li>
 <li>Le début d'une nouvelle transaction sans avoir terminé la première.</li>
 <li>Changer la valeur de la variable autocommit à TRUE.</li>
@@ -1127,9 +1282,9 @@
 </ul>
 <h2 id="sources">Sources</h2>
 <ul>
-<li><a href="https://dev.mysql.com/doc/refman/8.0/en/sql-transactional-statements.html">https://dev.mysql.com/doc/refman/8.0/en/sql-transactional-statements.html</a></li>
-<li><a href="https://www.javatpoint.com/mysql-transaction">https://www.javatpoint.com/mysql-transaction</a></li>
-<li><a href="https://www.mysqltutorial.org/mysql-transaction.aspx">https://www.mysqltutorial.org/mysql-transaction.aspx</a></li>
+<li><a href="https://dev.mysql.com/doc/refman/8.0/en/sql-transactional-statements.html" target="_blank">https://dev.mysql.com/doc/refman/8.0/en/sql-transactional-statements.html</a></li>
+<li><a href="https://www.javatpoint.com/mysql-transaction" target="_blank">https://www.javatpoint.com/mysql-transaction</a></li>
+<li><a href="https://www.mysqltutorial.org/mysql-transaction.aspx" target="_blank">https://www.mysqltutorial.org/mysql-transaction.aspx</a></li>
 </ul>
 
 
