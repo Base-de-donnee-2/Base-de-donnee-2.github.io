@@ -11,13 +11,15 @@
         <link rel="canonical" href="https://base-de-donnee-2.github.io/exercices/ex09_enonce/">
       
       
+        <link rel="prev" href="../ex08_enonce/">
+      
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.9">
     
     
       
-        <title>Exercice 06 - Crédit social - Base de données 2 420-3B4-VI</title>
+        <title>Exercice 09 - Crédit social - Base de données 2 420-3B4-VI</title>
       
     
     
@@ -71,7 +73,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#exercice-06-credit-social" class="md-skip">
+        <a href="#exercice-9-credit-social" class="md-skip">
           Aller au contenu
         </a>
       
@@ -106,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Exercice 06 - Crédit social
+              Exercice 09 - Crédit social
             
           </span>
         </div>
@@ -233,13 +235,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../ex01_enonce/" class="md-tabs__link">
+      <a href="../ex01_enonce/" class="md-tabs__link md-tabs__link--active">
         Exercices
       </a>
     </li>
@@ -589,8 +593,36 @@
   
   
     <li class="md-nav__item">
+      <a href="../../notes_de_cours/mySQL/stored_proc/" class="md-nav__link">
+        Procedures stockées
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../notes_de_cours/mySQL/error_handling/" class="md-nav__link">
         Gestion des erreurs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notes_de_cours/mySQL/curseur/" class="md-nav__link">
+        Curseur
       </a>
     </li>
   
@@ -692,14 +724,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
       
       
       
@@ -708,7 +742,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           Exercices
@@ -836,6 +870,143 @@
       <a href="../ex08_enonce/" class="md-nav__link">
         Exercice 08 - Exercice sur les fonctions
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Exercice 09 - Crédit social
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Exercice 09 - Crédit social
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagramme-des-classes" class="md-nav__link">
+    Diagramme des classes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#descriptions" class="md-nav__link">
+    Descriptions
+  </a>
+  
+    <nav class="md-nav" aria-label="Descriptions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#calcul-du-credit-social" class="md-nav__link">
+    Calcul du crédit social
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calcul-de-la-classe-du-citoyen" class="md-nav__link">
+    Calcul de la classe du citoyen
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercices" class="md-nav__link">
+    Exercices
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-fonction-calcul_credit" class="md-nav__link">
+    1. Fonction calcul_credit()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-fonction-privilege_valide" class="md-nav__link">
+    2. Fonction privilege_valide()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-vue-citoyen_avec_credit" class="md-nav__link">
+    3. Vue citoyen_avec_credit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-procedure-stockee-liste_manifestant" class="md-nav__link">
+    4. Procédure stockée liste_manifestant
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-procedure-stockee-update_classe" class="md-nav__link">
+    5. Procédure stockée update_classe
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -980,39 +1151,28 @@
   
 
 
-<h1 id="exercice-06-credit-social">Exercice 06 - Crédit social</h1>
+<h1 id="exercice-9-credit-social">Exercice 9 - Crédit social</h1>
 <h2 id="installation">Installation</h2>
-<p>Les scripts sql de génération de la base de données sont disponible sur Teams dans la section <strong>Fichiers &gt; Supports de cours &gt; Exercices &gt; Exercice06 - Crédit social</strong>.</p>
-<ol>
-<li>Créez une nouvelle base de données nommée <strong>credit_social</strong></li>
-<li>Créez les tables en exécutant le script sql <strong>01_create_table.sql</strong></li>
-<li>Insérez les données en exécutant les scripts suivants (<u><strong>l'ordre est important</strong></u>). Certains scripts comportent beaucoup de ligne, 50 000 pour 04_insert_citoyen, c'est normale que le temps exécution soit long. </li>
-<li>Créez un script SQL par numéro. Une fois terminé remettez moi les 5 scripts dans le devoir sur Teams.</li>
-</ol>
+<p>Les scripts sql de génération de la base de données sont disponible <a href="\ressources\ex09_credit_social.zip">ici</a></p>
+<ul>
+<li>Créez la base de données et les tables en exécutant le script sql <strong>01_create_table.sql</strong></li>
+<li>Insérez les données en exécutant les scripts suivants (<u><strong>l'ordre est important</strong></u>). Certains scripts comportent beaucoup de ligne, 50 000 pour 04_insert_citoyen, c'est normal que le temps exécution soit long. <mark class="critic">Importez les scripts en ligne de commande pour gagner beaucoup de temps!!!</mark></li>
+</ul>
 <p>Liste des scripts à exécuter</p>
 <ul>
-<li>
-<p>02_insert_classe</p>
-</li>
-<li>
-<p>03_insert_evenement_type</p>
-</li>
-<li>
-<p>04_insert_citoyen</p>
-</li>
-<li>
-<p>05_insert_evenement</p>
-</li>
-<li>
-<p>06_insert_citoyen_evenement</p>
-</li>
+<li>02_insert_classe</li>
+<li>03_insert_evenement_type</li>
+<li>04_insert_citoyen</li>
+<li>05_insert_evenement</li>
+<li>06_insert_citoyen_evenement</li>
 </ul>
+<p>Inscrivez moi les scripts des 5 numéros dans un fichier sql. Une fois terminé remettez moi le fichier dans le devoir sur Teams.</p>
 <h2 id="diagramme-des-classes">Diagramme des classes</h2>
-<p><img alt="ex06" src="\img\ex06.png" /></p>
+<p><img alt="ex09_diagramme" src="\img\ex09_diagramme.png" /></p>
 <h2 id="descriptions">Descriptions</h2>
 <p>La base de données sert à stocker des informations sur les citoyens pour établir leur score de crédit social, une note de bon comportement qui détermine dans quel classe le citoyen est situé. </p>
 <h3 id="calcul-du-credit-social">Calcul du crédit social</h3>
-<p>En naissant, un citoyen se voit octroyer un crédit initial de 500 (par contre ce nombre pourrait être modifié par le parti). Tout au long de sa vie, le total de ce crédit va fluctuer selon des événements auquel le citoyen va participer. Donc le crédit social de chaque citoyen est la somme de son crédit initial et du score de tous les événements auxquels il a participé. Les événements sont défini par un type et un score par défaut (dans la table <strong>evenement_type</strong>, mais ce score peut être ajusté selon la nature de l'événement (le champ <strong>score_ajustement</strong> de la table <strong>citoyen_evenement</strong>, s'il est à <strong>null</strong> ne pas en tenir compte, sinon il outrepasse le score par défaut de l'événement). Le score de crédit social peut varier entre 0 et 1000.</p>
+<p>À la naissance, un citoyen se voit octroyer un crédit initial de 500 (par contre ce nombre pourrait être modifié par le parti). Tout au long de sa vie, le total de ce crédit va fluctuer selon des événements auquel le citoyen va participer. Donc le crédit social de chaque citoyen est la somme de son crédit initial et du score de tous les événements auxquels il a participé. Les événements sont défini par un type et un score par défaut (dans la table <strong>evenement_type</strong>, mais ce score peut être ajusté selon la nature de l'événement (le champ <strong>score_ajustement</strong> de la table <strong>citoyen_evenement</strong>, s'il est à <strong>null</strong> ne pas en tenir compte, sinon il outrepasse le score par défaut de l'événement). Le score de crédit social peut varier entre 0 et 1000.</p>
 <h3 id="calcul-de-la-classe-du-citoyen">Calcul de la classe du citoyen</h3>
 <p>Chaque citoyen appartient à une classe selon son score de crédit social. Ça lui donne droit à certain avantage de sa classe mais aussi aux avantages de toutes les classes inférieurs. Pour appartenir à une classe, le score de crédit social du citoyen doit être supérieur au crédit minimum de cette classe ( colonne <strong>credit_min</strong> de la table <strong>classe</strong>). La classe est recalculé chaque nuit selon son score actuel. Donc pour connaitre la classe d'un citoyen vous n'avez qu'à utiliser le champ classe_id de la table citoyen.</p>
 <h2 id="exercices">Exercices</h2>
@@ -1021,7 +1181,7 @@
 <table>
 <thead>
 <tr>
-<th>Paramêtres</th>
+<th>Paramètres</th>
 <th>IN/OUT</th>
 <th>tYPE</th>
 <th>Valeur test</th>
@@ -1036,13 +1196,13 @@
 </tr>
 <tr>
 <td>RETURNS</td>
-<td>OUT</td>
+<td>-</td>
 <td>INT</td>
 <td>365</td>
 </tr>
 </tbody>
 </table>
-<p>Ex. Le citoyen Harry Walsh, id 20958, pin 51d8fbc8-d473-45f5-991e-15aea899e8f9, a un score de crédit social de 365. </p>
+<p>Ex. Le citoyen Harry Walsh, id 20958, pin 51d8fbc8-d473-45f5-991e-15aea899e8f9, a un score de crédit social de <mark class="critic">365</mark>. </p>
 <div class="language-sql highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">select</span><span class="w"> </span><span class="n">calcul_credit</span><span class="p">(</span><span class="mi">20958</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">score_credit</span>
 </span></code></pre></div>
 <h3 id="2-fonction-privilege_valide">2. Fonction privilege_valide()</h3>
@@ -1050,7 +1210,7 @@
 <table>
 <thead>
 <tr>
-<th>Paramêtres</th>
+<th>Paramètres</th>
 <th>IN/OUT</th>
 <th>tYPE</th>
 <th>Valeur test</th>
@@ -1071,7 +1231,7 @@
 </tr>
 <tr>
 <td>RETURNS</td>
-<td>OUT</td>
+<td>-</td>
 <td>BOOLEAN</td>
 <td>FALSE</td>
 </tr>
@@ -1172,16 +1332,16 @@
 </table>
 <p>Faite ensuite une validation avec la date 2021-04-01, vous devriez avoir 17 enregistrements. Si vous essayer avec la date 2022-09-15 vous devriez en avoir aucun.</p>
 <h3 id="5-procedure-stockee-update_classe">5. Procédure stockée update_classe</h3>
-<p>Créez une procédure stockée nommée <strong>update_classe</strong> qui va updater la classe de chaque citoyen. Il vous faudra calculer le crédit social de chacun, ensuite déterminer dans quelle classe il appartient selon le crédit minimum de chaque classe. </p>
+<p>Créez une procédure stockée nommée <strong>update_classe</strong> qui va mettre à jour la classe de chaque citoyen. Il vous faudra calculer le crédit social de chacun, ensuite déterminer dans quelle classe il appartient selon le crédit minimum de chaque classe. </p>
 <ul>
-<li>Vous devez parcourir tous les enregistrements de la table <strong>citoyen</strong> en utilisant un curseur.</li>
+<li>Vous devez parcourir tous les enregistrements de la table <strong>citoyen</strong> en utilisant un <mark class="critic">curseur</mark>.</li>
 <li>Si vous détectez une différence entre la classe du citoyen et votre calcul, vous devez "logger" le problème dans la table <strong>log_update_classe</strong>.</li>
 </ul>
 <p>Pour tester votre procedure, limitez la requête <strong>SELECT</strong> qui alimente le curseur à un seul citoyen et modifier la valeur du champs credit_initial de ce citoyen pour que la valeur du champs classe_id ne soit plus valide. Dans l'exemple plus bas j'ai modifié la valeur du crédit initial du citoyen 2 pour 850, ce qui lui donne une classe de 2 (Beta) au lieu de 4 (Delta).</p>
-<p><img alt="ex06_a" src="\img\ex06_a.png" /> </p>
+<p><img alt="ex09_a" src="\img\ex09_a.png" /> </p>
 <p>Après avoir lancer ma procédure, on peut voir que la valeur de classe_id a bien été modifié et que l'opération a été enregistré dans la table log_update_classe.</p>
-<p><img alt="ex06_b" src="\img\ex06_b.png" /></p>
-<p><img alt="ex06_c" src="\img\ex06_c.png" /></p>
+<p><img alt="ex09_b" src="\img\ex09_b.png" /></p>
+<p><img alt="ex09_c" src="\img\ex09_c.png" /></p>
 
 
 
