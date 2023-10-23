@@ -1670,36 +1670,35 @@
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="kn">import</span> <span class="nn">mysql.connector</span>
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a>
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="c1"># Création de la connexion à la base de données</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="n">cnx</span> <span class="o">=</span> <span class="n">mysql</span><span class="o">.</span><span class="n">connector</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a>    <span class="n">user</span><span class="o">=</span><span class="s1">&#39;root&#39;</span><span class="p">,</span> 
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a>    <span class="n">password</span><span class="o">=</span><span class="s1">&#39;********&#39;</span><span class="p">,</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a>    <span class="n">host</span><span class="o">=</span><span class="s1">&#39;localhost&#39;</span><span class="p">,</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a>    <span class="n">database</span><span class="o">=</span><span class="s1">&#39;bd2_ex10&#39;</span><span class="p">)</span>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10"></a>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="hll"><span class="n">cnx</span> <span class="o">=</span> <span class="n">mysql</span><span class="o">.</span><span class="n">connector</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
+</span></span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="hll">    <span class="n">user</span><span class="o">=</span><span class="s1">&#39;root&#39;</span><span class="p">,</span> 
+</span></span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="hll">    <span class="n">password</span><span class="o">=</span><span class="s1">&#39;********&#39;</span><span class="p">,</span>
+</span></span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="hll">    <span class="n">host</span><span class="o">=</span><span class="s1">&#39;localhost&#39;</span><span class="p">,</span>
+</span></span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="hll">    <span class="n">database</span><span class="o">=</span><span class="s1">&#39;bd2_ex10&#39;</span><span class="p">)</span>
+</span></span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10"></a>
 </span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="c1"># Création du curseur</span>
 </span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="c1"># Le paramêtre dictionary=True permet de faire </span>
 </span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="c1"># référence aux champs du résultat par leur nom</span>
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="n">cursor</span> <span class="o">=</span> <span class="n">cnx</span><span class="o">.</span><span class="n">cursor</span><span class="p">(</span><span class="n">dictionary</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15"></a>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="hll"><span class="n">cursor</span> <span class="o">=</span> <span class="n">cnx</span><span class="o">.</span><span class="n">cursor</span><span class="p">(</span><span class="n">dictionary</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15"></a>
 </span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16"></a><span class="c1"># Stockage de la requête dans une variable</span>
 </span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17"></a><span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;SELECT nom FROM houblon h ORDER BY nom;&quot;</span>
 </span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18"></a>
 </span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19"></a><span class="c1"># Exécution de la requête</span>
-</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20"></a><span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
-</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21"></a>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20"></a><span class="hll"><span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+</span></span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21"></a>
 </span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22"></a><span class="c1"># Affichage des résultats</span>
 </span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23"></a><span class="k">for</span> <span class="p">(</span><span class="n">ligne</span><span class="p">)</span> <span class="ow">in</span> <span class="n">cursor</span><span class="p">:</span>
 </span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">ligne</span><span class="p">[</span><span class="s2">&quot;nom&quot;</span><span class="p">])</span>
 </span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25"></a>
 </span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26"></a><span class="c1"># Fermeture du curseur et de la connexion</span>
-</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27"></a><span class="n">cursor</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28"></a><span class="n">cnx</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</span></code></pre></div></td></tr></table></div>
+</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27"></a><span class="hll"><span class="n">cursor</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28"></a><span class="hll"><span class="n">cnx</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span></code></pre></div></td></tr></table></div>
 <p>Le résultat contenu dans le curseur est un tableau de toutes les lignes du résultat dont chaque élément est aussi un tableau qui contient chaque colonne de la ligne. Dans l'exemple plus haut chaque élément du tableau est un tableau d'un item, la colonne nom.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<div class="language-text highlight"><pre><span></span><code>Quand vous exécutez une requête INSERT, UPDATE ou DELETE vous devez faire un commit pour que les modifications soit sauvegardées. Utilisez la fontion **commit()** de votre objet connexion.
-</code></pre></div>
+<p>Quand vous exécutez une requête INSERT, UPDATE ou DELETE vous devez faire un commit pour que les modifications soit sauvegardées. Utilisez la fontion <strong>commit()</strong> de votre objet connexion.</p>
 </div>
 <p>Voici un autre exemple qui supprime un élément d'une table. Dans cet exemple on voit comment passer des paramètres à la requête et faire une gestion d'erreurs avec un <strong>try ... catch</strong>.</p>
 <div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">delete_exemple.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
