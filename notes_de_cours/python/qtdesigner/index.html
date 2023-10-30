@@ -11,6 +11,10 @@
         <link rel="canonical" href="https://base-de-donnee-2.github.io/notes_de_cours/python/qtdesigner/">
       
       
+        <link rel="prev" href="../libpyqt/">
+      
+      
+        <link rel="next" href="../../devilbox/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -18,7 +22,7 @@
     
     
       
-        <title>Qt Designer - Base de données 2 420-3B4-VI</title>
+        <title>qtDesigner - Base de données 2 420-3B4-VI</title>
       
     
     
@@ -111,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Qt Designer
+              qtDesigner
             
           </span>
         </div>
@@ -224,16 +228,20 @@
         
   
   
+    
+  
   
     
     
       
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../../definition/" class="md-tabs__link">
           
   
@@ -358,6 +366,8 @@
       
   
   
+    
+  
   
     
     
@@ -367,12 +377,12 @@
       
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
@@ -386,7 +396,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Notes de cours
@@ -929,18 +939,20 @@
                 
   
   
+    
+  
   
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
         
           
           <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
@@ -954,7 +966,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             Python
@@ -1016,6 +1028,101 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    qtDesigner
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    qtDesigner
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lancer-qt-designer" class="md-nav__link">
+    Lancer Qt Designer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#convertir-un-fichier-ui-en-python" class="md-nav__link">
+    Convertir un fichier ui en python
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exemple" class="md-nav__link">
+    Exemple
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ressources" class="md-nav__link">
+    Ressources
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1439,6 +1546,26 @@
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../exercices/ex14_enonce/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercice 14 - qtDesigner
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1628,72 +1755,108 @@
 </span></code></pre></div>
 <h2 id="exemple">Exemple</h2>
 <p>Au démarrage de l'application Qt Designer la fenêtre nouveau formulaire va s'afficher. Sélectionnez <strong>Main Window</strong> dans la section <strong>templates\forms</strong> et cliquez sur créer.</p>
-<p><img alt="qtdesigner_01" src="\img\qtdesigner_01.png" /></p>
+<p><img alt="qtdesigner_01" class="center shadow" src="../../../img/qtdesigner_01.png" /></p>
 <p>Une fenêtre vide va être créé avec une barre de menu dans le haut et une barre de statut dans le bas. Enregistrez cette fenêtre dans le répertoire de votre application. (Dans mon exemple j'ai nommé mon fichier exemple.ui). Vous voilà prêt à créer votre interface. On créer une interface où on pourra saisir un id et en cliquant sur un bouton de l'information va s'afficher à l'écran.</p>
-<p><img alt="qtdesigner_02" src="\img\qtdesigner_02.png" /></p>
+<p><img alt="qtdesigner_02" class="center shadow" src="../../../img/qtdesigner_02.png" /></p>
 <p>Commencez par supprimer le menu et la barre de statut. Dans l'inspecteur d'objet sélectionnez menubar et statusbar et avec un clique droit choisissez supprimer.</p>
-<p><img alt="qtdesigner_03" src="\img\qtdesigner_03.png" /></p>
+<p><img alt="qtdesigner_03" class="center shadow" src="../../../img/qtdesigner_03.png" /></p>
 <p>Dans la section de gauche vous avez une liste de widgets à utiliser. Glissez un <strong>Vertical Layout</strong> dans la fenêtre principale. Cliquez ensuite sur la fenêtre principale à l'extérieur du widget que vous venez d'ajouter et dans la barre de menu du haut de l'éditeur cliquez sur le bouton mettre en forme verticalement. Le widget <strong>Vertical Layout</strong> devrait s'étendre à la totalité de la fenêtre.</p>
-<p><img alt="qtdesigner_04" src="\img\qtdesigner_04.png" /></p>
+<p><img alt="qtdesigner_04" class="center shadow" src="../../../img/qtdesigner_04.png" /></p>
 <p>Ensuite dans l'ordre on va ajouter un <strong>Label</strong>, un <strong>Line Edit</strong>, un <strong>Push Button</strong> et un autre <strong>Label</strong>.</p>
-<p><img alt="qtdesigner_05" src="\img\qtdesigner_05.png" /></p>
+<p><img alt="qtdesigner_05" class="center shadow" src="../../../img/qtdesigner_05.png" /></p>
 <p>En sélectionnant chaque widget, modifiez la propriété <strong>objectName</strong> dans l'éditeur de propriétés. Je n'ai pas renommé le premier label, mais pour les suivants j'ai utilisé les noms suivants : </p>
 <ul>
 <li>Line Edit = editCitoyenId</li>
 <li>Push Button = btnRechercher</li>
 <li>Label = lblResultat</li>
 </ul>
-<p><img alt="qtdesigner_06" src="\img\qtdesigner_06.png" /></p>
+<p><img alt="qtdesigner_06" class="center shadow" src="../../../img/qtdesigner_06.png" /></p>
 <p>Vous pouvez modifier le texte affiché sur un widget avec la propriété <strong>text</strong>. Vous pouvez ajuter le format du texte avec plusieurs propriétés, dont <strong>font</strong> et <strong>alignment</strong>.</p>
-<p><img alt="qtdesigner_07" src="\img\qtdesigner_07.png" /></p>
-<p>Dernière chose, on va associer une fonction à un événement, ici un clique de la souris sur le bouton. On peut le faire depuis l'interface de Qt Designer ou dans notre script python. Pour le faire depuis Qt Designer, dDans le menu principal, sous <strong>Édition</strong> sélectionnez <strong>Éditer signaux/slots</strong>. Ensuite cliquez sur le bouton et sans relâcher le bouton glisser la souris vers la fenêtre principale (attention on cible la fenêtre principale et non le widget <strong>layout</strong>). Vous devriez avoir une ligne rouge avec à son bout une flèche composée de barre rouge. Relâcher maintenant le bouton de la souris et la fenêtre <strong>Configurer connexion</strong> va s'afficher.</p>
-<p><img alt="qtdesigner_08" src="\img\qtdesigner_08.png" /></p>
+<p><img alt="qtdesigner_07" class="center shadow" src="../../../img/qtdesigner_07.png" /></p>
+<p>Dernière chose, on va associer une fonction à un événement, ici un clique de la souris sur le bouton. On peut le faire depuis l'interface de Qt Designer ou dans notre script python. Pour le faire depuis Qt Designer, dans le menu principal, sous <strong>Édition</strong> sélectionnez <strong>Éditer signaux/slots</strong>. Ensuite cliquez sur le bouton et sans relâcher le bouton glisser la souris vers la fenêtre principale (attention on cible la fenêtre principale et non le widget <strong>layout</strong>). Vous devriez avoir une ligne rouge avec à son bout une flèche composée de barre rouge. Relâcher maintenant le bouton de la souris et la fenêtre <strong>Configurer connexion</strong> va s'afficher.</p>
+<p><img alt="qtdesigner_08" class="center shadow" src="../../../img/qtdesigner_08.png" /></p>
 <p>Sélectionnez <strong>clicked()</strong> et cliquez sur <strong>Éditer</strong>. Dans la fenêtre qui va apparaître cliquez sur le bouton avec une croix verte dans la section <strong>Slots</strong>. Modifier ensuite le nom de la fonction (slot1() par défaut) pour le nom que vous allez donner à votre fonction. Cliquez ensuite sur ok. Dans la fenêtre précédente vous avez maintenant votre fonction dans la section de droite, sélectionnez la et cliquez sur ok.</p>
-<p><img alt="qtdesigner_09" src="\img\qtdesigner_09.png" /></p>
-<p><img alt="qtdesigner_10" src="\img\qtdesigner_10.png" /></p>
+<p><img alt="qtdesigner_09" class="center shadow" src="../../../img/qtdesigner_09.png" /></p>
+<p><img alt="qtdesigner_10" class="center shadow" src="../../../img/qtdesigner_10.png" /></p>
 <p>Pour connecter un événement depuis le script python, voir plus bas dans l'exemble du fichier <strong>app.py</strong>.</p>
 <p>Voila le travail pour notre interface vous pouvez sauvegarder le tout et ouvrir un terminal dans le répertoire où le fichier se trouve.  Utilisez la commande qu'on a vu plus haut pour convertir le fichier <strong>ui</strong> et fichier python.</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>pyuic5<span class="w"> </span>exemple.ui<span class="w"> </span>-o<span class="w"> </span>MainWindow.py
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>pyuic5<span class="w"> </span>exemple.ui<span class="w"> </span>-o<span class="w"> </span>demo.py
 </span></code></pre></div>
-<p>Si on regarde dans le fichier python qu'on a créé on peut voir qu'il y a une classe Ui_MainWindow qui contient toute notre interface. Maintenant on va créer un fichier python qui va être le script principal et qui ont va appeler cette classe et l'afficher.</p>
-<p><strong>app.py</strong></p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">import</span> <span class="nn">sys</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kn">from</span> <span class="nn">PyQt5.QtWidgets</span> <span class="kn">import</span> <span class="n">QApplication</span><span class="p">,</span> <span class="n">QMainWindow</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1"># Importer la classe Ui_MainWindow du fichier MainWindow.py</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="kn">from</span> <span class="nn">demo</span> <span class="kn">import</span> <span class="n">Ui_MainWindow</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="c1"># En paramêtre de la classe MainWindow on va hériter des fonctionnalités</span>
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="c1"># de QMainWindow et de notre interface Ui_MainWindow</span>
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="k">class</span> <span class="nc">MainWindow</span><span class="p">(</span><span class="n">QMainWindow</span><span class="p">,</span> <span class="n">Ui_MainWindow</span><span class="p">):</span>
-</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">obj</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>        <span class="nb">super</span><span class="p">(</span><span class="n">MainWindow</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>        <span class="c1"># On va créer la fenêtre avec cette commande</span>
-</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">setupUi</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>        <span class="c1"># On connecter un événement sur le line edit</span>
-</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">editIdCitoyen</span><span class="o">.</span><span class="n">returnPressed</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">test</span><span class="p">)</span>
-</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>
-</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>    <span class="c1"># On défini la fonction qu&#39;on avait déclaré pour le clique sur le bouton</span>
-</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>    <span class="k">def</span> <span class="nf">recherche_citoyen</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>        <span class="c1"># On récupère la valeur du line edit</span>
-</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>        <span class="n">citoyen_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">editIdCitoyen</span><span class="o">.</span><span class="n">text</span><span class="p">()</span>
-</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>        <span class="c1"># Ensuite on pourrait lancer une fonction qui interroge la BD</span>
-</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>        <span class="c1"># Pour l&#39;exemple on va simplement afficher la valeur dans le label </span>
-</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>        <span class="c1"># lblResultat</span>
-</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">lblResultat</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="n">citoyen_id</span><span class="p">)</span>
-</span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>        <span class="c1"># editIdCitoyen et lblResultat sont les noms qu&#39;on a donné au widget</span>
-</span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>        <span class="c1"># dans l&#39;éditeur Qt Designer</span>
-</span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>
-</span><span id="__span-4-27"><a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>    <span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="__span-4-28"><a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">lblResultat</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="s1">&#39;Tu as appuyé sur Enter&#39;</span><span class="p">)</span>
-</span><span id="__span-4-29"><a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a>
-</span><span id="__span-4-30"><a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a><span class="n">app</span> <span class="o">=</span> <span class="n">QApplication</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
-</span><span id="__span-4-31"><a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a>
-</span><span id="__span-4-32"><a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a><span class="n">window</span> <span class="o">=</span> <span class="n">MainWindow</span><span class="p">()</span>
-</span><span id="__span-4-33"><a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a><span class="n">window</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</span><span id="__span-4-34"><a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a><span class="n">app</span><span class="o">.</span><span class="n">exec</span><span class="p">()</span>
-</span></code></pre></div>
+<p>Si on regarde dans le fichier python qu'on a créé on peut voir qu'il y a une classe <mark>Ui_MainWindow</mark> qui contient notre interface. Maintenant on va créer un fichier python qui va être le script principal et où on va appeler cette classe et l'afficher.</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">app.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-4-10">10</a></span>
+<span class="normal"><a href="#__codelineno-4-11">11</a></span>
+<span class="normal"><a href="#__codelineno-4-12">12</a></span>
+<span class="normal"><a href="#__codelineno-4-13">13</a></span>
+<span class="normal"><a href="#__codelineno-4-14">14</a></span>
+<span class="normal"><a href="#__codelineno-4-15">15</a></span>
+<span class="normal"><a href="#__codelineno-4-16">16</a></span>
+<span class="normal"><a href="#__codelineno-4-17">17</a></span>
+<span class="normal"><a href="#__codelineno-4-18">18</a></span>
+<span class="normal"><a href="#__codelineno-4-19">19</a></span>
+<span class="normal"><a href="#__codelineno-4-20">20</a></span>
+<span class="normal"><a href="#__codelineno-4-21">21</a></span>
+<span class="normal"><a href="#__codelineno-4-22">22</a></span>
+<span class="normal"><a href="#__codelineno-4-23">23</a></span>
+<span class="normal"><a href="#__codelineno-4-24">24</a></span>
+<span class="normal"><a href="#__codelineno-4-25">25</a></span>
+<span class="normal"><a href="#__codelineno-4-26">26</a></span>
+<span class="normal"><a href="#__codelineno-4-27">27</a></span>
+<span class="normal"><a href="#__codelineno-4-28">28</a></span>
+<span class="normal"><a href="#__codelineno-4-29">29</a></span>
+<span class="normal"><a href="#__codelineno-4-30">30</a></span>
+<span class="normal"><a href="#__codelineno-4-31">31</a></span>
+<span class="normal"><a href="#__codelineno-4-32">32</a></span>
+<span class="normal"><a href="#__codelineno-4-33">33</a></span>
+<span class="normal"><a href="#__codelineno-4-34">34</a></span>
+<span class="normal"><a href="#__codelineno-4-35">35</a></span>
+<span class="normal"><a href="#__codelineno-4-36">36</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="kn">import</span> <span class="nn">sys</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="kn">from</span> <span class="nn">PyQt5.QtWidgets</span> <span class="kn">import</span> <span class="n">QApplication</span><span class="p">,</span> <span class="n">QMainWindow</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="c1"># Importer la classe Ui_MainWindow du fichier demo.py</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="hll"><span class="kn">from</span> <span class="nn">demo</span> <span class="kn">import</span> <span class="n">Ui_MainWindow</span>
+</span></span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5"></a>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="c1"># En paramêtre de la classe MainWindow on va hériter des fonctionnalités</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="c1"># de QMainWindow et de notre interface Ui_MainWindow</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="hll"><span class="k">class</span> <span class="nc">MainWindow</span><span class="p">(</span><span class="n">QMainWindow</span><span class="p">,</span> <span class="n">Ui_MainWindow</span><span class="p">):</span>
+</span></span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">obj</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10"></a>        <span class="nb">super</span><span class="p">(</span><span class="n">MainWindow</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11"></a>        <span class="c1"># On va créer la fenêtre avec cette commande</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="hll">        <span class="bp">self</span><span class="o">.</span><span class="n">setupUi</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+</span></span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13"></a>        <span class="c1"># On a accès à tous les éléments de notre interface</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14"></a>        <span class="c1"># Par exemple ici on branche une fonction à l&#39;appui sur le bouton</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">editCitoyenId</span><span class="o">.</span><span class="n">returnPressed</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">test</span><span class="p">)</span>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16"></a>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17"></a>    <span class="c1"># On défini la fonction qu&#39;on avait déclaré pour le clique sur le bouton </span>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18"></a><span class="hll">    <span class="c1"># dans qtDesigner</span>
+</span></span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19"></a>    <span class="k">def</span> <span class="nf">rechercherCitoyen</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20"></a>        <span class="c1"># On récupère la valeur du line edit</span>
+</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21"></a>        <span class="n">citoyen_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">editCitoyenId</span><span class="o">.</span><span class="n">text</span><span class="p">()</span>
+</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22"></a>        <span class="c1"># Ensuite on pourrait lancer une fonction qui interroge la BD</span>
+</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23"></a>        <span class="c1"># Pour l&#39;exemple on va simplement afficher la valeur dans le label </span>
+</span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24"></a>        <span class="c1"># lblResultat</span>
+</span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">lblResultat</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="n">citoyen_id</span><span class="p">)</span>
+</span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26"></a>        <span class="c1"># editCitoyenId et lblResultat sont les noms qu&#39;on a donné au widget</span>
+</span><span id="__span-4-27"><a id="__codelineno-4-27" name="__codelineno-4-27"></a>        <span class="c1"># dans l&#39;éditeur Qt Designer</span>
+</span><span id="__span-4-28"><a id="__codelineno-4-28" name="__codelineno-4-28"></a>
+</span><span id="__span-4-29"><a id="__codelineno-4-29" name="__codelineno-4-29"></a>    <span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-4-30"><a id="__codelineno-4-30" name="__codelineno-4-30"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">lblResultat</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="s1">&#39;Tu as appuyé sur Enter&#39;</span><span class="p">)</span>
+</span><span id="__span-4-31"><a id="__codelineno-4-31" name="__codelineno-4-31"></a>
+</span><span id="__span-4-32"><a id="__codelineno-4-32" name="__codelineno-4-32"></a><span class="n">app</span> <span class="o">=</span> <span class="n">QApplication</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
+</span><span id="__span-4-33"><a id="__codelineno-4-33" name="__codelineno-4-33"></a>
+</span><span id="__span-4-34"><a id="__codelineno-4-34" name="__codelineno-4-34"></a><span class="n">window</span> <span class="o">=</span> <span class="n">MainWindow</span><span class="p">()</span>
+</span><span id="__span-4-35"><a id="__codelineno-4-35" name="__codelineno-4-35"></a><span class="n">window</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</span><span id="__span-4-36"><a id="__codelineno-4-36" name="__codelineno-4-36"></a><span class="n">app</span><span class="o">.</span><span class="n">exec</span><span class="p">()</span>
+</span></code></pre></div></td></tr></table></div>
 <p>Finalement exécutez le script app.py pour afficher le résultat.</p>
-<p><img alt="qtdesigner_11" src="\img\qtdesigner_11.png" /></p>
+<p><img alt="qtdesigner_11" class="center shadow" src="../../../img/qtdesigner_11.png" /></p>
 <h2 id="ressources">Ressources</h2>
 <ul>
 <li><a href="https://realpython.com/qt-designer-python/">https://realpython.com/qt-designer-python/</a></li>
