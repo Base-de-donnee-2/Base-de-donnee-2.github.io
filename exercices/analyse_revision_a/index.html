@@ -1754,12 +1754,14 @@
 <li>Le nombre 2134521 situé au-dessus du nom "Mathieu Fréchette" est le code de ce client.</li>
 <li>La description du véhicule est un champs texte associé au compte du client. Le client peut avoir plus d'un véhicule associé à son compte.</li>
 <li>La case PLAQUE est le numéro de la plaque d'immatriculation du véhicule</li>
-<li>Les trois champs ODO ... représente trois prise de odomètre du véhicule durant le travail facturé.</li>
-<li>Dans le détail de la facture : </li>
+<li>Les trois champs ODO ... représente trois prise de l'odomètre du véhicule durant le travail facturé.</li>
+<li>Dans le détail de la facture : <ul>
 <li>Le texte "Remettre Pneus dans l'auto" est un texte global à la facture qu'un le commis a entré manuellement.</li>
 <li>Il y a trois ligne de détail, chacune commençant par une quantité et un code de produit.</li>
 <li>Le texte "N'oubliez pas la rotation... " est aussi un texte globale à la facture qu'un le commis a entré manuellement.</li>
 <li>Un peu payer la facture selon plus d'un mode de paiement. Donc à la ligne "Méthode de paiement. Visa=730.92$" on pourrait retrouver plus d'un mode de paiement avec le montant pour chaque mode.</li>
+</ul>
+</li>
 <li>Les "produits" sont classés en trois catégorie : Pièces, Main-d'œuvre (M.O.) et autre. Un produit ne peut avoir qu'une catégorie.</li>
 <li>Dans la table facturation, ajoutez deux colonnes, date_creation (type date) et user_creation (type varchar) qui seront remplies automatiquement avec un déclencheur.</li>
 </ul>
