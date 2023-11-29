@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://base-de-donnee-2.github.io/exercices/ex13/ex13_enonce/">
+        <link rel="canonical" href="https://base-de-donnee-2.github.io/exercices/corrige/sql_revision_a_corrige/">
       
       
       
@@ -18,7 +18,7 @@
     
     
       
-        <title>Exercice 13 - Révision analyse - Base de données 2 420-3B4-VI</title>
+        <title>Requête SQL - Révision - Corrigé - Base de données 2 420-3B4-VI</title>
       
     
     
@@ -75,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#exercice-13-revision-analyse" class="md-skip">
+        <a href="#requete-sql-revision-corrige" class="md-skip">
           Aller au contenu
         </a>
       
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Exercice 13 - Révision analyse
+              Requête SQL - Révision - Corrigé
             
           </span>
         </div>
@@ -1585,6 +1585,26 @@
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyse_revision_a/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Analyse
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1612,62 +1632,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table des matières
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#mise-en-situation" class="md-nav__link">
-    Mise en situation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#precisions" class="md-nav__link">
-    Précisions
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#diagramme-de-classes" class="md-nav__link">
-    Diagramme de classes
-  </a>
-  
-    <nav class="md-nav" aria-label="Diagramme de classes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#creation-de-la-base-de-donnees" class="md-nav__link">
-    Création de la base de données
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#triggers" class="md-nav__link">
-    Triggers
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#creation-dun-usager" class="md-nav__link">
-    Création d'un usager
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1684,59 +1648,23 @@
   
 
 
-<h1 id="exercice-13-revision-analyse">Exercice 13 - Révision analyse</h1>
-<h2 id="mise-en-situation">Mise en situation</h2>
-<p>À partir de l'image suivante, vous devez modéliser le système de facturation d'un garage de voiture.</p>
-<p><img alt="ex13_01" src="\img\ex13_01.jpg" /></p>
-<h2 id="precisions">Précisions</h2>
-<ul>
-<li>Seulement les informations surlignées en jaunes doivent être sauvegardés (ou peuvent être reproduit exactement avec les autres informations sauvegardées).</li>
-<li>Le nombre 2134521 situé au-dessus du nom "Mathieu Fréchette" est le code de ce client.</li>
-<li>La description du véhicule est un champs texte associé au compte du client. Le client peut avoir plus d'un véhicule associé à son compte.</li>
-<li>La case PLAQUE est le numéro de la plaque d'immatriculation du véhicule</li>
-<li>Les trois champs ODO ... représente trois prise de odomètre du véhicule durant le travail facturé.</li>
-<li>Dans le détail de la facture : </li>
-<li>Le texte "Remettre Pneus dans l'auto" est un texte global à la facture qu'un le commis a entré manuellement.</li>
-<li>Il y a trois ligne de détail, chacune commençant par une quantité et un code de produit.</li>
-<li>Le texte "N'oubliez pas la rotation... " est aussi un texte globale à la facture qu'un le commis a entré manuellement.</li>
-<li>Un peu payer la facture selon plus d'un mode de paiement. Donc à la ligne "Méthode de paiement. Visa=730.92$" on pourrait retrouver plus d'un mode de paiement avec le montant pour chaque mode.</li>
-<li>Les "produits" sont classés en trois catégorie : Pièces, Main-d'œuvre (M.O.) et autre. Un produit ne peut avoir qu'une catégorie.</li>
-<li>Dans la table facturation, ajoutez deux colonnes, date_creation (type date) et user_creation (type varchar) qui seront remplies automatiquement avec un déclencheur.</li>
-</ul>
-<h2 id="diagramme-de-classes">Diagramme de classes</h2>
-<p>Produisez le diagramme de classes en relation à partir des informations plus haut.</p>
-<ul>
-<li>Vous devez indiquer les relations entres les tables en précisant le type de relation. </li>
-<li>Utilisez la notation 1&lt;---&gt;1 pour une relation d'un à un et 1&lt;---&gt;n ou n&lt;---&gt;1 pour une relation d'un à plusieurs</li>
-<li>Vous devez inscrire les types de données</li>
-<li>Vous devez inscrire les clés primaires (PK) et étrangères (FK)</li>
-</ul>
-<h3 id="creation-de-la-base-de-donnees">Création de la base de données</h3>
-<p>Créez un script SQL qui effectuera les opérations suivantes : </p>
-<ul>
-<li>Création d'un nouvelle base de données</li>
-<li>Création des tables selon le diagramme de classes.</li>
-</ul>
-<h3 id="triggers">Triggers</h3>
-<p>Créez un script SQL qui fera la création des deux déclencheurs (Triggers) suivants : </p>
-<ul>
-<li>AVANT la création d'une facture, ajoutez la date du système au champ date_creation de la table de facturation.</li>
-<li>AVANT la création d'une facture, ajoutez le nom de l'usager courant dans le champs user_creation si aucun code de commis n'a été spécifié lors de la requête d'insertion. La commande current_user() permet de connaitre le nom de l'usager courant.</li>
-</ul>
-<h3 id="creation-dun-usager">Création d'un usager</h3>
-<p>Créez un script SQL qui effectuera les opérations suivantes : </p>
-<p>a) Créez un usager selon ces informations : </p>
-<ul>
-<li>nom : facturation</li>
-<li>mot de passe : $acture</li>
-<li>hôte accepté : localhost</li>
-</ul>
-<p>b) Donnez les permissions suivantes à cette usager : </p>
-<ul>
-<li>Il peut faire des requêtes SELECT, UPDATE, INSERT sur les tables de facturations de la base de données créé.</li>
-<li>Il peut faire des requêtes SELECT, UPDATE sur la table des clients.</li>
-<li>Il peut faire des requêtes SELECT sur la table des produits.</li>
-</ul>
+<h1 id="requete-sql-revision-corrige">Requête SQL - Révision - Corrigé</h1>
+<div class="language-sql highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span>
+<span class="normal"><a href="#__codelineno-0-5">5</a></span>
+<span class="normal"><a href="#__codelineno-0-6">6</a></span>
+<span class="normal"><a href="#__codelineno-0-7">7</a></span>
+<span class="normal"><a href="#__codelineno-0-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1">-- 1a. Affichez le prénom et le nom de tous les acteurs de la table actor.</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">first_name</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">last_name</span><span class="w">  </span><span class="k">FROM</span><span class="w"> </span><span class="n">actor</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="c1">-- 1b. Affichez le prénom et le nom de chaque acteur dans une seule colonne et en lettre majuscule. Nommé la colonne nom_acteur.</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">LOWER</span><span class="p">(</span><span class="n">CONCAT</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">first_name</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">last_name</span><span class="p">))</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">nom_acteur</span><span class="w">  </span><span class="k">FROM</span><span class="w"> </span><span class="n">actor</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="c1">-- 2a. Vous devez affichez le id, le prénom et le nom d&#39;un acteur dont le prénom est &quot;Joe&quot;.</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">actor_id</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">first_name</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">last_name</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">actor</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">first_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;Joe&quot;</span><span class="p">;</span><span class="w"> </span>
+</span></code></pre></div></td></tr></table></div>
 
 
 

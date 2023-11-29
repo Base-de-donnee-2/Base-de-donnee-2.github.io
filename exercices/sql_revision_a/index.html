@@ -8,13 +8,9 @@
       
       
       
-        <link rel="canonical" href="https://base-de-donnee-2.github.io/exercices/ex05_enonce/">
+        <link rel="canonical" href="https://base-de-donnee-2.github.io/exercices/sql_revision_a/">
       
       
-        <link rel="prev" href="../ex04_enonce/">
-      
-      
-        <link rel="next" href="../ex06_enonce/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -22,7 +18,7 @@
     
     
       
-        <title>Exercice 05 - Exercice sur les INSERTs - Base de données 2 420-3B4-VI</title>
+        <title>Requête SQL - Révision - Base de données 2 420-3B4-VI</title>
       
     
     
@@ -79,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#exercice-5-insert" class="md-skip">
+        <a href="#requete-sql-revision" class="md-skip">
           Aller au contenu
         </a>
       
@@ -115,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Exercice 05 - Exercice sur les INSERTs
+              Requête SQL - Révision
             
           </span>
         </div>
@@ -255,12 +251,10 @@
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
+      <li class="md-tabs__item">
         <a href="../ex01_enonce/" class="md-tabs__link">
           
   
@@ -1170,8 +1164,6 @@
       
   
   
-    
-  
   
     
     
@@ -1181,12 +1173,12 @@
       
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
@@ -1200,7 +1192,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Exercices
@@ -1291,18 +1283,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../ex05_enonce/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1311,7 +1294,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -1650,6 +1632,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#les-requetes" class="md-nav__link">
+    Les requêtes
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1666,16 +1663,39 @@
   
 
 
-<h1 id="exercice-5-insert">Exercice 5 - INSERT</h1>
-<p>À partir de la base de données athlète, (le script sql de génération est disponible <a href="\ressources\ex05_create_tables.sql"><strong>ici</strong></a>), réalisez les requêtes d'insertion suivante.</p>
-<ol>
-<li>Insérez-vous dans la table athlète sans spécifier les noms de colonnes dans la requête.</li>
-<li>Insérez un autre athlète fictif mais en spécifiant seulement son nom, prénom et la date de naissance.</li>
-<li>Récupérez le id qui a été généré automatiquement lors de la requête précédente et faites afficher avec une requête <strong>SELECT</strong> le message suivant : "L'athlète [prenom] [nom] a été ajouté avec succès!". Utilisez le id récupéré dans la clause <strong>WHERE</strong> de votre requête.</li>
-<li>Créez une nouvelle table appelé athlete_quebec avec les colonnes suivante ( id clé primaire auto-incrémenté, nom, prénom, ville )</li>
-<li>Insérez dans cette table tous les athlètes qui proviennent de la province du Québec à l'aide d'une requête select.</li>
-</ol>
-<p>Je veux que vous me remettiez les requêtes dans un script SQL avec pour chaque requête d'insertion une requête select qui va valider que les données ont bien été ajouté.</p>
+<h1 id="requete-sql-revision">Requête SQL - Révision</h1>
+<p>Cet exercice de révision couvre les requêtes SQL ainsi que les Views. La base de données à utiliser est Sakila. C'est une base de données développé pour illustré les divers fonctionnalités de MySQL. Pour plus de détails, consultez le <a href="https://dev.mysql.com/doc/sakila/en/" target="_blank">https://dev.mysql.com/doc/sakila/en/</a></p>
+<p>Téléchargez le fichier suivant : <a href="../../ressources/sakila-db.zip">sakila-db.zip</a>. À l'intérieur ces fichiers : </p>
+<ul>
+<li>sakila-schema.sql : Le script de création de tables</li>
+<li>sakila-data.sql   : L'insertion des données</li>
+<li>sakila-doc.pdf    : De la documentation sur la base de données</li>
+<li>sakila.mwb        : Un schéma de la base de données que vous pouvez consulter avec Workbench</li>
+</ul>
+<p>Lancez les deux scripts SQL pour générer la base de données</p>
+<p>Dans un nouveau scripts SQL, répondez de votre mieux aux questions suivantes. La source de l'exercice (en anglais) se trouve à cette adresse : <a href="https://github.com/adesai25/MySQL-Exercises-with-Sakila-DB-" target="_blank">https://github.com/adesai25/MySQL-Exercises-with-Sakila-DB-</a></p>
+<p>Voici un diagramme de la base de données, ce n'est pas au même format que ce qu'on a vu mais vous allez pouvoir vous y repérer facilement</p>
+<figure>
+<p><img alt="sql_revision_a.png" class="center shadow" src="../../img/sql_revision_a.png" />
+  </p>
+<figcaption>source <a href="https://www.jooq.org/sakila" target="_blank">https://www.jooq.org/sakila</a></figcaption>
+</figure>
+<h2 id="les-requetes">Les requêtes</h2>
+<ul>
+<li><strong>1a.</strong> Affichez le prénom et le nom de tous les acteurs de la table <code>actor</code>.</li>
+<li><strong>1b.</strong> Affichez le prénom et le nom de chaque acteur dans une seule colonne et en lettre minuscule. Nommé la colonne <code>nom_acteur</code>.</li>
+<li><strong>2a.</strong> Vous devez affichez le id, le prénom et le nom d'un acteur dont le prénom est "Joe".</li>
+<li><strong>2b.</strong> Trouvez tous les acteurs dont le nom contient les lettres <code>gen</code>.</li>
+<li><strong>2c.</strong> Trouvez tous les acteurs dont le nom contient les lettres <code>li</code>. Triez le résultat par le nom et le prénom.</li>
+<li><strong>2d.</strong> Avec l'opérateur <code>IN</code>, afficher les colonnes <code>counrty_id</code> et <code>country</code> des pays suivants : Afghanistan, Bangladesh, and China.</li>
+<li><strong>3a.</strong> Ajoutez une colonne <code>middle_name</code> à la table <code>actor</code>. Positionnez cette colonne entre la colonne <code>first_name</code> et <code>last_name</code>.</li>
+<li><strong>3b.</strong> Changez le type de données de la colonne <code>middle_name</code> pour <code>TEXT</code>.</li>
+<li><strong>3c.</strong> Supprimez la colonne <code>middle_name</code>.</li>
+<li><strong>4a.</strong> Listez les noms de famille des acteurs et le nombre d'acteurs qui ont ce nom de famille.</li>
+<li><strong>4b.</strong> Listez les noms de famille des acteurs et le nombre d'acteurs qui ont ce nom de famille, mais seulement pour les noms qui ont plus de 2 acteurs. (Astuce, utilisez une clause <code>HAVING</code>).</li>
+<li><strong>4c.</strong> Il y a un erreur dans le nom de l'acteur <code>GROUCHO WILLIAMS</code>, en fait son vrai nom est <code>HARPO WILLIAMS</code>. Corrigez cette erreur par une requête.</li>
+</ul>
+<p>https://datamastery.gitlab.io/exercises/sakila-queries.html</p>
 
 
 
