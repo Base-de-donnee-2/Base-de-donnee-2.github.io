@@ -14,13 +14,15 @@
         <link rel="prev" href="../examen01_revision_a/">
       
       
+        <link rel="next" href="../../examen/epreuve_finale/revision/">
+      
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
     
     
       
-        <title>Analyse - Base de données 2 420-3B4-VI</title>
+        <title>Analyse - Révision - Base de données 2 420-3B4-VI</title>
       
     
     
@@ -113,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Analyse
+              Analyse - Révision
             
           </span>
         </div>
@@ -1610,7 +1612,7 @@
           
   
   <span class="md-ellipsis">
-    Analyse
+    Analyse - Révision
   </span>
   
 
@@ -1621,7 +1623,7 @@
         
   
   <span class="md-ellipsis">
-    Analyse
+    Analyse - Révision
   </span>
   
 
@@ -1663,10 +1665,37 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#interrogation-des-donnees" class="md-nav__link">
+    Interrogation des données
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examen/epreuve_finale/revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Épreuve finale - révision
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1726,6 +1755,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#interrogation-des-donnees" class="md-nav__link">
+    Interrogation des données
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1747,7 +1783,7 @@
 <h1 id="analyse-revision-a">Analyse - Révision A</h1>
 <h2 id="mise-en-situation">Mise en situation</h2>
 <p>À partir de l'image suivante, vous devez modéliser le système de facturation d'un garage de voiture.</p>
-<p><img alt="ex13_01" class="center shadow" src="\img\analyse_revision_a.jpg" /></p>
+<p><img alt="revision_analyse_01" class="center shadow" src="../../img/revision_analyse_01.jpg" /></p>
 <h2 id="precisions">Précisions</h2>
 <ul>
 <li>Seulement les informations surlignées en jaunes doivent être sauvegardés (ou peuvent être reproduit exactement avec les autres informations sauvegardées).</li>
@@ -1756,10 +1792,10 @@
 <li>La case PLAQUE est le numéro de la plaque d'immatriculation du véhicule</li>
 <li>Les trois champs ODO ... représente trois prise de l'odomètre du véhicule durant le travail facturé.</li>
 <li>Dans le détail de la facture : <ul>
-<li>Le texte "Remettre Pneus dans l'auto" est un texte global à la facture qu'un le commis a entré manuellement.</li>
+<li>Le texte "Remettre Pneus dans l'auto" est un texte global à la facture que le commis a entré manuellement.</li>
 <li>Il y a trois ligne de détail, chacune commençant par une quantité et un code de produit.</li>
-<li>Le texte "N'oubliez pas la rotation... " est aussi un texte globale à la facture qu'un le commis a entré manuellement.</li>
-<li>Un peu payer la facture selon plus d'un mode de paiement. Donc à la ligne "Méthode de paiement. Visa=730.92$" on pourrait retrouver plus d'un mode de paiement avec le montant pour chaque mode.</li>
+<li>Le texte "N'oubliez pas la rotation... " est aussi un texte globale à la facture qu'un commis a entré manuellement.</li>
+<li>On peu payer la facture selon plus d'un mode de paiement. Donc à la ligne "Méthode de paiement. Visa=730.92$" on pourrait retrouver plus d'un mode de paiement avec le montant pour chaque mode.</li>
 </ul>
 </li>
 <li>Les "produits" sont classés en trois catégorie : Pièces, Main-d'œuvre (M.O.) et autre. Un produit ne peut avoir qu'une catégorie.</li>
@@ -1768,6 +1804,12 @@
 <h2 id="schema-conceptuelle-et-diagramme-de-classe">Schéma conceptuelle et diagramme de classe</h2>
 <p>Produisez schéma conceptuelle et un diagramme de classes à partir du système décrit plus haut.</p>
 <p>Les deux diagrammes doivent respecter les normes de conception et la troisième forme normale.</p>
+<h2 id="interrogation-des-donnees">Interrogation des données</h2>
+<p>Un fois vos 2 diagrammes terminés, téléchargez et exécutez le script suivant : <a href="../../ressources/revision_analyse.sql">revision_analyse.sql</a>. Il contient la création de la base de données, des tables et l'insertion des données de ma version de cet exercice.</p>
+<p>Écrivez une requête qui va permettre de reproduire l'affichage de la section détail de la facture plus haut. Le résultat doit ressembler à celui-ci : </p>
+<p><img alt="revision_analyse_02" class="center shadow" src="../../img/revision_analyse_02.png" /></p>
+<p>Ensuite ajoutez la ligne où il est question de la méthode de paiement à l'aide d'un <strong>UNION</strong>. Vous devez avoir ce résultat: </p>
+<p><img alt="revision_analyse_03" class="center shadow" src="../../img/revision_analyse_03.png" /></p>
 
 
 
